@@ -12,18 +12,18 @@ jobs:
     
     steps:
       - name: checkout code
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
 
       - name: Set up Ruby
-      - uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7.4'
 
       - name: Install dependancies
-      - run: cd api && bundle install
+        run: cd api && bundle install
 
       # - name: Set up database
-      # - run: cd api && bundle exec rails db:create db:migrate RAILS_ENV=test
+      #   run: cd api && bundle exec rails db:create db:migrate RAILS_ENV=test
     
       # - name: Run tests
-      # - run: cd api && bundle exec rspec spec
+      #   run: cd api && bundle exec rspec spec
