@@ -1,6 +1,8 @@
 class User
   include Mongoid::Document
   include Mongoid::Timestamps
+  include ActiveModel::SecurePassword
+
   field :fullname, type: String
   field :email, type: String
   field :phone, type: Integer
