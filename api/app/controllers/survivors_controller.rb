@@ -8,6 +8,11 @@ class SurvivorsController < ApplicationController
       render json: @survivors
     end
   
+    # to get a single survivor
+    def show
+        render json: @survivor
+    end
+    
     
 
 end
