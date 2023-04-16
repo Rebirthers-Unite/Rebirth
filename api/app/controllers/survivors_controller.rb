@@ -28,7 +28,14 @@ class SurvivorsController < ApplicationController
         end
     end
       
-    
+    # UPDATE
+      # Define the update method
+      # Find the survivor in the database by the ID
+      # If the survivor exists, update its attributes with the new parameters
+      # If the update is successful, return a success message with the updated survivor object
+      # If the update fails due to validation errors, return an error message with the validation
+  
+      
       
 
 end
