@@ -18,7 +18,7 @@ Rails.application.routes.draw do
     post '/survivors', to: 'survivors#create'
 
     # Route for updating an existing survivor
-    put '/survivors/:id', to: 'survivors#update'
+    patch '/survivors/:id', to: 'survivors#update'
 
     # Route for deleting a survivor
     delete '/survivors/:id', to: 'survivors#destroy'
