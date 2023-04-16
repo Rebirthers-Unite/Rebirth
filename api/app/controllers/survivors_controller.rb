@@ -19,7 +19,17 @@ class SurvivorsController < ApplicationController
       # If the new survivor is valid, save it to the database and return a success message with the new survivor object
       # If the new survivor is not valid, return an error message with the validation errors
       
+    def create
+        @survivor = Survivor.new(survivor_params)
+        if @survivor.save
+          render json: @survivor, status: :created
+        else
+          render json: { errors: @survivor.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
+      
     
+      
 
 end
   
