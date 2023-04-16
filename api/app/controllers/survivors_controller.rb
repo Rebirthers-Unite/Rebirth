@@ -43,7 +43,30 @@ class SurvivorsController < ApplicationController
         end
     end
     
-      
+    # DELETE
+      # Define the destroy method
+      # Find the survivor in the database by the ID
+      # If the survivor exists, delete it from the database
+      # If the deletion is successful, return a success message with no content
+  
+    def destroy
+        @survivor.destroy
+        head :no_content
+    end
+    
+      private
+    
+      # Define the set_survivor method
+    def set_survivor
+          # Find the survivor with the given id parameter
+        @survivor = Survivor.find(params[:id])
+    end
+    
+      # Define the survivor_params method
+    def survivor_params
+          # Permit only the specified attributes of the survivor object
+        params.require(:survivor).permit(:name, :description, :image, :location)
+    end    
       
 
 end
