@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+
     # Define a `before_action` method 
     # In the `before_action` method, define a `set_blog` method that sets the `@blog` instance variable to the blog object with the specified `:id` parameter.
     # The `set_blog` method should be called before the `show`, `update`, and `destroy` actions 
@@ -47,6 +48,15 @@ class BlogsController < ApplicationController
         end
     end 
 
+    # Define destroy method
+    # Destroy the blog
+    # Respond with no content
+
+    def destroy
+        @blog.destroy
+        head :no_content
+    end
+
     private
 
     def set_blog
@@ -56,4 +66,5 @@ class BlogsController < ApplicationController
     def blog_params
       params.require(:blog).permit(:title, :description, :author, :user_id)
     end
+    
 end
