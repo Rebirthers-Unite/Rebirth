@@ -23,4 +23,19 @@ Rails.application.routes.draw do
     # Route for deleting a survivor
     delete '/survivors/:id', to: 'survivors#destroy'
 
+    # Route for retrieving all blogs
+    get '/blogs', to: 'blogs#index'
+
+    # Route for retrieving a single blog
+    get '/blogs/:id', to: 'blogs#show'
+
+    # Route for creating a new blog
+    post '/blogs', to: 'blogs#create'
+
+    # Route for updating an existing blog
+    put '/blogs/:id', to: 'blogs#update'
+
+    # Route for deleting a blog
+    delete '/blogs/:id', to: 'blogs#destroy'
+
 end
