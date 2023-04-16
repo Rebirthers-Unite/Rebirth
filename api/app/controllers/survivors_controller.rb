@@ -35,6 +35,14 @@ class SurvivorsController < ApplicationController
       # If the update is successful, return a success message with the updated survivor object
       # If the update fails due to validation errors, return an error message with the validation
   
+    def update
+        if @survivor.update(survivor_params)
+          render json: @survivor
+        else
+          render json: { errors: @survivor.errors.full_messages }, status: :unprocessable_entity
+        end
+    end
+    
       
       
 
