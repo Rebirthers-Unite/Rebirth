@@ -7,6 +7,20 @@ Rails.application.routes.draw do
     #Route for Logging in an existing user
     post '/login', to: 'auth#create'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+
+    # Route for retrieving all survivors
+    get '/survivors', to: 'survivors#index'
+
+    # Route for retrieving a single survivor
+    get '/survivors/:id', to: 'survivors#show'
+
+    # Route for creating a new survivor
+    post '/survivors', to: 'survivors#create'
+
+    # Route for updating an existing survivor
+    put '/survivors/:id', to: 'survivors#update'
+
+    # Route for deleting a survivor
+    delete '/survivors/:id', to: 'survivors#destroy'
+
 end
