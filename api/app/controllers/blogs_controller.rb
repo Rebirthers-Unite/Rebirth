@@ -33,8 +33,22 @@ class BlogsController < ApplicationController
         end
     end 
 
+    # define update method
+    # Check if the blog with the given id exists
+    # If it exists, update the attributes of the blog object with the permitted parameters
+    # If the update is successful, render the updated blog object in JSON format
+    # If the update is unsuccessful, render the error messages in JSON format with a 422 status code.
+
+    def update
+        if @blog.update(blog_params)
+          render json: @blog
+        else
+          render json: { errors: @blog.errors.full_messages }, status: :unprocessable_entity
+        end
+    end 
+
     private
-    
+
     def set_blog
       @blog = Blog.find(params[:id])
     end
