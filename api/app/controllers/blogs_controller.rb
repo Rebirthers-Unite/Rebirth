@@ -19,4 +19,27 @@ class BlogsController < ApplicationController
     def show
         render json: @blog
     end
+
+    # Define the create method 
+    # If the object saves successfully, render 201 Created HTTP status code.
+    # If the object does not save successfully, render a 422 Unprocessable Entity HTTP status code.
+
+    def create
+        @blog = Blog.new(blog_params)
+        if @blog.save
+          render json: @blog, status: :created 
+        else
+          render json: { errors: @blog.errors.full_messages }, status: :unprocessable_entity
+        end
+    end 
+
+    private
+    
+    def set_blog
+      @blog = Blog.find(params[:id])
+    end
+
+    def blog_params
+      params.require(:blog).permit(:title, :description, :author, :user_id)
+    end
 end
