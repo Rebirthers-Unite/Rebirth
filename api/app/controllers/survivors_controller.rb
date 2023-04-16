@@ -71,3 +71,19 @@ class SurvivorsController < ApplicationController
 
 end
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
