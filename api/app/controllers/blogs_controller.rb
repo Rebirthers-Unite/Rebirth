@@ -12,4 +12,11 @@ class BlogsController < ApplicationController
         @blogs = Blog.all
         render json: @blogs
     end
+
+    # define show method
+    # it should get  single blog
+
+    def show
+        render json: @blog
+    end
 end
