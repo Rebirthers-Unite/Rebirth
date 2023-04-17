@@ -17,10 +17,7 @@ return (
 			<li className='p-4 hover:text-yellow-300 hover:font-bold'> Programs </li>
 			<li className='p-4 hover:text-yellow-300 hover:font-bold'> Contact </li>
 			<li className='p-4 hover:text-yellow-300 hover:font-bold'> Support </li>
-			<li className='p-4 hover:text-yellow-300 hover:font-bold'>
-				{' '}
-				<FiUser size={20} />{' '}
-			</li>
+			
 		</ul>
 		<div
 			onClick={handleNav}
@@ -54,7 +51,6 @@ return (
 					{' '}
 					Support{' '}
 				</li>
-				<li className='p-4 hover:text-yellow-300 hover:font-bold'> Login </li>
 			</ul>
 		</div>
 	</div>
