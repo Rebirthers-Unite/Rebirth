@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     patch '/users/:id', to: 'users#update'
 
     #Route for deleting a user
-    decode '/users/:id', to: 'users#delete'
+    delete '/users/:id', to: 'users#destroy'
 
 
     # Route for retrieving all survivors

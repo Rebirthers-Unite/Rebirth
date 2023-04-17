@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      render json: @survivor
+      render json: @user
     else
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
@@ -36,7 +36,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.permit(:fullname, :email, :phone, :role, :password)
+      params.permit(:name, :email, :role, :password)
     end
 
     def set_user
