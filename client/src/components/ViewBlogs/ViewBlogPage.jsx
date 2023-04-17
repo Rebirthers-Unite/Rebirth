@@ -12,7 +12,7 @@ export const ViewBlogPage = () => {
         <img id='blog-image' src='https://media.istockphoto.com/id/929671484/photo/poor-homeless-man-or-refugee-sleeping-on-the-wooden-bench-on-the-urban-street-in-the-city.jpg?s=612x612&w=0&k=20&c=pytU-fVTuzLF_hBm3upCNY4FHrZaPGvfWGjGd477u1Y=' alt='blog-image'/>
 
         <div className='row mt-5' id='blog-data'>
-          <img className='col-1' src={'https://upload.wikimedia.org/wikipedia/commons/6/67/User_Avatar.png'} id='admin-photo'/>
+          <img className='col-1' src={'https://www.w3schools.com/howto/img_avatar.png'} id='admin-photo'/>
           <p className='col-3' style={{textAlign: 'left'}}>Rebirth Blogger <br></br>April 17th 2023. 4 min read</p>
           <div className='col-8' style={{textAlign: 'right'}}>
               <BsFacebook className='me-2'/>
