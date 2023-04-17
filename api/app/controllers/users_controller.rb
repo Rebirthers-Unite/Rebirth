@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   # skip_before_action :authorized, only: [:create]
+  before_action :set_user, only: [:update, :destroy]
 
   def index
     @users = User.all
@@ -20,14 +21,26 @@ class UsersController < ApplicationController
   end
 
   def update
+    if @user.update(user_params)
+      render json: @survivor
+    else
+      render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
+    end
   end
 
   def destroy
+    @user.destroy
+    head :no_content
   end
 
   private
 
     def user_params
       params.permit(:fullname, :email, :phone, :role, :password)
+    end
+
+    def set_user
+      # Find a specific user with the given id parameter
+      @user = User.find(params[:id])
     end
 end
