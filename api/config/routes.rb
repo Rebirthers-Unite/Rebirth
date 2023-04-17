@@ -26,6 +26,10 @@ Rails.application.routes.draw do
     # Route for retrieving all blogs
     get '/blogs', to: 'blogs#index'
 
+    #  route for retriieving all users
+    
+    get '/users', to: 'users#index'
+
     # Route for retrieving a single blog
     get '/blogs/:id', to: 'blogs#show'
 
