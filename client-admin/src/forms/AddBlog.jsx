@@ -13,7 +13,7 @@ const AddBlog = () => {
 			<FormLabel>Date</FormLabel>
 			<Input type='date'/>
 			<FormLabel>Blog Body</FormLabel>
-			<Textarea h={'40rem'} resize={'none'} />
+			<Textarea h={'20rem'} resize={'none'} />
 			<Button>POST BLOG</Button>
 		</FormControl>
 	);
