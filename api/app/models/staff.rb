@@ -8,7 +8,7 @@ class Staff
   field :gender, type: String
 
 
-  validates :name, , presence: true
+  validates :name, :phone_number, :position, :gender, presence: true
   validates :email, presence: true, uniqueness: true, format: { with:URI::MailTo::EMAIL_REGEXP}
 
 
