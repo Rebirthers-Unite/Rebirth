@@ -1,6 +1,5 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {AiOutlineArrowRight} from 'react-icons/ai'
 import avatar from '../../assets/face.jpeg'
 
 export const ProgramsCard = () => {
@@ -14,7 +13,7 @@ export const ProgramsCard = () => {
           Our commitment is to continue keeping the safehouse secure, safe and healing space for all to heal and thrive. </p>
         </div>
         <div>
-         <Link to='/donate' className='btn btn-warning' style={{width: '200px'}}>Donate<AiOutlineArrowRight/></Link>
+         <Link to='/donate' className='btn btn-warning' style={{width: '300px'}}>Donate</Link>
         </div>
     </div>
   )
