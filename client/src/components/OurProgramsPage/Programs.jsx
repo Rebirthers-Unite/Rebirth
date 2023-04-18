@@ -5,7 +5,8 @@ import './programs.css'
 export const Programs = () => {
   return (
     <div id='our-programs-page'>
-        <h1 className='font-bold text-5xl' style={{textAlign: 'center'}}>Our Programs</h1>
+        <h1 className='font-bold text-5xl' style={{textAlign: 'center', marginTop:'90px'}}>Our Programs</h1>
+        <input className='form-control border' placeholder='Search by Title' type='text' id='search-input'/>
         <div className='mt-4'>
           <ProgramsCard/>
           <ProgramsCard/>
