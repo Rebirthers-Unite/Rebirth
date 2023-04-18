@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :programs
   # Routes for CRUD operations staff
   resources :staffs
   
