@@ -7,6 +7,8 @@ export const Programs = () => {
     <div id='our-programs-page'>
         <h1>Our Programs</h1>
         <ProgramsCard/>
+        <ProgramsCard/>
+        <ProgramsCard/>
     </div>
   )
 }

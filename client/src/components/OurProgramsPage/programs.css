@@ -1,3 +1,18 @@
 #our-programs-page{
     background-color: #CBC2F3;
 }
+
+#card-div{
+    height: 230px;
+    max-width: 900px;
+}
+
+#card-image{
+    height: 230px;
+    width: 230px;
+    margin-left: -12px;
+}
+
+#card-content{
+    max-width: 1000px;
+}
