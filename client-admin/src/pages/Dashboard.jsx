@@ -15,7 +15,7 @@ import UpdateSurvivorModal from '../components/UpdateSurvivorModal';
 
 const Dashboard = ({ renderUpdateForm, isOpen, closeModal, loading }) => {
 	return (
-		<Box w={'100vw'}>
+		<Box>
 			<Search />
 			<Tabs
 				mt={'40px'}

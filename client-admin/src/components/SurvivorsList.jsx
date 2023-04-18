@@ -28,8 +28,8 @@ const SurvivorsList = ({ renderUpdateForm }) => {
 		'REFERRING ORGANIZATION',
 		// 'REFERRING ORGANIZATION CONTACT',
 		// 'PROGRAMS',
-		'DATE OF ENTRY',
-		'DATE OF EXIT',
+		// 'DATE OF ENTRY',
+		// 'DATE OF EXIT',
 		// 'GUARDIAN',
 		// 'GUARDIAN CONTACT',
 		'ACTIONS',
@@ -62,13 +62,13 @@ const SurvivorsList = ({ renderUpdateForm }) => {
 							<Td>{survivor.referringOrganization}</Td>
 							{/* <Td>{survivor.referringOrganizationContact}</Td> */}
 							{/* <Td>{survivor.programs}</Td> */}
-							<Td>{survivor.dateOfEntry}</Td>
-							<Td>{survivor.dateOfExit}</Td>
+							{/* <Td>{survivor.dateOfEntry}</Td> */}
+							{/* <Td>{survivor.dateOfExit}</Td> */}
 							{/* <Td>{survivor.guardian}</Td> */}
 							{/* <Td>{survivor.guardianContact}</Td> */}
 							<HStack className="buttons" justify={'center'}>
 								<Button onClick={renderUpdateForm}>UPDATE</Button>
-								<Button>DELETE</Button>
+								<Button bg={"red.500"}>DELETE</Button>
 							</HStack>
 						</Tr>
 					))}

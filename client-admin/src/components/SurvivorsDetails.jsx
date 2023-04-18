@@ -1,3 +1,4 @@
+import { PhoneIcon } from '@chakra-ui/icons';
 import {
 	Avatar,
 	Box,
@@ -38,8 +39,11 @@ const SurvivorsDetails = () => {
 
 							<Box>
 								<Heading size="sm">{survivor.name}</Heading>
-								<Text>{survivor.dateOfBirth}</Text>
-								<Text>{survivor.contact}</Text>
+								<Text>
+									<span>D.O.B: </span> {survivor.dateOfBirth}
+								</Text>
+								<Text><PhoneIcon/>{" "}
+									{survivor.contact}</Text>
 							</Box>
 						</Flex>
 						<IconButton
