@@ -2,11 +2,13 @@ import { PhoneIcon } from '@chakra-ui/icons';
 import {
 	Avatar,
 	Box,
+	Button,
 	Card,
 	CardBody,
 	CardHeader,
 	Container,
 	Flex,
+	HStack,
 	Heading,
 	IconButton,
 	Image,
@@ -42,8 +44,9 @@ const SurvivorsDetails = () => {
 								<Text>
 									<span>D.O.B: </span> {survivor.dateOfBirth}
 								</Text>
-								<Text><PhoneIcon/>{" "}
-									{survivor.contact}</Text>
+								<Text>
+									<PhoneIcon /> {survivor.contact}
+								</Text>
 							</Box>
 						</Flex>
 						<IconButton
@@ -87,6 +90,7 @@ const SurvivorsDetails = () => {
 					src="https://placehold.co/600x400"
 					alt="Image goes here"
 				/>
+
 				{/* 
 	<CardFooter
 		justify="space-between"
@@ -108,6 +112,10 @@ const SurvivorsDetails = () => {
 		</Button>
 	</CardFooter> */}
 			</Card>
+			<HStack justify={'center'} gap={'1rem'} mt={'1rem'}>
+				<Button>UPDATE DETAILS</Button>
+				<Button bg={'red.500'}>DELETE SURVIVOR</Button>
+			</HStack>
 		</Container>
 	);
 };

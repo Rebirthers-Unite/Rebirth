@@ -30,7 +30,6 @@ export default function RootLayout() {
 					xl: 5,
 				}}
 				p={'40px'}
-				// h={"100vh"}
 			>
 				<Navbar />
 				<Outlet />

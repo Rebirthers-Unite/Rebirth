@@ -30,7 +30,7 @@ const Navbar = () => {
 
 	return (
 		<Flex as={'nav'} p={'10px'} align={'center'} mb={'40px'}>
-			<Heading as={'h1'}>Administrator Dashboard</Heading>
+			<Heading as={'h1'}>Dashboard</Heading>
 
 			<Spacer />
 

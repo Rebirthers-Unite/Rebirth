@@ -9,17 +9,10 @@ import {
 	Thead,
 	Tr,
 } from '@chakra-ui/react';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-const SurvivorsList = ({ renderUpdateForm }) => {
-	const [survivors, setSurvivors] = useState([]);
-
-	useEffect(() => {
-		fetch('http://localhost:8000/survivors').then((r) => {
-			r.ok ? r.json().then((data) => setSurvivors(data)) : 'Problems!';
-		});
-	}, []);
+const SurvivorsList = ({ renderUpdateForm, survivors}) => {
 
 	const tableFields = [
 		'NAME',
@@ -68,7 +61,7 @@ const SurvivorsList = ({ renderUpdateForm }) => {
 							{/* <Td>{survivor.guardianContact}</Td> */}
 							<HStack className="buttons" justify={'center'}>
 								<Button onClick={renderUpdateForm}>UPDATE</Button>
-								<Button bg={"red.500"}>DELETE</Button>
+								<Button bg={'red.500'}>DELETE</Button>
 							</HStack>
 						</Tr>
 					))}
