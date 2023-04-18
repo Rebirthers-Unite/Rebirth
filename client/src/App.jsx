@@ -15,7 +15,6 @@ function App() {
    <Survivors/>
    <Footer/>
    </div>
-  
   )
 }
 
