@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4'>
-      <h1 className='w-full text-3xl font-bold text-[#ffcc3d] flex'> REBIRTH </h1>
+      <Link className='w-full text-3xl font-bold text-[#ffcc3d] flex' to='/'> REBIRTH </Link>
       <ul className='hidden md:flex'>
         <Link className='p-4 hover:text-yellow-300 hover:font-bold' to='/'> Home </Link>
         <Link className='p-4 hover:text-yellow-300 hover:font-bold'> About </Link>

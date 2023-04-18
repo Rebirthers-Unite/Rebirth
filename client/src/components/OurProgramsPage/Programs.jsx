@@ -5,10 +5,13 @@ import './programs.css'
 export const Programs = () => {
   return (
     <div id='our-programs-page'>
-        <h1>Our Programs</h1>
-        <ProgramsCard/>
-        <ProgramsCard/>
-        <ProgramsCard/>
+        <h1 className='font-bold text-5xl' style={{textAlign: 'center'}}>Our Programs</h1>
+        <div className='mt-4'>
+          <ProgramsCard/>
+          <ProgramsCard/>
+          <ProgramsCard/>
+        </div>
+        
     </div>
   )
 }
