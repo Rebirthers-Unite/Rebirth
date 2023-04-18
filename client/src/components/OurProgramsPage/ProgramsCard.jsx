@@ -4,7 +4,7 @@ import avatar from '../../assets/face.jpeg'
 
 export const ProgramsCard = () => {
   return (
-    <div className='card row ms-5 mb-5 px-0' id='card-div'>
+    <div className='card row mb-5 px-0' id='card-div'>
         <img src={avatar} alt='card-image' className='col-2' id='card-image'/>
         <div className='col-10' id='card-content'>
           <h3 className='card-title mt-4'> Rebirth of a Queen Safe House </h3>
