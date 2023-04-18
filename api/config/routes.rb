@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  # Routes for CRUD operations staff
   resources :staffs
+  
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
     #Route for creating a new user
