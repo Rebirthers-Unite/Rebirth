@@ -1,4 +1,5 @@
 import {Routes, Route} from 'react-router-dom'
+import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import { LandingPage } from './components/LandingPage/LandingPage'
 import { Programs } from './components/OurProgramsPage/Programs'

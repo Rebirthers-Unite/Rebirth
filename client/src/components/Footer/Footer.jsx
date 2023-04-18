@@ -43,7 +43,7 @@ function Footer() {
             <FaWordpress size={30} className='hover:text-[#21759c] hover:scale-110'/>
             <FaYoutube size={30} className='hover:text-[#c4302b] hover:scale-110'/>
         </div>
-        <p className='py-2 flex pb-[-6rem]'> Copyright <FaRegCopyright className='flex ml-1 mt-1'/> <p className="ml-1">{new Date().getFullYear()}</p></p>
+          <p className='py-2 flex pb-[-6rem]'> Copyright <FaRegCopyright className='flex ml-1 mt-1'/><span className="ml-1">{new Date().getFullYear()}</span></p>
         </div>          
         </div>
         </div>
