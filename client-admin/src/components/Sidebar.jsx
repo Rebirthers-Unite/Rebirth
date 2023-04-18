@@ -28,7 +28,7 @@ const Sidebar = () => {
 				<ListItem>
 					<NavLink to={'/create'}>
 						<ListIcon as={EditIcon} color={'whatsapp.200'} />
-						New Survivor
+						New Task
 					</NavLink>
 				</ListItem>
 				<ListItem>
