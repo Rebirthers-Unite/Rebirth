@@ -7,9 +7,47 @@
 #who-we-are-content{
     margin-top: 20px;
     text-align: center;
+    width: 1000px;
+    margin-left: 190px;
+    line-height: 30px;
 }
 
 #our-story{
     margin-top: 100px;
     margin-left: 45%;
+}
+
+#our-story-image{
+    width: 500px;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+#our-vision-image{
+    width: 500px;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+#mission-text{
+    line-height: 30px;
+}
+
+#vision-div{
+    margin-left: 40px;
+    width: 500px;
+}
+
+#vision-text{
+    line-height: 30px;
+}
+
+#values-text{
+    line-height: 30px;
+}
+
+#values-list{
+    margin-left: 20px;
+    line-height: 30px;
+    margin-top: 10px;
 }
