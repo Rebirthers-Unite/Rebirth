@@ -8,7 +8,21 @@
     margin-top: 100px;
 }
 
-#school{
-    width: 100px;
-    height: 100px;
+.icon{
+    width: 130px;
+    height: 130px;
+    margin-left: 50px;
+    display: block;
+}
+
+#support-cards{
+    margin-left:  30px;
+}
+
+.card{
+    width: 250px;
+    margin-left: 40px;
+    text-align: center;
+    color: #ffcc3d;
+    padding: 5px;
 }
