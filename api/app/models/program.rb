@@ -5,8 +5,7 @@ class Program
 
   field :title, type: String
   field :description, type: String
-  
-  # field :image, type: Attachment
 
+  #Allows storing images in the database
   has_mongoid_attached_file :image
 end
