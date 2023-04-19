@@ -8,7 +8,7 @@ const Navbar = () => {
       <Link className='w-full text-3xl font-bold text-[#ffcc3d] flex' to='/'> REBIRTH </Link>
       <ul className='hidden md:flex'>
         <Link className='p-4 hover:text-yellow-300 hover:font-bold' to='/'> Home </Link>
-        <Link className='p-4 hover:text-yellow-300 hover:font-bold'> About </Link>
+        <Link className='p-4 hover:text-yellow-300 hover:font-bold' to='/about'> About </Link>
         <Link className='p-4 hover:text-yellow-300 hover:font-bold' to='/programs'> Programs </Link>
         <Link className='p-4 hover:text-yellow-300 hover:font-bold'> Contact </Link>
         <Link className='p-4 hover:text-yellow-300 hover:font-bold'> Support </Link>
