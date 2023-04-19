@@ -6,7 +6,7 @@ export const BlogPage = () => {
   return (
       <div id='blog-page'>
 
-          <h1>BLOGS</h1>
+          <h1 className='text-5xl font-serif ' style={{textAlign: 'center'}}>BLOGS</h1>
 
           <div id='search-bar'>
             <input type='text' className='form-control' placeholder={'Search for Blog'} />

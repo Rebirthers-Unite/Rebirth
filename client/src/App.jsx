@@ -1,13 +1,10 @@
 import {ViewBlogPage} from './components/ViewBlogs/ViewBlogPage.jsx'
+import { BlogPage } from './components/BlogPage/BlogPage.jsx';
 import {Routes, Route} from 'react-router-dom'
-import './App.css'
-
 function App() {
 
   return (
-    <Routes>
-      <Route element={<ViewBlogPage/>} path='/blogs'/>
-    </Routes>
+    <BlogPage />
   )
 }
 

@@ -21,10 +21,11 @@
 #blog-content{
     width: 1000px;
     text-align: left;
-    margin-left: 160px;
+    margin-left: 180px;
     margin-top: 30px;
 }
 
 #blog-page{
     background-color: #D8D2E7;
+    padding: 40px;
 }
