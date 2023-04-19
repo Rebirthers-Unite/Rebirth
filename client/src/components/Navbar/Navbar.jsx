@@ -9,17 +9,35 @@ const Navbar = () => {
 	};
 	return (
 		<div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4'>
-			<h1 className='w-full text-3xl font-bold text-[#ffcc3d] flex'>
-				REBIRTH
-			</h1>
+			<h1 className='w-full text-3xl font-bold text-[#ffcc3d] flex'>REBIRTH</h1>
 			<ul className='hidden md:flex'>
-				<li className='p-4 hover:text-yellow-300 hover:font-bold'> Home </li>
-				<li className='p-4 hover:text-yellow-300 hover:font-bold'> About </li>
-				<li className='p-4 hover:text-yellow-300 hover:font-bold'>
+				<Link to='/' className='p-4 hover:text-yellow-300 hover:font-bold'>
+					{' '}
+					Home{' '}
+				</Link>
+				<Link
+					to='/aboutus'
+					className='p-4 hover:text-yellow-300 hover:font-bold'>
+					{' '}
+					About{' '}
+				</Link>
+				<Link
+					to='/programs'
+					className='p-4 hover:text-yellow-300 hover:font-bold'>
 					Programs
-				</li>
-				<li className='p-4 hover:text-yellow-300 hover:font-bold'> Contact </li>
-				<li className='p-4 hover:text-yellow-300 hover:font-bold'> Support </li>
+				</Link>
+				<Link
+					to='/contact'
+					className='p-4 hover:text-yellow-300 hover:font-bold'>
+					{' '}
+					Contact{' '}
+				</Link>
+				<Link
+					to='/support'
+					className='p-4 hover:text-yellow-300 hover:font-bold'>
+					{' '}
+					Support{' '}
+				</Link>
 			</ul>
 			<div
 				onClick={handleNav}
@@ -37,7 +55,7 @@ const Navbar = () => {
 						<Link to='/'>Home </Link>
 					</li>
 					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
-						<Link to='/about'>About </Link>
+						<Link to='/aboutus'>About </Link>
 					</li>
 					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
 						<Link to='/programs'>Programs </Link>
