@@ -1,9 +1,13 @@
 import React from 'react'
+import './support.css'
+import { SupportCards } from './SupportCards'
 
 export const Support = () => {
   return (
-    <div>
-        <h1>Donate</h1>
+    <div id='support-page'>
+        <h1 id='title'>Donate</h1>
+        <h1>Your donation will support</h1>
+        <SupportCards/>
     </div>
   )
 }
