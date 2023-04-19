@@ -6,7 +6,7 @@ function App() {
 
   return (
     <Routes>
-      <Route element={<ViewBlogPage/>} />
+      <Route element={<ViewBlogPage/>} path='/blogs'/>
     </Routes>
   )
 }
