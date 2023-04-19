@@ -15,13 +15,13 @@ export const Support = () => {
         <div className='row' style={{textAlign:'center', padding: '60px'}}>
 
           <div className='col-6'>
-            <p>Gofund Me</p><br></br>
-            <a href='' type='button' className='btn btn-warning '>Go Fund Me</a>
+            <img src='https://p.kindpng.com/picc/s/151-1514121_go-fund-me-hd-png-download.png' alt='gofundme logo' id='gofundme-logo'/>
           </div>
 
           <div className='col-6'>
-            <p>Mchanga</p><br></br>
-          <a href='https://www.mchanga.africa/fundraiser/44234' type='button' className='btn btn-primary'>Mchanga</a>
+            <a href='https://www.mchanga.africa/fundraiser/44234'>
+              <img src={'https://tadamon.community/uploads/images/mchanga_logo_1574fa55-a36a-4b2e-b4b5-c317c5b1cff6.png?v=63819070917'} alt='mchanga' id='mchanga-logo'/>
+            </a>
           </div>
 
         </div>
