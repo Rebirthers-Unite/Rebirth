@@ -9,19 +9,19 @@ function Footer() {
             <div>
             <h1 className='font-bold sm:text-xl md:text-2xl text-[#824cc6]'> Useful Links </h1>
             <ul>
-            <li className='py-1 text-medium hover:scale-105'> Our Team </li>
-            <li className='py-1 text-medium hover:scale-105'> Privacy Policy </li>
-            <li className='py-1 text-medium hover:scale-105'> Our Blogs </li>
-            <li className='py-1 text-medium hover:scale-105'> Our Sponsors </li>
+            <li className='py-1 text-medium'> Our Team </li>
+            <li className='py-1 text-medium'> Privacy Policy </li>
+            <li className='py-1 text-medium'> Our Blogs </li>
+            <li className='py-1 text-medium'> Our Sponsors </li>
             </ul>
             </div>
             <div>
             <h1 className='font-bold sm:text-xl sm:py-2 md:text-2xl text-[#824cc6]'> Our Programs </h1>
             <ul>
-            <li className='py-1 text-medium hover:scale-105'> Safe House </li>
-            <li className='py-1 text-medium hover:scale-105'> Elimisha Project </li>
-            <li className='py-1 text-medium hover:scale-105'> Authentic Voices </li>
-            <li className='py-1 text-medium hover:scale-105'> Economic Empowerment </li>
+            <li className='py-1 text-medium'> Safe House </li>
+            <li className='py-1 text-medium'> Elimisha Project </li>
+            <li className='py-1 text-medium'> Authentic Voices </li>
+            <li className='py-1 text-medium'> Economic Empowerment </li>
             </ul>
             </div>
             <div>
