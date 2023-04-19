@@ -11,8 +11,7 @@ const Navbar = () => {
         <Link className='p-4 hover:text-yellow-300 hover:font-bold' to='/aboutus'> About </Link>
         <Link className='p-4 hover:text-yellow-300 hover:font-bold' to='/programs'> Programs </Link>
         <Link className='p-4 hover:text-yellow-300 hover:font-bold'> Contact </Link>
-        <Link className='p-4 hover:text-yellow-300 hover:font-bold'> Support </Link>
-        <Link className='p-4 hover:text-yellow-300 hover:font-bold'> <FiUser size={20}/> </Link>
+        <Link className='p-4 hover:text-yellow-300 hover:font-bold' to='/support'> Support </Link>
       </ul>
     </div>
   )
