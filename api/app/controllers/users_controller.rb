@@ -1,11 +1,12 @@
 class UsersController < ApplicationController
-  # skip_before_action :authorized, only: [:create]
-  before_action :set_survivor, only: [:update, :destroy]
+  skip_before_action :authorized, only: [:create]
+  before_action :set_user, only: [:update, :destroy]
 
-  def index
-    @users = User.all
-    render json: @users
-  end
+  # #Get all users
+  # def index
+  #   @users = User.all
+  #   render json: @users
+  # end
 
   # POST to create new user
   def create
@@ -19,6 +20,7 @@ class UsersController < ApplicationController
     end
   end
 
+  # # PATCH method for updating specific fields of a user
   def update
     if @user.update(user_params)
       render json: @user
@@ -27,10 +29,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def destroy
-    @user.destroy
-    head :no_content
-  end
+  # # Delete method for removing specific user
+  # def destroy
+  #   @user.destroy
+  #   head :no_content
+  # end
 
   private
 
