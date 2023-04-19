@@ -14,4 +14,5 @@ private
 def user_login_params
   params.permit(:email, :password)
 end
+  
 end
