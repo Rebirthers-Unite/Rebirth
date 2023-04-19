@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   # #Get all users
   # def index
   #   @users = User.all
-  #   render json: @users
+  #   render json: @usersmm
   # end
   # POST to create new user
   def create
