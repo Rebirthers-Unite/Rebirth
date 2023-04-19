@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../assets/logo.png';
+import Logo from '../../../assets/logo.png';
 import { BsArrowRightCircle } from 'react-icons/bs';
 
 function About() {
@@ -20,7 +20,7 @@ function About() {
 						Nairobi Kenya.
 					</p>
 					<div className='flex items-center justify-center'>
-						<button className='relative bg-white w-[160px] font-bold my-4 pr-4 py-3 text-[#916aff] border-[#916aff] border rounded-3xl hover:scale-105 hover:bg-purple-200'>
+						<button className='relative bg-white w-[160px] font-bold my-4 pr-4 py-3 text-[#916aff] border-[#916aff] border rounded-3xl hover:scale-105 hover:bg-purple-700'>
 							Learn More
 							<BsArrowRightCircle
 								size={20}
