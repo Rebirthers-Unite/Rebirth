@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaWordpress, FaRegCopyright, FaYoutube, FaHouseUser, FaMapMarkerAlt, FaPhoneAlt} from 'react-icons/fa'
 import { MdEmail } from 'react-icons/md'
+import {Link} from 'react-router-dom'
 
 function Footer() {
   return (
