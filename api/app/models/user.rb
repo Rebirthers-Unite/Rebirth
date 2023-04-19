@@ -3,9 +3,8 @@ class User
   include Mongoid::Timestamps
   include ActiveModel::SecurePassword
 
-  field :fullname, type: String
+  field :name, type: String
   field :email, type: String
-  field :phone, type: Integer
   field :role, type: String
   field :password_digest, type: String
 

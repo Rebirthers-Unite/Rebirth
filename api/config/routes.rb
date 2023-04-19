@@ -7,6 +7,12 @@ Rails.application.routes.draw do
     #Route for Logging in an existing user
     post '/login', to: 'auth#create'
 
+    #Route for updating a user 
+    patch '/users/:id', to: 'users#update'
+
+    #Route for deleting a user
+    delete '/users/:id', to: 'users#destroy'
+
 
     # Route for retrieving all survivors
     get '/survivors', to: 'survivors#index'

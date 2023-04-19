@@ -35,15 +35,3 @@ def authorized
   render json: { message: 'Please login' }, status: :unauthorized unless logged_in?
 end
 end
-
-
-
-
-
-
-
-
-
-
-
-
