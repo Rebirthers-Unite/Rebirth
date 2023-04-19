@@ -1,5 +1,5 @@
 import React from 'react';
-import Face from '../../assets/face.jpeg';
+import Face from '../../../assets/face.jpeg'
 import { BsArrowRightCircle } from 'react-icons/bs';
 
 function Survivors() {
@@ -11,7 +11,7 @@ function Survivors() {
 					Meet some of our Survivors{' '}
 				</h1>
 			</div>
-			<div className='max-w-[1240px] mx-auto bg-[#cbc2f3] grid sm:grid-cols-1 md:grid-cols-4 gap-8'>
+			<div className='max-w-[1240px] mx-auto grid sm:grid-cols-1 md:grid-cols-4 gap-8'>
 				<div className='md:w-full sm:w-4/5 sm:ml-20 md:ml-2 shadow-xl flex bg-white text-black flex-col p-4 md:mt-2 my-4 ml-2 rounded-lg hover:scale-105 duration-300'>
 					<img
 						className='w-30 mx-auto mt-[-15rem] bg-white'
@@ -98,7 +98,7 @@ function Survivors() {
 				</div>
 			</div>
 			<div className='flex items-center justify-center'>
-				<button className='relative bg-black hover:text-black w-[160px] font-bold my-4 pr-4 py-3 text-[#916aff] border-[#916aff] border rounded-3xl hover:scale-110 hover:bg-white'>
+				<button className='relative bg-black hover:text-[#916aff] w-[160px] font-bold my-4 pr-4 py-3 text-[#916aff] border-[#916aff] border rounded-3xl hover:scale-110 hover:bg-white'>
 					{' '}
 					View All{' '}
 					<BsArrowRightCircle
