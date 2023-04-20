@@ -1,4 +1,4 @@
-import { PhoneIcon } from '@chakra-ui/icons';
+import { DeleteIcon, PhoneIcon } from '@chakra-ui/icons';
 import {
 	Avatar,
 	Box,
@@ -13,13 +13,34 @@ import {
 	IconButton,
 	Image,
 	Text,
+	useToast,
 } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-
-const SurvivorsDetails = () => {
+import { useNavigate, useParams } from 'react-router-dom';
+import DeleteSurvivorModal from './modals/DeleteSurvivorModal';
+const SurvivorsDetails = ({
+	renderUpdateForm,
+	renderDeleteSurvivorModal,
+	deleteModalOpen,
+	closeModal,
+	setIsOpen,
+}) => {
 	const [survivor, setSurvivor] = useState({});
 	const { id } = useParams();
+	const navigate = useNavigate();
+	const toast = useToast();
+
+	const showToast = () => {
+		toast({
+			title: 'Deleted Survivor',
+			description: 'Successfully deleted survivor',
+			duration: 3000,
+			isClosable: true,
+			status: 'success',
+			position: 'top',
+			icon: <DeleteIcon />,
+		});
+	};
 
 	useEffect(() => {
 		fetch('http://localhost:8000/survivors/' + id).then((r) => {
@@ -30,6 +51,39 @@ const SurvivorsDetails = () => {
 				: 'Wahala!!';
 		});
 	}, []);
+
+	const deleteSurvivor = () => {
+		fetch('  http://localhost:8000/survivors/' + id, {
+			method: 'DELETE',
+		}).then(() => {
+			showToast();
+			navigate('/dashboard');
+		});
+	};
+
+	const updateDetails = (e) => {
+		e.preventDefault();
+		console.log('Hello!');
+
+		const survivorDetails = {
+			names,
+			contact,
+			dob,
+			reforg,
+			reforgContact,
+			programs,
+			dateofEntry,
+			dateofExit,
+			guardian,
+			guardianContacts,
+		};
+
+		fetch('http://localhost:8000/survivors/' + id, {
+			method: 'PUT',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(survivorDetails),
+		}).then((data) => console.log(data));
+	};
 
 	return (
 		<Container h={'100vh'}>
@@ -90,32 +144,19 @@ const SurvivorsDetails = () => {
 					src="https://placehold.co/600x400"
 					alt="Image goes here"
 				/>
-
-				{/* 
-	<CardFooter
-		justify="space-between"
-		flexWrap="wrap"
-		sx={{
-			'& > button': {
-				minW: '136px',
-			},
-		}}
-	>
-		<Button flex="1" variant="ghost" leftIcon={<BiLike />}>
-			Like
-		</Button>
-		<Button flex="1" variant="ghost" leftIcon={<BiChat />}>
-			Comment
-		</Button>
-		<Button flex="1" variant="ghost" leftIcon={<BiShare />}>
-			Share
-		</Button>
-	</CardFooter> */}
 			</Card>
 			<HStack justify={'center'} gap={'1rem'} mt={'1rem'}>
-				<Button>UPDATE DETAILS</Button>
-				<Button bg={'red.500'}>DELETE SURVIVOR</Button>
+				<Button onClick={renderUpdateForm}>UPDATE DETAILS</Button>
+				<Button bg={'red.500'} onClick={renderDeleteSurvivorModal}>
+					DELETE SURVIVOR
+				</Button>
 			</HStack>
+
+			<DeleteSurvivorModal
+				deleteModalOpen={deleteModalOpen}
+				closeModal={closeModal}
+				deleteSurvivor={deleteSurvivor}
+			/>
 		</Container>
 	);
 };
