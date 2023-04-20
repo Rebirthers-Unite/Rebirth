@@ -11,7 +11,7 @@ function About() {
 					<h1 className='text-[#824cc6] font-bold md:text-2xl sm:text-center sm:text-bold sm:text-xl'>
 						ABOUT US
 					</h1>
-					<p className='md:text-xl sm:text-lg py-3'>
+					<p className='md:text-xl sm:text-lg py-3' style={{color: 'black'}}>
 						Rebirth of a Queen is grassroot organization that was founded in the
 						year 2019 with a goal to holistically empower and protect vulnerable
 						groups from sexual and gender-based violence in Kenya. Rebirth of a
