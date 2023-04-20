@@ -183,3 +183,10 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+
+production:
+  clients:
+    default:
+      uri: mongodb+srv://rebirth01:rebirth@rebirth.l97vofc.mongodb.net/?retryWrites=true&w=majority
+      options:
+        server_selection_timeout: 5
