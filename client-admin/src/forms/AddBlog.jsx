@@ -1,19 +1,25 @@
-import { Button, FormControl, FormLabel, Input, Textarea } from '@chakra-ui/react';
+import {
+	Button,
+	FormControl,
+	FormLabel,
+	Input,
+	Textarea,
+} from '@chakra-ui/react';
 import React from 'react';
 
 const AddBlog = () => {
 	return (
 		<FormControl>
 			<FormLabel>Blog Title</FormLabel>
-			<Input required/>
+			<Input required />
 			<FormLabel>Image Source</FormLabel>
-			<Input required/>
+			<Input required />
 			<FormLabel> Author</FormLabel>
-			<Input required/>
+			<Input required />
 			<FormLabel>Date</FormLabel>
-			<Input type='date'/>
+			<Input type="date" />
 			<FormLabel>Blog Body</FormLabel>
-			<Textarea h={'40rem'} resize={'none'} />
+			<Textarea h={'20rem'} resize={'none'} />
 			<Button>POST BLOG</Button>
 		</FormControl>
 	);

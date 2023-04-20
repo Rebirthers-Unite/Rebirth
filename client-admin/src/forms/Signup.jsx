@@ -1,4 +1,4 @@
-import { RiLockPasswordFill, RiUser3Line, RiUserFill } from 'react-icons/ri';
+import { RiUser3Line } from 'react-icons/ri';
 
 import {
 	Button,
