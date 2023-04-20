@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react';
 
 import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
 import { EmailIcon, LockIcon } from '@chakra-ui/icons';
 
 const Login = () => {
@@ -69,14 +70,14 @@ const Login = () => {
 		>
 			<Text as={'h1'}>{loginPageTexts.welcomeMessage}</Text>
 
-			<FormControl w={'50%'} m={'0 auto'} as={'form'}>
+			<FormControl onSubmit={handleSubmit} w={'50%'} m={'0 auto'} as={'form'}>
 				<HStack p={'1rem'}>
 					<EmailIcon fontSize={'3rem'} color="purple.400" />
-					<Input type="email" placeholder="email or phone number" value={email} onChange={handleUsernameChange} required />
+					<Input type="email" placeholder="email or phone number" value={email} onChange={handleEmailChange} required />
 				</HStack>
 				<HStack p={'1rem'}>
 					<LockIcon fontSize={'3rem'} color="purple.400" />
-					<Input type="password" placeholder="password" required />
+					<Input type="password" placeholder="password" value={password} onChange={handlePasswordChange} required />
 				</HStack>
 				<VStack>
 					<Button
