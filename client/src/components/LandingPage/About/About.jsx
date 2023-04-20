@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../../assets/logo.png';
+import Logo from '../../../assets/again.jpeg';
 import { BsArrowRightCircle } from 'react-icons/bs';
 
 function About() {
@@ -35,5 +35,3 @@ function About() {
 }
 
 export default About;
-
-export default About

@@ -1,5 +1,5 @@
 import React from 'react';
-import Face from '../../../assets/face.jpeg'
+import Face from '../../../assets/again.jpeg'
 import { BsArrowRightCircle } from 'react-icons/bs';
 
 function Survivors() {

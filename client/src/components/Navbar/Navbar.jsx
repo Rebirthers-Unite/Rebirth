@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { FiUser } from 'react-icons/fi';// Import the FiUser icon from React Icons Linkbrary
+import {AiOutlineClose} from 'react-icons/ai'
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
