@@ -1,6 +1,8 @@
 import {Routes, Route} from 'react-router-dom'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
+import {ViewBlogPage} from './components/ViewBlogs/ViewBlogPage.jsx'
+import { BlogPage } from './components/BlogPage/BlogPage.jsx';
 import { LandingPage } from './components/LandingPage/LandingPage'
 import { Programs } from './components/OurProgramsPage/Programs'
 import { AboutUs } from './components/AboutUs/AboutUs.jsx'
@@ -16,6 +18,8 @@ function App() {
         <Route element={<Programs/>} path='programs' />
         <Route element={<AboutUs/>} path='aboutus' />
         <Route element={<Support/>} path='support' />
+        <Route element={<BlogPage />} path='blogs'/>
+        <Route element={<ViewBlogPage/>} path='blog/id'/>
     </Routes>
    <Footer/>
    </div>
