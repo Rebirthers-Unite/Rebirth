@@ -90,45 +90,6 @@
       "dateOfExit": "6/05/2019",
       "guardian": "Sarah",
       "guardianContact": "202-555-0184"
-    },
-    {
-      "id": 8,
-      "name": "David Kimani",
-      "contact": "david@hotmail.com",
-      "dateOfBirth": "01/01/2005",
-      "referringOrganization": "Save the Children",
-      "referringOrganizationContact": "23rd Street, Washington",
-      "programs": "Healthcare and Nutrition",
-      "dateOfEntry": "12/05/2014",
-      "dateOfExit": "12/05/2021",
-      "guardian": "Peter",
-      "guardianContact": "202-555-0137"
-    },
-    {
-      "id": 9,
-      "name": "Mary Amondi",
-      "contact": "mary@gmail.com",
-      "dateOfBirth": "25/03/2010",
-      "referringOrganization": "UNICEF",
-      "referringOrganizationContact": "Rue de Varembé, Geneva",
-      "programs": "Child Protection",
-      "dateOfEntry": "15/01/2019",
-      "dateOfExit": "15/01/2022",
-      "guardian": "Alice",
-      "guardianContact": "41-22-909-5429"
-    },
-    {
-      "id": 10,
-      "name": "James Saitoti",
-      "contact": "james@hotmail.com",
-      "dateOfBirth": "07/09/2003",
-      "referringOrganization": "Doctors Without Borders",
-      "referringOrganizationContact": "Rue de Lausanne, Paris",
-      "programs": "Emergency Response",
-      "dateOfEntry": "02/06/2012",
-      "dateOfExit": "02/06/2017",
-      "guardian": "Mark",
-      "guardianContact": "33-1-43-94-16-88"
     }
   ]
 }

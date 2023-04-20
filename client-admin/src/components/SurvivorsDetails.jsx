@@ -33,7 +33,7 @@ const SurvivorsDetails = ({
 	const showToast = () => {
 		toast({
 			title: 'Deleted Survivor',
-			description: 'Successfully deleted survivor',
+			description: `Successfully deleted ${survivor.name}`,
 			duration: 3000,
 			isClosable: true,
 			status: 'success',
