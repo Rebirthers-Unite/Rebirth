@@ -1,0 +1,27 @@
+#our-programs-page{
+    background-color: #CBC2F3;
+    padding: 20px;
+    margin-top: -100px;
+}
+
+#search-input{
+    width: 200px;
+    margin-left: 67%;
+    margin-top: 10px;
+}
+
+#card-div{
+    height: 230px;
+    max-width: 900px;
+    margin-left: 180px;
+}
+
+#card-image{
+    height: 230px;
+    width: 230px;
+    margin-left: -12px;
+}
+
+#card-content{
+    max-width: 1000px;
+}

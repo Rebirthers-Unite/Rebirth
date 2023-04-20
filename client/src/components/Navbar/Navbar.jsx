@@ -1,0 +1,21 @@
+import React, {useState} from 'react';
+import { FiUser } from 'react-icons/fi';// Import the FiUser icon from React Icons Linkbrary
+import { Link } from 'react-router-dom';
+
+const Navbar = () => {
+  return (
+    <div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4'>
+      <Link className='w-full text-3xl font-bold text-[#ffcc3d] flex' to='/'> REBIRTH </Link>
+      <ul className='hidden md:flex'>
+        <Link className='p-4 hover:text-yellow-300 hover:font-bold' to='/'> Home </Link>
+        <Link className='p-4 hover:text-yellow-300 hover:font-bold' to='/aboutus'> About </Link>
+        <Link className='p-4 hover:text-yellow-300 hover:font-bold' to='/programs'> Programs </Link>
+        <Link className='p-4 hover:text-yellow-300 hover:font-bold'> Contact </Link>
+        <Link className='p-4 hover:text-yellow-300 hover:font-bold' to='/support'> Support </Link>
+      </ul>
+    </div>
+  )
+}
+
+export default Navbar;
+
