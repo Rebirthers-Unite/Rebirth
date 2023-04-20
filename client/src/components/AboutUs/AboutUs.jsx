@@ -1,6 +1,8 @@
 import React from 'react'
 import './About.css'
 import whoWeAre from '../../assets/who we are.JPG'
+import teamWork from '../../assets/teamwork.JPG'
+import study from '../../assets/study.JPG'
 
 export const AboutUs = () => {
   return (
@@ -33,13 +35,13 @@ export const AboutUs = () => {
               <p className='mt-3 font-sans' id='vision-text'>A frontier organization in ending sexual/ gender-based violence and human trafficking in the community </p>
             </div> 
             <div className='col-6'>
-              <img src={whoWeAre} alt='who we are' id='our-vision-image'/>
+              <img src={study} alt='who we are' id='our-vision-image'/>
             </div>
           </div>
 
           <div className='row'>
             <div className='col-6'>
-              <img src={whoWeAre} alt='who we are' id='our-story-image'/>
+              <img src={teamWork} alt='who we are' id='our-story-image'/>
             </div>
             <div className='col-6 mt-5'>
               <p className='text-5xl font-serif' >Our Values</p>
