@@ -13,21 +13,27 @@ import RootLayout from './components/layouts/RootLayout';
 
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
+	const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 	const [loading, setLoading] = useState(false);
 
 	const renderUpdateForm = () => {
 		setIsOpen(true);
 		setLoading(true);
 	};
+	const renderDeleteSurvivorModal = () => {
+		setDeleteModalOpen(true);
+		setLoading(true);
+	};
 
 	const closeModal = () => {
 		setIsOpen(false);
+		setDeleteModalOpen(false)
 	};
 
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route path="/" element={<RootLayout />}>
-				{/* <Route path="/login" element={<Login />} /> */}
+				<Route path="/login" element={<Login />} />
 				<Route path="/signup" element={<Signup />} />
 				<Route
 					path="/dashboard"
@@ -40,7 +46,17 @@ function App() {
 						/>
 					}
 				/>
-				<Route path="/survivor/:id" element={<SurvivorsDetails />} />
+				<Route
+					path="/survivor/:id"
+					element={
+						<SurvivorsDetails
+							deleteModalOpen={deleteModalOpen}
+							closeModal={closeModal}
+							renderDeleteSurvivorModal={renderDeleteSurvivorModal}
+							setIsOpen={setIsOpen}
+						/>
+					}
+				/>
 			</Route>
 		)
 	);
