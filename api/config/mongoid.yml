@@ -191,8 +191,4 @@ production:
     default:
       uri: <%= ENV['MONGODB_URI'] %>
       options:
-        # Set the read preference to primary for production.
-        read:
-          mode: :primary
-        # Set the maximum number of connections in the connection pool.
-        max_pool_size: 50
+        server_selection_timeout: 5
