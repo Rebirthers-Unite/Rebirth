@@ -25,7 +25,7 @@ class ProgramsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /programs/1
+  # PATCH/PUT /programs/1In response this is the image attribute is there an error?
   def update
     if @program.update(program_params)
       render json: @program
@@ -47,6 +47,6 @@ class ProgramsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def program_params
-      params.require(:program).permit(:title, :description, :image)
+      params.permit(:title, :description, :image)
     end
 end
