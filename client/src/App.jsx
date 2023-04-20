@@ -4,7 +4,10 @@ import {Routes, Route} from 'react-router-dom'
 function App() {
 
   return (
-    <BlogPage />
+    <Routes>
+      <Route element={<BlogPage />} path='blogs'/>
+      <Route element={<ViewBlogPage/>} path='blogs/:id'/>
+    </Routes>
   )
 }
 
