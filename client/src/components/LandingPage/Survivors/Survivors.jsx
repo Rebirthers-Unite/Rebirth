@@ -112,5 +112,3 @@ function Survivors() {
 }
 
 export default Survivors;
-
-export default Survivors
