@@ -7,8 +7,8 @@ class Survivor
     field :date_of_birth, type: DateTime
     field :organization, type: String
     field :contact, type: Integer
-    field :date_of_entry, type: DateTime
-    field :date_of_exit, type: DateTime
+    field :date_of_entry, type: Date
+    field :date_of_exit, type: Date
     field :guardian_name, type: String
     field :contact_of_guardian, type: Integer
   
