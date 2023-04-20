@@ -187,6 +187,6 @@ test:
 production:
   clients:
     default:
-      uri: mongodb+srv://rebirth01:rebirth@rebirth.l97vofc.mongodb.net/?retryWrites=true&w=majority
+      uri: mongodb://mongo:Wq98FgA20CWX8p2LflPs@containers-us-west-38.railway.app:7281
       options:
         server_selection_timeout: 5
