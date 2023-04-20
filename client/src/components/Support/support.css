@@ -36,11 +36,17 @@
 }
 
 #mchanga-logo{
-    width: 100px;
-    margin-left: 260px;
+    width: 200px;
+    height: 110px;
+    margin-left: 140px;
 }
 
 #gofundme-logo{
-    width: 100px;
-    margin-left: 260px;
+    width: 200px;
+    margin-left: 300px;
+}
+
+#or-text{
+    margin-left: 210px;
+    margin-top: 40px;
 }

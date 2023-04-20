@@ -14,8 +14,12 @@ export const Support = () => {
 
         <div className='row' style={{textAlign:'center', padding: '60px'}}>
 
-          <div className='col-6'>
+          <div className='col-4'>
             <img src='https://p.kindpng.com/picc/s/151-1514121_go-fund-me-hd-png-download.png' alt='gofundme logo' id='gofundme-logo'/>
+          </div>
+
+          <div className='col-2'>
+            <p id='or-text' className='text-3xl font-serif'>or</p>
           </div>
 
           <div className='col-6'>
