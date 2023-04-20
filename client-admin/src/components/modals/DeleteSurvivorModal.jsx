@@ -10,10 +10,11 @@ import {
 	ModalCloseButton,
 } from '@chakra-ui/react';
 
-
 const DeleteSurvivorModal = ({
 	deleteModalOpen,
-	closeModal, deleteSurvivor
+	closeModal,
+	deleteSurvivor,
+	survivorName,
 }) => {
 	return (
 		<div>
@@ -27,11 +28,14 @@ const DeleteSurvivorModal = ({
 						display={'flex'}
 						alignItems={'center'}
 						justifyContent={'center'}
+						textAlign={'center'}
 					>
-						ARE YOU SURE?
+						Delete {survivorName} from the database?
+						<br />
+						This action is irreversible
 					</ModalBody>
 					<ModalFooter>
-						<Button bg={"red.400"} mr={3} onClick={deleteSurvivor}>
+						<Button bg={'red.400'} mr={3} onClick={deleteSurvivor}>
 							DELETE
 						</Button>
 						<Button color="red.400" mr={3} onClick={closeModal}>

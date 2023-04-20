@@ -126,7 +126,7 @@ const Dashboard = ({
 
 						<SurvivorsList
 							renderUpdateForm={renderUpdateForm}
-							survivors={survivors.filter((survivor) =>
+							survivors={survivors.filter((survivor) => 
 								survivor.name.toLowerCase().includes(search.toLowerCase())
 							)}
 							setSurvivors={setSurvivors}

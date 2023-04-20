@@ -156,6 +156,7 @@ const SurvivorsDetails = ({
 				deleteModalOpen={deleteModalOpen}
 				closeModal={closeModal}
 				deleteSurvivor={deleteSurvivor}
+				survivorName={survivor.name}
 			/>
 		</Container>
 	);
