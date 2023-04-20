@@ -15,6 +15,55 @@ import { EmailIcon, LockIcon, PhoneIcon } from '@chakra-ui/icons';
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
+
+  const token = useAuthStore((state) => state.token);
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [role, setRole] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleNameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handleRoleChange = (event) => {
+    setRole(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = { username, email, password };
+    fetch('http://127.0.0.1:3000/signup', {
+      method: 'POST',
+      headers: {
+		Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  };
+
+
 	const signupPageTexts = {
 		welcomeMessage: 'Welcome',
 		haveAccount: 'Already have an account? ',
@@ -31,22 +80,22 @@ const Signup = () => {
 		>
 			<Text as={'h1'}>{signupPageTexts.welcomeMessage}</Text>
 
-			<FormControl w={'50%'} m={'0 auto'} as={'form'}>
+			<FormControl onSubmit={handleSubmit} w={'50%'} m={'0 auto'} as={'form'}>
 				<HStack p={'1rem'}>
 					<RiUser3Line fontSize={'3rem'} color="#666" />
-					<Input type="email" placeholder="full name" required />
+					<Input type="text" placeholder="Name" value={username} onChange={handleNameChange} required />
 				</HStack>
 				<HStack p={'1rem'}>
 					<EmailIcon fontSize={'3rem'} color="#666" />
-					<Input type="password" placeholder="email address" required />
+					<Input type="email" placeholder="email address" value={email} onChange={handleEmailChange} required />
 				</HStack>
 				<HStack p={'1rem'}>
 					<PhoneIcon fontSize={'3rem'} color="#666" />
-					<Input type="email" placeholder="email or phone number" required />
+					<Input type="email" placeholder="email or phone number" value={role} onChange={handleRoleChange}  required />
 				</HStack>
 				<HStack p={'1rem'}>
 					<LockIcon fontSize={'3rem'} color="#666" />
-					<Input type="password" placeholder="password" required />
+					<Input type="password" placeholder="password" value={password} onChange={handlePasswordChange} required />
 				</HStack>
 				<VStack>
 					<Button
