@@ -1,6 +1,6 @@
-import React, { useState } from 'react'; // Import the FiUser icon from React Icons library
+import React, {useState} from 'react';
+import { FiUser } from 'react-icons/fi';// Import the FiUser icon from React Icons Linkbrary
 import { Link } from 'react-router-dom';
-import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 
 const Navbar = () => {
 	const [nav, setNav] = useState(false);
@@ -9,6 +9,7 @@ const Navbar = () => {
 	};
 	return (
 		<div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4'>
+			<h1 className='w-full text-3xl font-bold text-[#ffcc3d] flex'>REBIRTH</h1>
 			<h1 className='w-full text-3xl font-bold text-[#ffcc3d] flex'>REBIRTH</h1>
 			<ul className='hidden md:flex'>
 				<Link to='/' className='p-4 hover:text-yellow-300 hover:font-bold'>
@@ -20,6 +21,11 @@ const Navbar = () => {
 					className='p-4 hover:text-yellow-300 hover:font-bold'>
 					{' '}
 					About{' '}
+				</Link>
+				<Link
+					to='/blogs'
+					className='p-4 hover:text-yellow-300 hover:font-bold'>
+					Blogs
 				</Link>
 				<Link
 					to='/programs'
@@ -58,6 +64,9 @@ const Navbar = () => {
 						<Link to='/aboutus'>About </Link>
 					</li>
 					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
+						<Link to='/blogs'>Blogs</Link>
+					</li>
+					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
 						<Link to='/programs'>Programs </Link>
 					</li>
 					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
@@ -73,3 +82,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
