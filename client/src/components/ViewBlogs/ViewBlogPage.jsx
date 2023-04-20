@@ -7,7 +7,7 @@ export const ViewBlogPage = () => {
   return (
     <div id='blog-page'>
       
-        <h1 className='mb-4 text-5xl font-bold font-serif' style={{textAlign: 'center'}}>SHELTER FOR HOMELESS</h1>
+        <h1 className='mb-4 text-5xl font-bold font-serif' style={{textAlign: 'center', marginTop:'100px'}}>SHELTER FOR HOMELESS</h1>
 
         <img id='blog-image' src='https://media.istockphoto.com/id/929671484/photo/poor-homeless-man-or-refugee-sleeping-on-the-wooden-bench-on-the-urban-street-in-the-city.jpg?s=612x612&w=0&k=20&c=pytU-fVTuzLF_hBm3upCNY4FHrZaPGvfWGjGd477u1Y=' alt='blog-image'/>
 

@@ -10,11 +10,10 @@ function App() {
       <Navbar />
       <Routes>
         <Route element={<BlogPage />} path='blogs'/>
-        <Route element={<ViewBlogPage/>} path='blogs/:id'/>
+        <Route element={<ViewBlogPage/>} path='blog/id'/>
       </Routes>
       <Footer/>
     </div>
-    
   )
 }
 

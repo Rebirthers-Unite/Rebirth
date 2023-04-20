@@ -7,7 +7,8 @@ export const BlogCard = () => {
       <img className='card-img-top' alt='' src='https://images.unsplash.com/photo-1494253109108-2e30c049369b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHJhbmRvbXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60'/>
         <div className='card-body'>
             <h3 className='card-title text-3xl font-bold'>Dawgy Dawg</h3>
-            <p className='card-text'>He my Dawgy Dawg<Link to='blogs/2' style={{color: 'purple'}}>{'Read More >>'}</Link></p>
+            <p className='card-text'>He my Dawgy Dawg</p>
+            <Link to={`/blog/id`} style={{color: 'purple'}}>{'Read More >>'}</Link>
         </div>
     </div>
   )
