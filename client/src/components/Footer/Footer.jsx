@@ -35,8 +35,8 @@ function Footer() {
 						Useful Links
 					</h1>
 					<ul>
-						{usefulLinks.map((e) => (
-							<li className='py-1 text-medium'> {e} </li>
+						{usefulLinks.map((e, index) => (
+							<li key={index} className='py-1 text-medium'> {e} </li>
 						))}
 					</ul>
 				</div>
@@ -45,8 +45,8 @@ function Footer() {
 						Our Programs
 					</h1>
 					<ul>
-						{ourPrograms.map((e) => (
-							<li className='py-1 text-medium'>{e}</li>
+						{ourPrograms.map((e, index) => (
+							<li key={index} className='py-1 text-medium'>{e}</li>
 						))}
 					</ul>
 				</div>
@@ -116,7 +116,7 @@ function Footer() {
 					</div>
 					<p className='py-2 flex pb-[-6rem]'>
 						Copyright <FaRegCopyright className='flex ml-1 mt-1' />
-						<p className='ml-1'>{new Date().getFullYear()}</p>
+						<span className='ml-1'>{new Date().getFullYear()}</span>
 					</p>
 				</div>
 			</div>
