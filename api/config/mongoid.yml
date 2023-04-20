@@ -186,9 +186,13 @@ test:
 
 
 
-development:
+production:
   clients:
     default:
-      database: api_development
-      hosts:
-        - localhost:27017
+      uri: <%= ENV['MONGODB_URI'] %>
+      options:
+        # Set the read preference to primary for production.
+        read:
+          mode: :primary
+        # Set the maximum number of connections in the connection pool.
+        max_pool_size: 50
