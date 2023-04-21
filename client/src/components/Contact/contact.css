@@ -50,12 +50,12 @@ input{
     transform: translate(-0%, -0%);
 }
 
-button span{
+#send-button span{
     position: relative;
     z-index: 0;
   }
   
-  button:after{
+#send-button:after{
     position: absolute;
     content: "";
     top: 0;
@@ -67,10 +67,10 @@ button span{
     z-index: -1;
   }
   
-  button:hover{
+#send-button:hover{
     color: yellow;
   }
   
-  button:hover:after{
+#send-button:hover:after{
     width: 100%;
   }
