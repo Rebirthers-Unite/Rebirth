@@ -2,6 +2,7 @@
     background-color: #CBC2F3;
     margin-top: -100px;
     color: black;
+    overflow-x: hidden;
 }
 
 #title{
