@@ -4,8 +4,9 @@ import { Container, Row, Col } from 'react-bootstrap'
 
 function Contact() {
   return (
-		<Container className='pb-12'>
-			<Row className='mb-5 mt-3'>
+		<div id='contact-page'>
+		<div id='div-content'>
+			<Row className='mb-5 mt-3' >
 				<Col lg='8'>
 					<h1 className='display-4 mb-4'>Contact Us</h1>
 				</Col>
@@ -54,7 +55,8 @@ function Contact() {
 					</form>
 				</Col>
 			</Row>
-		</Container>
+			</div>
+		</div>
 	);
 }
 
