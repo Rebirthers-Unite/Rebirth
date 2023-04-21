@@ -2,9 +2,75 @@
     background-color: #CBC2F3;
     margin-top: -100px;
     padding: 30px;
+    height: 540px
 }
 
 #div-content{
     margin-top: 100px;
 }
 
+input{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: #DCDCDC;
+  }
+  
+  input:focus {
+      outline: 0px;
+    }
+  
+  textarea{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color: #DCDCDC;
+  }
+  
+  textarea:focus {
+      outline: 0px;
+    }
+
+#contacts-form{
+        position: absolute;
+        top: 35%;
+        left: 40%;
+        width: 600px
+}
+  
+#send-button{
+    width: 180px;
+    height: 50px;
+    border-width: thin;
+    border-style: groove;
+    border-color: #0B2545;
+    background-color: #ffcc3d;
+    transform: translate(-0%, -0%);
+}
+
+button span{
+    position: relative;
+    z-index: 0;
+  }
+  
+  button:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #CBC2F3;
+    transition: all .35s;
+    z-index: -1;
+  }
+  
+  button:hover{
+    color: yellow;
+  }
+  
+  button:hover:after{
+    width: 100%;
+  }
