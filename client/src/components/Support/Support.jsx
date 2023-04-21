@@ -14,9 +14,9 @@ export const Support = () => {
 
         <div className='row' style={{textAlign:'center', padding: '60px'}}>
 
-          <div className='col-4 hover:scale-105'>
+          <div className='col-4 '>
             <a href='https://gofund.me/bc18e7b5'>
-              <img src='https://p.kindpng.com/picc/s/151-1514121_go-fund-me-hd-png-download.png' alt='gofundme logo' id='gofundme-logo'/>
+              <img src='https://p.kindpng.com/picc/s/151-1514121_go-fund-me-hd-png-download.png' alt='gofundme logo' id='gofundme-logo' className='hover:scale-105'/>
             </a>
           </div>
 
@@ -26,7 +26,7 @@ export const Support = () => {
 
           <div className='col-6'>
             <a href='https://www.mchanga.africa/fundraiser/44234'>
-              <img src={'https://tadamon.community/uploads/images/mchanga_logo_1574fa55-a36a-4b2e-b4b5-c317c5b1cff6.png?v=63819070917'} alt='mchanga' id='mchanga-logo'/>
+              <img src={'https://tadamon.community/uploads/images/mchanga_logo_1574fa55-a36a-4b2e-b4b5-c317c5b1cff6.png?v=63819070917'} alt='mchanga' id='mchanga-logo' className='hover:scale-105'/>
             </a>
           </div>
 
