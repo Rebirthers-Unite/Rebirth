@@ -2,7 +2,7 @@
     background-color: #CBC2F3;
     margin-top: -100px;
     padding: 30px;
-    height: 540px
+    height: 600px
 }
 
 #div-content{
@@ -35,8 +35,8 @@ input{
 
 #contacts-form{
         position: absolute;
-        top: 35%;
-        left: 40%;
+        top: 50%;
+        left: 30%;
         width: 600px
 }
   

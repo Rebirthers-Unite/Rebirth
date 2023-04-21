@@ -8,21 +8,9 @@ function Contact() {
 		<div id='contact-page'>
 		<div id='div-content'>
 			<div className='mb-5 mt-3' >
-					<h1 className='text-5xl mb-5' style={{textAlign:'center'}}>Contact Us</h1>
+					<h1 className='text-5xl mb-5 font-serif' style={{textAlign:'center'}}>Contact Us</h1>
+					<h5 style={{textAlign: 'center'}} className='text-3xl'>Got a question or proposal, or just want to say hello? Go ahead.</h5>
 			</div>
-			<Row className='sec_sp'>
-				<Col lg='5' className='mb-5'>
-					<strong className='color_sec py-4'>Get in touch</strong>
-					<address>
-						<strong> Email: rebirthofaqueen20@gmail.com </strong>
-						<br />
-						<br />
-						<p>
-							<strong> Phone: +254720339204</strong>
-						</p>
-					</address>
-				</Col>
-				<Col lg='7' className='d-flex align-items-center'>
 					<form id='contacts-form'>
 					<div className="row mb-3">
 
@@ -47,8 +35,6 @@ function Contact() {
 					<button type="submit" id='send-button'>Send Message  <i className="fa-regular fa-paper-plane"></i></button> 
 					</div>		
 				</form>
-				</Col>
-			</Row>
 			</div>
 		</div>
 	);
