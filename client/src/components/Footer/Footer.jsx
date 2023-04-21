@@ -4,12 +4,6 @@ import { MdEmail } from 'react-icons/md'
 import {Link} from 'react-router-dom'
 
 function Footer() {
-	const usefulLinks = [
-		'Our Team',
-		'Privacy Policy',
-		'Our Blogs',
-		'Our Sponsors',
-	];
 	const ourPrograms = [
 		'Safe House',
 		'Elimisha Project',
@@ -24,19 +18,23 @@ function Footer() {
 					<h1 className='font-bold sm:text-xl md:text-2xl text-[#824cc6]'>
 						Useful Links
 					</h1>
-					<ul>
-						{usefulLinks.map((e, index) => (
-							<li key={index} className='py-1 text-medium'> {e} </li>
-						))}
+					<ul style={{lineHeight: '30px'}}>
+						<Link to='/aboutus'>About</Link><br></br>
+						<Link to='/blogs'>Blogs</Link><br></br>
+						<Link to='/programs'>Programs</Link><br></br>
+						<Link to='/contact'>Support</Link><br></br>
+						<Link to='/support'>Contact</Link><br></br>
 					</ul>
 				</div>
 				<div>
 					<h1 className='font-bold sm:text-xl sm:py-2 md:text-2xl text-[#824cc6]'>
 						Our Programs
 					</h1>
-					<ul>
+					<ul style={{lineHeight: '30px'}}>
 						{ourPrograms.map((e, index) => (
-							<li key={index} className='py-1 text-medium'>{e}</li>
+							<>
+								<Link key={index} className='py-1 text-medium' to='/programs'>{e}</Link><br></br>
+							</>
 						))}
 					</ul>
 				</div>
