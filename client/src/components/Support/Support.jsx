@@ -14,7 +14,7 @@ export const Support = () => {
 
         <div className='row' style={{textAlign:'center', padding: '60px'}}>
 
-          <div className='col-4'>
+          <div className='col-4 hover:scale-105'>
             <a href='https://gofund.me/bc18e7b5'>
               <img src='https://p.kindpng.com/picc/s/151-1514121_go-fund-me-hd-png-download.png' alt='gofundme logo' id='gofundme-logo'/>
             </a>
