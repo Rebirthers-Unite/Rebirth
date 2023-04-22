@@ -104,12 +104,6 @@ const SurvivorsDetails = ({
 								</Text>
 							</Box>
 						</Flex>
-						<IconButton
-							variant="ghost"
-							colorScheme="gray"
-							aria-label="See menu"
-							// icon={<BsThreeDotsVertical />}
-						/>
 					</Flex>
 				</CardHeader>
 				<CardBody>

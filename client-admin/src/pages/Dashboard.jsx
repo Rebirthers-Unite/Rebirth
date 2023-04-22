@@ -29,14 +29,14 @@ const Dashboard = ({
 	const [newSurvivor, setNewSurvivor] = useState({
 		name: '',
 		contact: '',
-		dob: '',
-		reforg: '',
-		reforgContact: '',
+		dateOfBirth: '',
+		referringOrganization: '',
+		referringOrganizationContact: '',
 		programs: '',
-		dateofEntry: '',
+		dateOfEntry: '',
 		dateofExit: '',
 		guardian: '',
-		guardianContacts: '',
+		guardianContact: '',
 	});
 
 	const [survivors, setSurvivors] = useState([]);

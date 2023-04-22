@@ -33,6 +33,7 @@ const UpdateDetailsForm = ({
 				return response.json();
 			})
 			.then((data) => {
+				console.log(data);
 				setNewSurvivor(data);
 			})
 			.catch((error) => {
@@ -59,13 +60,17 @@ const UpdateDetailsForm = ({
 			<Input type="text" name="contact" onChange={handleChange} />
 
 			<FormLabel>Date of Birth</FormLabel>
-			<Input type="date" name="dob" onChange={handleChange} />
+			<Input type="date" name="dateOfBirth" onChange={handleChange} />
 
 			<FormLabel>Referring Organization</FormLabel>
-			<Input type="text" name="reforg" onChange={handleChange} />
+			<Input type="text" name="referringOrganization" onChange={handleChange} />
 
 			<FormLabel>Referring Organization Contacts</FormLabel>
-			<Input type="text" name="reforgContact" onChange={handleChange} />
+			<Input
+				type="text"
+				name="referringOrganizationContact"
+				onChange={handleChange}
+			/>
 
 			<FormLabel>Programs</FormLabel>
 			<select name="programs" onChange={handleChange}>
@@ -82,7 +87,7 @@ const UpdateDetailsForm = ({
 			/> */}
 
 			<FormLabel>Date of Entry</FormLabel>
-			<Input type="date" name="dateofEntry" onChange={handleChange} />
+			<Input type="date" name="dateOfEntry" onChange={handleChange} />
 
 			<FormLabel>Date of Exit</FormLabel>
 			<Input type="date" name="dateofExit" onChange={handleChange} />
@@ -91,7 +96,7 @@ const UpdateDetailsForm = ({
 			<Input type="text" name="guardian" onChange={handleChange} />
 
 			<FormLabel>Guardian Contacts</FormLabel>
-			<Input type="text" name="guardianContacts" onChange={handleChange} />
+			<Input type="text" name="guardianContact" onChange={handleChange} />
 
 			<Button onClick={handleSubmit} type="submit" colorScheme="blue" mt={5}>
 				Add Survivor
