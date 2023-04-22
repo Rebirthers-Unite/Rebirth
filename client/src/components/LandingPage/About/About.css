@@ -1,0 +1,35 @@
+#learn-more-button{
+    width: 180px;
+    height: 50px;
+    color: #916aff;
+    border-width: thin;
+    border-style: groove;
+    border-color: #916aff;
+    background-color: white;
+    transform: translate(-0%, -0%);
+}
+
+#learn-more-button span{
+    position: relative;
+    z-index: 0;
+  }
+  
+#learn-more-button:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #916aff;
+    transition: all .35s;
+    z-index: -1;
+  }
+  
+#learn-more-button:hover{
+    color: white;
+  }
+  
+#learn-more-button:hover:after{
+    width: 100%;
+  }
