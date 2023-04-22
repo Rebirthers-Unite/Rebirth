@@ -21,6 +21,8 @@ const UpdateSurvivorModal = ({
 	updateModalOpen,
 	setUpdateModalOpen,
 	closeUpdateSurvivorModal,
+	survivors,
+	setSurvivors
 }) => {
 	return (
 		<div>
@@ -51,6 +53,8 @@ const UpdateSurvivorModal = ({
 							// updateModalOpen={updateModalOpen}
 							setUpdateModalOpen={setUpdateModalOpen}
 							closeUpdateSurvivorModal={closeUpdateSurvivorModal}
+							survivors={survivors}
+							setSurvivors={setSurvivors}
 						/>
 					</ModalBody>
 					<ModalFooter>

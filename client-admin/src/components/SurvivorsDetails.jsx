@@ -34,6 +34,8 @@ const SurvivorsDetails = ({
 	isUpdating,
 	newSurvivor,
 	setNewSurvivor,
+	survivors,
+	setSurvivors,
 }) => {
 	const [survivor, setSurvivor] = useState({});
 	const { id } = useParams();
@@ -72,29 +74,7 @@ const SurvivorsDetails = ({
 		});
 	};
 
-	const updateDetails = (e) => {
-		e.preventDefault();
-		console.log('Hello!');
 
-		const survivorDetails = {
-			names,
-			contact,
-			dob,
-			reforg,
-			reforgContact,
-			programs,
-			dateofEntry,
-			dateofExit,
-			guardian,
-			guardianContacts,
-		};
-
-		fetch('http://localhost:8000/survivors/' + id, {
-			method: 'PUT',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(survivorDetails),
-		}).then((data) => console.log(data));
-	};
 
 	return (
 		<Container h={'100vh'}>
@@ -167,6 +147,8 @@ const SurvivorsDetails = ({
 				setUpdateModalOpen={setUpdateModalOpen}
 				newSurvivor={newSurvivor}
 				setNewSurvivor={setNewSurvivor}
+				survivors={survivors}
+				setSurvivors={setSurvivors}
 			/>
 			<DeleteSurvivorModal
 				deleteModalOpen={deleteModalOpen}

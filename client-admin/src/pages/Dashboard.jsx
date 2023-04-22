@@ -25,12 +25,14 @@ const Dashboard = ({
 	loading,
 	renderNewStaffForm,
 	newSurvivor,
-	setNewSurvivor
+	setNewSurvivor,
+	survivors,
+	setSurvivors,
 }) => {
 	const [search, setSearch] = useState('');
 	
 
-	const [survivors, setSurvivors] = useState([]);
+
 	const [staff, setStaff] = useState([]);
 
 	useEffect(() => {

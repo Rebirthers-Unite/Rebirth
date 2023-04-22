@@ -16,7 +16,7 @@ function App() {
 	const [updateModalOpen, setUpdateModalOpen] = useState(false);
 	const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 	const [isUpdating, setIsUpdating] = useState(false);
-
+	const [survivors, setSurvivors] = useState([]);
 	const [newSurvivor, setNewSurvivor] = useState({
 		name: '',
 		contact: '',
@@ -65,6 +65,8 @@ function App() {
 							closeModal={closeModal}
 							newSurvivor={newSurvivor}
 							setNewSurvivor={setNewSurvivor}
+							survivors={survivors}
+							setSurvivors={setSurvivors}
 						/>
 					}
 				/>
@@ -85,6 +87,8 @@ function App() {
 							setIsUpdating={setIsUpdating}
 							newSurvivor={newSurvivor}
 							setNewSurvivor={setNewSurvivor}
+							survivors={survivors}
+							setSurvivors={setSurvivors}
 						/>
 					}
 				/>
@@ -96,3 +100,4 @@ function App() {
 }
 
 export default App;
+
