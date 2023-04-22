@@ -28,18 +28,18 @@ const Dashboard = ({
 	setNewSurvivor,
 	survivors,
 	setSurvivors,
+	staff,
+	setStaff,
 }) => {
 	const [search, setSearch] = useState('');
-	
-
-
-	const [staff, setStaff] = useState([]);
 
 	useEffect(() => {
 		fetch('http://localhost:8000/survivors').then((r) => {
 			r.ok ? r.json().then((data) => setSurvivors(data)) : 'Problems!';
 		});
 	}, [newSurvivor]);
+
+	const [tabIndex, setTabIndex] = useState(0)
 
 	return (
 		<Box>
@@ -49,6 +49,7 @@ const Dashboard = ({
 				colorScheme="purple"
 				h={'100dvh'}
 				maxW={'100vw'}
+				// isFitted
 			>
 				<TabList>
 					<Tab

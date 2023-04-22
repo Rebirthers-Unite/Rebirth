@@ -10,6 +10,7 @@ import Signup from './forms/Signup';
 import Dashboard from './pages/Dashboard';
 import SurvivorsDetails from './components/SurvivorsDetails';
 import RootLayout from './components/layouts/RootLayout';
+import StaffDetails from './components/StaffDetails';
 
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -17,6 +18,7 @@ function App() {
 	const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 	const [isUpdating, setIsUpdating] = useState(false);
 	const [survivors, setSurvivors] = useState([]);
+	const [staff, setStaff] = useState([]);
 	const [newSurvivor, setNewSurvivor] = useState({
 		name: '',
 		contact: '',
@@ -67,6 +69,8 @@ function App() {
 							setNewSurvivor={setNewSurvivor}
 							survivors={survivors}
 							setSurvivors={setSurvivors}
+							staff={staff}
+							setStaff={setStaff}
 						/>
 					}
 				/>
@@ -92,6 +96,7 @@ function App() {
 						/>
 					}
 				/>
+				<Route path="/staff/:id" element={<StaffDetails />} />
 			</Route>
 		)
 	);
@@ -100,4 +105,3 @@ function App() {
 }
 
 export default App;
-

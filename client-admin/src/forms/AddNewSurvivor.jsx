@@ -93,28 +93,10 @@ const UpdateDetailsForm = ({
 	return (
 		<FormControl as={'form'}>
 			<FormLabel>Name</FormLabel>
-			<Input
-				type="text"
-				name="name"
-				value={
-					isUpdating
-						? survivors.filter((survivor) => (survivor.id === id).name)
-						: ''
-				}
-				onChange={handleChange}
-			/>
+			<Input type="text" name="name" onChange={handleChange} />
 
 			<FormLabel>Contact</FormLabel>
-			<Input
-				type="text"
-				name="contact"
-				value={
-					isUpdating
-						? survivors.filter((survivor) => (survivor.id === id).contact)
-						: ''
-				}
-				onChange={handleChange}
-			/>
+			<Input type="text" name="contact" onChange={handleChange} />
 
 			<FormLabel>Date of Birth</FormLabel>
 			<Input type="date" name="dateOfBirth" onChange={handleChange} />

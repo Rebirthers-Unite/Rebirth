@@ -1,6 +1,4 @@
 import {
-	Button,
-	HStack,
 	Table,
 	TableContainer,
 	Tbody,
@@ -9,17 +7,15 @@ import {
 	Thead,
 	Tr,
 } from '@chakra-ui/react';
-import React, { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SurvivorsList = ({ renderUpdateForm, survivors }) => {
-	// let [survId, setSurvId] = useState('');
-
 	const tableFields = [
 		'NAME',
-		'CONTACT',
 		'DATE OF BIRTH',
 		'REFERRING ORGANIZATION',
+		'CONTACT',
 		// 'REFERRING ORGANIZATION CONTACT',
 		// 'PROGRAMS',
 		// 'DATE OF ENTRY',
@@ -28,15 +24,6 @@ const SurvivorsList = ({ renderUpdateForm, survivors }) => {
 		// 'GUARDIAN CONTACT',
 		// 'ACTIONS',
 	];
-
-	// survId = useParams();
-	const deleteSurvivor = () => {
-		fetch('  http://localhost:8000/survivors/' + survId, {
-			method: 'DELETE',
-		}); /* .then(() => {
-			history.push('/');
-		}); */
-	};
 
 	return (
 		<TableContainer>
@@ -64,9 +51,9 @@ const SurvivorsList = ({ renderUpdateForm, survivors }) => {
 							>
 								<Td>{survivor.name}</Td>
 							</Link>
-							<Td>{survivor.contact}</Td>
 							<Td>{survivor.dateOfBirth}</Td>
 							<Td>{survivor.referringOrganization}</Td>
+							<Td>{survivor.contact}</Td>
 							{/* <Td>{survivor.referringOrganizationContact}</Td> */}
 							{/* <Td>{survivor.programs}</Td> */}
 							{/* <Td>{survivor.dateOfEntry}</Td> */}

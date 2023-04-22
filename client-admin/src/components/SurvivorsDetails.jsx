@@ -74,8 +74,6 @@ const SurvivorsDetails = ({
 		});
 	};
 
-
-
 	return (
 		<Container h={'100vh'}>
 			<Card maxW="md">

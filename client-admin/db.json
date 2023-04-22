@@ -1,57 +1,70 @@
 {
-  "survivors": [
-    {
-      "id": 1,
-      "name": "John Smith",
-      "contact": "john@gmail.com",
-      "dateOfBirth": "19/11/2022",
-      "referringOrganization": "Some Organization",
-      "referringOrganizationContact": "14th Street Kilimani, Nairobi",
-      "programs": "Some Projects",
-      "dateOfEntry": "1/11/2000",
-      "dateOfExit": "1/11/2011",
-      "guardian": "Some Guardian",
-      "guardianContact": "0722111937"
-    },
-    {
-      "id": 4,
-      "name": "Avery Owino",
-      "contact": "avery@gmail.com",
-      "dateOfBirth": "25/09/2015",
-      "referringOrganization": "UNICEF",
-      "referringOrganizationContact": "42nd Street, Manhattan",
-      "programs": "Nutrition Support",
-      "dateOfEntry": "5/05/2021",
-      "dateOfExit": "",
-      "guardian": "Karen Lee",
-      "guardianContact": "212-555-4321"
-    },
-    {
-      "id": 5,
-      "name": "Misou Miso",
-      "contact": "0722270969",
-      "dateOfBirth": "",
-      "referringOrganization": "",
-      "referringOrganizationContact": "",
-      "programs": "",
-      "dateOfEntry": "",
-      "dateOfExit": "5/12/2014",
-      "guardian": "",
-      "guardianContact": "",
-      "dateofExit": ""
-    },
-    {
-      "id": 7,
-      "name": "Grace Muthoni",
-      "contact": "grace@yahoo.com",
-      "dateOfBirth": "12/08/2001",
-      "referringOrganization": "Red Cross",
-      "referringOrganizationContact": "5th Avenue, New York",
-      "programs": "Education and Training",
-      "dateOfEntry": "6/05/2010",
-      "dateOfExit": "6/05/2019",
-      "guardian": "Sarah",
-      "guardianContact": "202-555-0184"
-    }
-  ]
+	"survivors": [
+		{
+			"id": 1,
+			"name": "John Smith",
+			"contact": "john@gmail.com",
+			"dateOfBirth": "19/11/2022",
+			"referringOrganization": "Some Organization",
+			"referringOrganizationContact": "14th Street Kilimani, Nairobi",
+			"programs": "Some Projects",
+			"dateOfEntry": "1/11/2000",
+			"dateOfExit": "1/11/2011",
+			"guardian": "Some Guardian",
+			"guardianContact": "0722111937"
+		},
+		{
+			"id": 4,
+			"name": "Avery Owino",
+			"contact": "avery@gmail.com",
+			"dateOfBirth": "25/09/2015",
+			"referringOrganization": "UNICEF",
+			"referringOrganizationContact": "42nd Street, Manhattan",
+			"programs": "Nutrition Support",
+			"dateOfEntry": "5/05/2021",
+			"dateOfExit": "",
+			"guardian": "Karen Lee",
+			"guardianContact": "212-555-4321"
+		},
+		{
+			"id": 5,
+			"name": "Misou Miso",
+			"contact": "0722270969",
+			"dateOfBirth": "",
+			"referringOrganization": "",
+			"referringOrganizationContact": "",
+			"programs": "",
+			"dateOfEntry": "",
+			"dateOfExit": "5/12/2014",
+			"guardian": "",
+			"guardianContact": "",
+			"dateofExit": ""
+		},
+		{
+			"id": 7,
+			"name": "Grace Muthoni",
+			"contact": "grace@yahoo.com",
+			"dateOfBirth": "12/08/2001",
+			"referringOrganization": "Red Cross",
+			"referringOrganizationContact": "5th Avenue, New York",
+			"programs": "Education and Training",
+			"dateOfEntry": "6/05/2010",
+			"dateOfExit": "6/05/2019",
+			"guardian": "Sarah",
+			"guardianContact": "202-555-0184"
+		},
+		{
+			"name": "Calathea",
+			"contact": "",
+			"dateOfBirth": "",
+			"referringOrganization": "",
+			"referringOrganizationContact": "",
+			"programs": "",
+			"dateOfEntry": "",
+			"dateofExit": "",
+			"guardian": "",
+			"guardianContact": "",
+			"id": 8
+		}
+	]
 }
