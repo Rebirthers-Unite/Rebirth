@@ -97,16 +97,6 @@ function Survivors() {
 					</button>
 				</div>
 			</div>
-			<div className='flex items-center justify-center'>
-				<button className='relative bg-black hover:text-[#916aff] w-[160px] font-bold my-4 pr-4 py-3 text-[#916aff] border-[#916aff] border rounded-3xl hover:scale-110 hover:bg-white'>
-					{' '}
-					View All{' '}
-					<BsArrowRightCircle
-						size={20}
-						className='absolute top-1/2 right-2 transform -translate-y-1/2 text-[#916aff] hover:text-black'
-					/>{' '}
-				</button>
-			</div>
 		</div>
 	);
 }
