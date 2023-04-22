@@ -28,10 +28,6 @@ function Survivors() {
 							She is has been in our care and protection since she was 5 years{' '}
 						</p>
 					</div>
-					<button className='bg-[#916aff] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black hover:bg-[#824cc6]'>
-						{' '}
-						Read More{' '}
-					</button>
 				</div>
 				<div className='md:w-full sm:w-4/5 sm:ml-20 md:ml-2 shadow-xl flex bg-white text-black flex-col p-4 sm:mt-56 md:mt-2 my-4 ml-2 rounded-lg hover:scale-105 duration-300'>
 					<img
@@ -49,10 +45,6 @@ function Survivors() {
 							She is has been in our care and protection since she was 5 years{' '}
 						</p>
 					</div>
-					<button className='bg-[#916aff] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black hover:bg-[#824cc6]'>
-						{' '}
-						Read More{' '}
-					</button>
 				</div>
 				<div className='md:w-full sm:w-4/5 sm:ml-20 md:ml-2 shadow-xl flex bg-white text-black flex-col p-4 sm:mt-56 md:mt-2 my-4 ml-2 rounded-lg hover:scale-105 duration-300'>
 					<img
@@ -70,10 +62,6 @@ function Survivors() {
 							She is has been in our care and protection since she was 5 years{' '}
 						</p>
 					</div>
-					<button className='bg-[#916aff] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black hover:bg-[#824cc6]'>
-						{' '}
-						Read More{' '}
-					</button>
 				</div>
 				<div className='md:w-full sm:w-4/5 sm:ml-20 md:ml-2 shadow-xl flex bg-white text-black flex-col p-4 sm:mt-56 md:mt-2 my-4 ml-2 rounded-lg hover:scale-105 duration-300'>
 					<img
@@ -91,10 +79,6 @@ function Survivors() {
 							She is has been in our care and protection since she was 5 years{' '}
 						</p>
 					</div>
-					<button className='bg-[#916aff] w-[200px] rounded-md font-medium my-6 mx-auto py-3 text-black hover:bg-[#824cc6]'>
-						{' '}
-						Read More{' '}
-					</button>
 				</div>
 			</div>
 		</div>
