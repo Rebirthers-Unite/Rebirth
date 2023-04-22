@@ -13,7 +13,7 @@ import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 const SurvivorsList = ({ renderUpdateForm, survivors }) => {
-	let [survId, setSurvId] = useState('');
+	// let [survId, setSurvId] = useState('');
 
 	const tableFields = [
 		'NAME',
@@ -26,10 +26,10 @@ const SurvivorsList = ({ renderUpdateForm, survivors }) => {
 		// 'DATE OF EXIT',
 		// 'GUARDIAN',
 		// 'GUARDIAN CONTACT',
-		'ACTIONS',
+		// 'ACTIONS',
 	];
 
-	survId = useParams();
+	// survId = useParams();
 	const deleteSurvivor = () => {
 		fetch('  http://localhost:8000/survivors/' + survId, {
 			method: 'DELETE',
@@ -73,7 +73,7 @@ const SurvivorsList = ({ renderUpdateForm, survivors }) => {
 							{/* <Td>{survivor.dateOfExit}</Td> */}
 							{/* <Td>{survivor.guardian}</Td> */}
 							{/* <Td>{survivor.guardianContact}</Td> */}
-							<HStack className="buttons" justify={'center'}>
+							{/* <HStack className="buttons" justify={'center'}>
 								<Button onClick={renderUpdateForm}>UPDATE</Button>
 								<Button
 									bg={'red.500'}
@@ -85,7 +85,7 @@ const SurvivorsList = ({ renderUpdateForm, survivors }) => {
 								>
 									DELETE
 								</Button>
-							</HStack>
+							</HStack> */}
 						</Tr>
 					))}
 				</Tbody>

@@ -34,7 +34,6 @@ const UpdateDetailsForm = ({ closeModal, newSurvivor, setNewSurvivor }) => {
 
 		setNewSurvivor((prevState) => ({ ...prevState, [name]: value }));
 	};
-	console.log(newSurvivor);
 
 	return (
 		<FormControl as={'form'}>
