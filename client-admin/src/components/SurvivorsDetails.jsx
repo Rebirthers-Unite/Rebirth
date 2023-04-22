@@ -23,7 +23,7 @@ const SurvivorsDetails = ({
 	renderDeleteSurvivorModal,
 	deleteModalOpen,
 	closeModal,
-	setIsOpen,
+	setDeleteModalOpen,
 }) => {
 	const [survivor, setSurvivor] = useState({});
 	const { id } = useParams();
@@ -56,6 +56,7 @@ const SurvivorsDetails = ({
 		fetch('  http://localhost:8000/survivors/' + id, {
 			method: 'DELETE',
 		}).then(() => {
+			setDeleteModalOpen(false);
 			showToast();
 			navigate('/dashboard');
 		});

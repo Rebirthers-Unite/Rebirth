@@ -26,35 +26,20 @@ const Dashboard = ({
 	renderNewSurvivorForm,
 }) => {
 	const [search, setSearch] = useState('');
-	const [newSurvivor, setNewSurvivor] = useState('');
+	const [newSurvivor, setNewSurvivor] = useState({
+		name: '',
+		contact: '',
+		dob: '',
+		reforg: '',
+		reforgContact: '',
+		programs: '',
+		dateofEntry: '',
+		dateofExit: '',
+		guardian: '',
+		guardianContacts: '',
+	});
 
 	const [survivors, setSurvivors] = useState([]);
-
-	const [names, setNames] = useState('');
-	const [contact, setContact] = useState('');
-	const [dob, setDob] = useState('');
-	const [reforg, setReforg] = useState('');
-	const [reforgContact, setReforgContact] = useState('');
-	const [programs, setPrograms] = useState('');
-	const [dateofEntry, setDateOfEntry] = useState('');
-	const [dateofExit, setDateOfExit] = useState('');
-	const [guardian, setGuardian] = useState('');
-	const [guardianContacts, setGuardianContacts] = useState('');
-
-	/*
-	
-	setNames
-	setContact
-	setDob
-	setReforg
-	setReforgContact
-	setPrograms
-	setDateOfEntry
-	setDateOfExit
-	setGuardian
-	setGuardianContacts
-	
-	*/
 
 	useEffect(() => {
 		fetch('http://localhost:8000/survivors').then((r) => {
@@ -126,27 +111,17 @@ const Dashboard = ({
 
 						<SurvivorsList
 							renderUpdateForm={renderUpdateForm}
-							survivors={survivors.filter((survivor) => 
+							survivors={survivors.filter((survivor) =>
 								survivor.name.toLowerCase().includes(search.toLowerCase())
 							)}
 							setSurvivors={setSurvivors}
 						/>
 						<UpdateSurvivorModal
-							setNames={setNames}
-							setContact={setContact}
-							setDob={setDob}
-							setReforg={setReforg}
-							setReforgContact={setReforgContact}
-							setPrograms={setPrograms}
-							setDateOfEntry={setDateOfEntry}
-							setDateOfExit={setDateOfExit}
-							setGuardian={setGuardian}
-							setGuardianContacts={setGuardianContacts}
 							isOpen={isOpen}
 							closeModal={closeModal}
 							loading={loading}
-							survivors={survivors}
-							setSurvivors={setSurvivors}
+							// survivors={survivors}
+							// setSurvivors={setSurvivors}
 							newSurvivor={newSurvivor}
 							setNewSurvivor={setNewSurvivor}
 						/>

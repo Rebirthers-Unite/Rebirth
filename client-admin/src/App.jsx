@@ -51,6 +51,7 @@ function App() {
 					element={
 						<SurvivorsDetails
 							deleteModalOpen={deleteModalOpen}
+							setDeleteModalOpen={setDeleteModalOpen}
 							closeModal={closeModal}
 							renderDeleteSurvivorModal={renderDeleteSurvivorModal}
 							setIsOpen={setIsOpen}

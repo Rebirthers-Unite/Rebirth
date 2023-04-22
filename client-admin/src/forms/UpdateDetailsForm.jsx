@@ -3,126 +3,118 @@ import React from 'react';
 import { useParams } from 'react-router';
 
 const UpdateDetailsForm = ({
-	names,
-	setNames,
-	contact,
-	setContact,
-	dob,
-	setDob,
-	reforg,
-	setReforg,
-	reforgContact,
-	setReforgContact,
-	programs,
-	setPrograms,
-	dateofEntry,
-	setDateOfEntry,
-	dateofExit,
-	setDateOfExit,
-	guardian,
-	setGuardian,
-	guardianContacts,
-	setGuardianContacts,
+	// names,
+	// contact,
+	// dob,
+	// reforg,
+	// reforgContact,
+	// programs,
+	// dateofEntry,
+	// dateofExit,
+	// guardian,
+	// guardianContacts,
 	newSurvivor,
 	setNewSurvivor,
 }) => {
-	const id = useParams();
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log('Hello!');
+		console.log(newSurvivor);
 
-		const survivorDetails = {
-			names,
-			contact,
-			dob,
-			reforg,
-			reforgContact,
-			programs,
-			dateofEntry,
-			dateofExit,
-			guardian,
-			guardianContacts,
-		};
-fetch('http://localhost:8000/survivors/', {
-	method: 'POST',
-	headers: { 'Content-Type': 'application/json' },
-	body: JSON.stringify(survivorDetails),
-})
-	.then((response) => {
-		if (!response.ok) {
-			throw new Error('Network response was not ok');
-		}
-		return response.json();
-	})
-	.then((data) => {
-		console.log(data);
-		setNewSurvivor(data)
-	})
-	.catch((error) => {
-		console.error('Error:', error);
-	});
-
+		fetch('http://localhost:8000/survivors/', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(newSurvivor),
+		})
+			// .then((response) => {
+			// 	if (!response.ok) {
+			// 		throw new Error('Network response was not ok');
+			// 	}
+			// 	return response.json();
+			// })
+			// .then((data) => {
+			// 	console.log(data);
+			// })
+			// .catch((error) => {
+			// 	console.error('Error:', error);
+			// });
+		window.location.reload();
 	};
+
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+
+		setNewSurvivor((prevState) => ({ ...prevState, [name]: value }));
+	};
+	console.log(newSurvivor);
 
 	return (
 		<FormControl as={'form'}>
 			<FormLabel>Name</FormLabel>
-			<Input
-				type="text"
-				value={names}
-				onChange={(e) => setNames(e.target.value)}
-			/>
+			<Input type="text" name="name" onChange={handleChange} />
+
 			<FormLabel>Contact</FormLabel>
 			<Input
 				type="text"
-				value={contact}
-				onChange={(e) => setContact(e.target.value)}
+				name="contact"
+				
+				onChange={handleChange}
 			/>
+
 			<FormLabel>Date of Birth</FormLabel>
-			<Input type="text" value={dob} onChange={(e) => setDob(e.target.value)} />
+			<Input type="date"  name="dob" onChange={handleChange} />
+
 			<FormLabel>Referring Organization</FormLabel>
-			<Input
-				type="text"
-				value={reforg}
-				onChange={(e) => setReforg(e.target.value)}
-			/>
+			<Input type="text" name="reforg" onChange={handleChange} />
+
 			<FormLabel>Referring Organization Contacts</FormLabel>
 			<Input
 				type="text"
-				value={reforgContact}
-				onChange={(e) => setReforgContact(e.target.value)}
+				name="reforgContact"
+				onChange={handleChange}
 			/>
+
 			<FormLabel>Programs</FormLabel>
-			<Input
-				type="text"
+			<select name="programs" onChange={handleChange}>
+				<option value="Test 1">Test 1</option>
+				<option value="Test 1">Test 2</option>
+				<option value="Test 1">Test 3</option>
+				<option value="Test 1">Test 4</option>
+			</select>
+			{/* <Input
+				type="select"
+				name="programs"
 				value={programs}
-				onChange={(e) => setPrograms(e.target.value)}
-			/>
+				onChange={handleChange}
+			/> */}
+
 			<FormLabel>Date of Entry</FormLabel>
 			<Input
 				type="date"
-				value={dateofEntry}
-				onChange={(e) => setDateOfEntry(e.target.value)}
+				name="dateofEntry"
+				onChange={handleChange}
 			/>
+
 			<FormLabel>Date of Exit</FormLabel>
 			<Input
 				type="date"
-				value={dateofExit}
-				onChange={(e) => setDateOfExit(e.target.value)}
+				name="dateofExit"
+				onChange={handleChange}
 			/>
+
 			<FormLabel>Guardian</FormLabel>
 			<Input
 				type="text"
-				value={guardian}
-				onChange={(e) => setGuardian(e.target.value)}
+				name="guardian"
+				onChange={handleChange}
 			/>
+
 			<FormLabel>Guardian Contacts</FormLabel>
 			<Input
 				type="text"
-				value={guardianContacts}
-				onChange={(e) => setGuardianContacts(e.target.value)}
+				name="guardianContacts"
+				onChange={handleChange}
 			/>
+
 			<Button onClick={handleSubmit} type="submit" colorScheme="blue" mt={5}>
 				Add Survivor
 			</Button>
