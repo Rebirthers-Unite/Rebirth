@@ -32,9 +32,9 @@ function Footer() {
 					</h1>
 					<ul style={{lineHeight: '30px'}}>
 						{ourPrograms.map((e, index) => (
-							<>
+							<div key={index}>
 								<Link key={index} className='py-1 text-medium' to='/programs'>{e}</Link><br></br>
-							</>
+							</div>
 						))}
 					</ul>
 				</div>

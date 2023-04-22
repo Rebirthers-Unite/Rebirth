@@ -1,0 +1,10 @@
+#hero-image{
+    margin-top: -300px;
+    filter: brightness(80%)
+}
+
+#hero-content{
+    position: absolute;
+    top: 25%;
+    left: 20%;
+}

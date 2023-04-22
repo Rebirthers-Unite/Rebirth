@@ -9,7 +9,7 @@ const Navbar = () => {
 		setNav(!nav);
 	};
 	return (
-		<div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4'>
+		<div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4' id='navbar'>
 			<h1 className='w-full text-3xl font-bold text-[#ffcc3d] flex'>REBIRTH</h1>
 			<ul className='hidden md:flex'>
 				<NavLink to='/' className='p-4 hover:text-yellow-300 hover:font-bold'>
