@@ -2,21 +2,7 @@ import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
 import React from 'react';
 import { useParams } from 'react-router';
 
-const UpdateDetailsForm = ({
-	// names,
-	// contact,
-	// dob,
-	// reforg,
-	// reforgContact,
-	// programs,
-	// dateofEntry,
-	// dateofExit,
-	// guardian,
-	// guardianContacts,
-	closeModal,
-	newSurvivor,
-	setNewSurvivor,
-}) => {
+const UpdateDetailsForm = ({ closeModal, newSurvivor, setNewSurvivor }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(newSurvivor);
@@ -41,7 +27,6 @@ const UpdateDetailsForm = ({
 			});
 
 		closeModal();
-		
 	};
 
 	const handleChange = (e) => {

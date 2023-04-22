@@ -9,7 +9,7 @@ import {
 	ModalBody,
 	ModalCloseButton,
 } from '@chakra-ui/react';
-import UpdateDetailsForm from '../../forms/UpdateDetailsForm';
+import UpdateDetailsForm from '../../forms/AddNewSurvivor';
 
 const UpdateSurvivorModal = ({
 	isOpen,
