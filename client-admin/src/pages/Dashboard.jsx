@@ -23,7 +23,7 @@ const Dashboard = ({
 	isOpen,
 	closeModal,
 	loading,
-	renderNewSurvivorForm,
+	renderNewStaffForm,
 }) => {
 	const [search, setSearch] = useState('');
 	const [newSurvivor, setNewSurvivor] = useState({
@@ -40,6 +40,7 @@ const Dashboard = ({
 	});
 
 	const [survivors, setSurvivors] = useState([]);
+	const [staff, setStaff] = useState([]);
 
 	useEffect(() => {
 		fetch('http://localhost:8000/survivors').then((r) => {
@@ -120,8 +121,6 @@ const Dashboard = ({
 							isOpen={isOpen}
 							closeModal={closeModal}
 							loading={loading}
-							// survivors={survivors}
-							// setSurvivors={setSurvivors}
 							newSurvivor={newSurvivor}
 							setNewSurvivor={setNewSurvivor}
 						/>
@@ -138,7 +137,12 @@ const Dashboard = ({
 							</Button>
 						</HStack>
 
-						<StaffList />
+						<StaffList
+						// renderUpdateForm={renderUpdateForm}
+							staff={staff.filter((staffMember) =>
+								staffMember.name.toLowerCase().includes(search.toLowerCase())
+							)}
+							setStaff={setStaff}/>
 					</TabPanel>
 					<TabPanel>
 						<AddBlog />

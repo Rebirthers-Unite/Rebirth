@@ -1,7 +1,7 @@
 import { Table, TableContainer, Th, Thead, Tr } from "@chakra-ui/react"
 
 const StaffList = () => {
-	const tableFields = ["NAME", "DESCRIPTION", "ROLE"]
+	const tableFields = ["NAME", "EMAIL", "PHONE NUMBER", "POSITION", "GENDER"]
 	return (
 		<TableContainer>
 			<Table>
