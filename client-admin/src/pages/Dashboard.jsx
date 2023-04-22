@@ -45,7 +45,7 @@ const Dashboard = ({
 		fetch('http://localhost:8000/survivors').then((r) => {
 			r.ok ? r.json().then((data) => setSurvivors(data)) : 'Problems!';
 		});
-	}, []);
+	}, [newSurvivor]);
 
 	return (
 		<Box>

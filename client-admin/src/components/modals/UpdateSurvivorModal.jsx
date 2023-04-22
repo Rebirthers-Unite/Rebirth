@@ -14,18 +14,7 @@ import UpdateDetailsForm from '../../forms/UpdateDetailsForm';
 const UpdateSurvivorModal = ({
 	isOpen,
 	closeModal,
-	setNames,
-	setContact,
-	setDob,
-	setReforg,
-	setReforgContact,
-	setPrograms,
-	setDateOfEntry,
-	setDateOfExit,
-	setGuardian,
-	setGuardianContacts,
-	survivors,
-	setSurvivors,
+
 	newSurvivor,
 	setNewSurvivor,
 }) => {
@@ -43,20 +32,9 @@ const UpdateSurvivorModal = ({
 						justifyContent={'center'}
 					>
 						<UpdateDetailsForm
-							setNames={setNames}
-							setContact={setContact}
-							setDob={setDob}
-							setReforg={setReforg}
-							setReforgContact={setReforgContact}
-							setPrograms={setPrograms}
-							setDateOfEntry={setDateOfEntry}
-							setDateOfExit={setDateOfExit}
-							setGuardian={setGuardian}
-							setGuardianContacts={setGuardianContacts}
-							setSurvivors={setSurvivors}
-							survivors={survivors}
 							newSurvivor={newSurvivor}
 							setNewSurvivor={setNewSurvivor}
+							closeModal={closeModal}
 						/>
 					</ModalBody>
 					<ModalFooter>

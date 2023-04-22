@@ -13,6 +13,7 @@ const UpdateDetailsForm = ({
 	// dateofExit,
 	// guardian,
 	// guardianContacts,
+	closeModal,
 	newSurvivor,
 	setNewSurvivor,
 }) => {
@@ -25,19 +26,21 @@ const UpdateDetailsForm = ({
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify(newSurvivor),
 		})
-			// .then((response) => {
-			// 	if (!response.ok) {
-			// 		throw new Error('Network response was not ok');
-			// 	}
-			// 	return response.json();
-			// })
-			// .then((data) => {
-			// 	console.log(data);
-			// })
-			// .catch((error) => {
-			// 	console.error('Error:', error);
-			// });
-		window.location.reload();
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error('Network response was not ok');
+				}
+				return response.json();
+			})
+			.then((data) => {
+				setNewSurvivor(data);
+			})
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+
+		closeModal();
+		
 	};
 
 	const handleChange = (e) => {
@@ -53,25 +56,16 @@ const UpdateDetailsForm = ({
 			<Input type="text" name="name" onChange={handleChange} />
 
 			<FormLabel>Contact</FormLabel>
-			<Input
-				type="text"
-				name="contact"
-				
-				onChange={handleChange}
-			/>
+			<Input type="text" name="contact" onChange={handleChange} />
 
 			<FormLabel>Date of Birth</FormLabel>
-			<Input type="date"  name="dob" onChange={handleChange} />
+			<Input type="date" name="dob" onChange={handleChange} />
 
 			<FormLabel>Referring Organization</FormLabel>
 			<Input type="text" name="reforg" onChange={handleChange} />
 
 			<FormLabel>Referring Organization Contacts</FormLabel>
-			<Input
-				type="text"
-				name="reforgContact"
-				onChange={handleChange}
-			/>
+			<Input type="text" name="reforgContact" onChange={handleChange} />
 
 			<FormLabel>Programs</FormLabel>
 			<select name="programs" onChange={handleChange}>
@@ -88,32 +82,16 @@ const UpdateDetailsForm = ({
 			/> */}
 
 			<FormLabel>Date of Entry</FormLabel>
-			<Input
-				type="date"
-				name="dateofEntry"
-				onChange={handleChange}
-			/>
+			<Input type="date" name="dateofEntry" onChange={handleChange} />
 
 			<FormLabel>Date of Exit</FormLabel>
-			<Input
-				type="date"
-				name="dateofExit"
-				onChange={handleChange}
-			/>
+			<Input type="date" name="dateofExit" onChange={handleChange} />
 
 			<FormLabel>Guardian</FormLabel>
-			<Input
-				type="text"
-				name="guardian"
-				onChange={handleChange}
-			/>
+			<Input type="text" name="guardian" onChange={handleChange} />
 
 			<FormLabel>Guardian Contacts</FormLabel>
-			<Input
-				type="text"
-				name="guardianContacts"
-				onChange={handleChange}
-			/>
+			<Input type="text" name="guardianContacts" onChange={handleChange} />
 
 			<Button onClick={handleSubmit} type="submit" colorScheme="blue" mt={5}>
 				Add Survivor
