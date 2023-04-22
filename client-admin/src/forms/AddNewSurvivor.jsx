@@ -2,31 +2,60 @@ import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
 import React from 'react';
 import { useParams } from 'react-router';
 
-const UpdateDetailsForm = ({ closeModal, newSurvivor, setNewSurvivor, isUpdating }) => {
+const UpdateDetailsForm = ({
+	closeModal,
+	newSurvivor,
+	setNewSurvivor,
+	isUpdating,
+	closeUpdateSurvivorModal,
+}) => {
+	const { id } = useParams();
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(newSurvivor);
 
-		fetch('http://localhost:8000/survivors/', {
-			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify(newSurvivor),
-		})
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error('Network response was not ok');
-				}
-				return response.json();
+		if (!isUpdating) {
+			fetch('http://localhost:8000/survivors/', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(newSurvivor),
 			})
-			.then((data) => {
-				console.log(data);
-				setNewSurvivor(data);
+				.then((response) => {
+					if (!response.ok) {
+						throw new Error('Network response was not ok');
+					}
+					return response.json();
+				})
+				.then((data) => {
+					console.log(data);
+					setNewSurvivor(data);
+				})
+				.catch((error) => {
+					console.error('Error:', error);
+				});
+			closeUpdateSurvivorModal();
+		} else {
+			fetch('http://localhost:8000/survivors/' + id, {
+				method: 'PUT',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(newSurvivor),
 			})
-			.catch((error) => {
-				console.error('Error:', error);
-			});
-
-		closeModal();
+				.then((response) => {
+					if (!response.ok) {
+						throw new Error('Network response was not ok');
+					}
+					return response.json();
+				})
+				.then((data) => {
+					console.log(data);
+					setNewSurvivor(data);
+				})
+				.catch((error) => {
+					console.error('Error:', error);
+				});
+			closeModal();
+		}
 	};
 
 	const handleChange = (e) => {
@@ -83,7 +112,7 @@ const UpdateDetailsForm = ({ closeModal, newSurvivor, setNewSurvivor, isUpdating
 			<Input type="text" name="guardianContact" onChange={handleChange} />
 
 			<Button onClick={handleSubmit} type="submit" colorScheme="blue" mt={5}>
-				{isUpdating ? "Update Survivor" : "Add New Survivor"}
+				{isUpdating ? 'Update Survivor' : 'Add New Survivor'}
 			</Button>
 		</FormControl>
 	);

@@ -17,6 +17,19 @@ function App() {
 	const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 	const [isUpdating, setIsUpdating] = useState(false);
 
+	const [newSurvivor, setNewSurvivor] = useState({
+		name: '',
+		contact: '',
+		dateOfBirth: '',
+		referringOrganization: '',
+		referringOrganizationContact: '',
+		programs: '',
+		dateOfEntry: '',
+		dateofExit: '',
+		guardian: '',
+		guardianContact: '',
+	});
+
 	const renderUpdateForm = () => {
 		setIsOpen(true);
 	};
@@ -50,6 +63,8 @@ function App() {
 							renderUpdateForm={renderUpdateForm}
 							isOpen={isOpen}
 							closeModal={closeModal}
+							newSurvivor={newSurvivor}
+							setNewSurvivor={setNewSurvivor}
 						/>
 					}
 				/>
@@ -68,6 +83,8 @@ function App() {
 							setIsOpen={setIsOpen}
 							isUpdating={isUpdating}
 							setIsUpdating={setIsUpdating}
+							newSurvivor={newSurvivor}
+							setNewSurvivor={setNewSurvivor}
 						/>
 					}
 				/>

@@ -32,6 +32,8 @@ const SurvivorsDetails = ({
 	setDeleteModalOpen,
 	setIsUpdating,
 	isUpdating,
+	newSurvivor,
+	setNewSurvivor,
 }) => {
 	const [survivor, setSurvivor] = useState({});
 	const { id } = useParams();
@@ -163,8 +165,8 @@ const SurvivorsDetails = ({
 				isUpdating={isUpdating}
 				setIsUpdating={setIsUpdating}
 				setUpdateModalOpen={setUpdateModalOpen}
-				// newSurvivor={newSurvivor}
-				// setNewSurvivor={setNewSurvivor}
+				newSurvivor={newSurvivor}
+				setNewSurvivor={setNewSurvivor}
 			/>
 			<DeleteSurvivorModal
 				deleteModalOpen={deleteModalOpen}

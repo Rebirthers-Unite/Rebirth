@@ -24,20 +24,11 @@ const Dashboard = ({
 	closeModal,
 	loading,
 	renderNewStaffForm,
+	newSurvivor,
+	setNewSurvivor
 }) => {
 	const [search, setSearch] = useState('');
-	const [newSurvivor, setNewSurvivor] = useState({
-		name: '',
-		contact: '',
-		dateOfBirth: '',
-		referringOrganization: '',
-		referringOrganizationContact: '',
-		programs: '',
-		dateOfEntry: '',
-		dateofExit: '',
-		guardian: '',
-		guardianContact: '',
-	});
+	
 
 	const [survivors, setSurvivors] = useState([]);
 	const [staff, setStaff] = useState([]);
