@@ -18,12 +18,20 @@ import {
 import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import DeleteSurvivorModal from './modals/DeleteSurvivorModal';
+import UpdateSurvivorModal from './modals/UpdateSurvivorModal';
 const SurvivorsDetails = ({
+	updateModalOpen,
+	setUpdateModalOpen,
+	renderUpdateSurvivorModal,
+	closeUpdateSurvivorModal,
 	renderUpdateForm,
 	renderDeleteSurvivorModal,
 	deleteModalOpen,
+	isOpen,
 	closeModal,
 	setDeleteModalOpen,
+	setIsUpdating,
+	isUpdating,
 }) => {
 	const [survivor, setSurvivor] = useState({});
 	const { id } = useParams();
@@ -141,12 +149,23 @@ const SurvivorsDetails = ({
 				/>
 			</Card>
 			<HStack justify={'center'} gap={'1rem'} mt={'1rem'}>
-				<Button onClick={renderUpdateForm}>UPDATE DETAILS</Button>
+				<Button onClick={renderUpdateSurvivorModal}>UPDATE DETAILS</Button>
 				<Button bg={'red.500'} onClick={renderDeleteSurvivorModal}>
 					DELETE SURVIVOR
 				</Button>
 			</HStack>
 
+			<UpdateSurvivorModal
+				isOpen={isOpen}
+				updateModalOpen={updateModalOpen}
+				closeModal={closeModal}
+				closeUpdateSurvivorModal={closeUpdateSurvivorModal}
+				isUpdating={isUpdating}
+				setIsUpdating={setIsUpdating}
+				setUpdateModalOpen={setUpdateModalOpen}
+				// newSurvivor={newSurvivor}
+				// setNewSurvivor={setNewSurvivor}
+			/>
 			<DeleteSurvivorModal
 				deleteModalOpen={deleteModalOpen}
 				closeModal={closeModal}

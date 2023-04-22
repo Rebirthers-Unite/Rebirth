@@ -138,11 +138,12 @@ const Dashboard = ({
 						</HStack>
 
 						<StaffList
-						// renderUpdateForm={renderUpdateForm}
+							// renderUpdateForm={renderUpdateForm}
 							staff={staff.filter((staffMember) =>
 								staffMember.name.toLowerCase().includes(search.toLowerCase())
 							)}
-							setStaff={setStaff}/>
+							setStaff={setStaff}
+						/>
 					</TabPanel>
 					<TabPanel>
 						<AddBlog />

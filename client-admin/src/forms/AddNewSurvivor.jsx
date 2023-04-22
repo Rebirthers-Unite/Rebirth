@@ -2,7 +2,7 @@ import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
 import React from 'react';
 import { useParams } from 'react-router';
 
-const UpdateDetailsForm = ({ closeModal, newSurvivor, setNewSurvivor }) => {
+const UpdateDetailsForm = ({ closeModal, newSurvivor, setNewSurvivor, isUpdating }) => {
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(newSurvivor);
@@ -83,7 +83,7 @@ const UpdateDetailsForm = ({ closeModal, newSurvivor, setNewSurvivor }) => {
 			<Input type="text" name="guardianContact" onChange={handleChange} />
 
 			<Button onClick={handleSubmit} type="submit" colorScheme="blue" mt={5}>
-				Add Survivor
+				{isUpdating ? "Update Survivor" : "Add New Survivor"}
 			</Button>
 		</FormControl>
 	);

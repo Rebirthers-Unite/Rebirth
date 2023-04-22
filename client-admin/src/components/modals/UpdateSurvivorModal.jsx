@@ -14,17 +14,28 @@ import UpdateDetailsForm from '../../forms/AddNewSurvivor';
 const UpdateSurvivorModal = ({
 	isOpen,
 	closeModal,
-
 	newSurvivor,
 	setNewSurvivor,
+	isUpdating,
+	setIsUpdating,
+	updateModalOpen,
+	setUpdateModalOpen,
+	closeUpdateSurvivorModal,
 }) => {
 	return (
 		<div>
-			<Modal isOpen={isOpen} onClose={closeModal}>
+			<Modal
+				isOpen={isUpdating ? updateModalOpen : isOpen}
+				onClose={isUpdating ? closeUpdateSurvivorModal : closeModal}
+			>
 				<ModalOverlay />
 				<ModalContent>
-					<ModalHeader>Add New Survivor</ModalHeader>
-					<ModalCloseButton />
+					<ModalHeader>
+						{isUpdating ? 'Update Survivor' : 'Add New Survivor'}
+					</ModalHeader>
+					<ModalCloseButton
+						onClick={isUpdating ? closeUpdateSurvivorModal : closeModal}
+					/>
 					<ModalBody
 						as={'form'}
 						display={'flex'}
@@ -35,10 +46,19 @@ const UpdateSurvivorModal = ({
 							newSurvivor={newSurvivor}
 							setNewSurvivor={setNewSurvivor}
 							closeModal={closeModal}
+							isUpdating={isUpdating}
+							setIsUpdating={setIsUpdating}
+							// updateModalOpen={updateModalOpen}
+							setUpdateModalOpen={setUpdateModalOpen}
+							closeUpdateSurvivorModal={closeUpdateSurvivorModal}
 						/>
 					</ModalBody>
 					<ModalFooter>
-						<Button color="red.400" mr={3} onClick={closeModal}>
+						<Button
+							color="red.400"
+							mr={3}
+							onClick={isUpdating ? closeUpdateSurvivorModal : closeModal}
+						>
 							Close
 						</Button>
 					</ModalFooter>

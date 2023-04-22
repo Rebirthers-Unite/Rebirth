@@ -13,21 +13,29 @@ import RootLayout from './components/layouts/RootLayout';
 
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
+	const [updateModalOpen, setUpdateModalOpen] = useState(false);
 	const [deleteModalOpen, setDeleteModalOpen] = useState(false);
-	const [loading, setLoading] = useState(false);
+	const [isUpdating, setIsUpdating] = useState(false);
 
 	const renderUpdateForm = () => {
 		setIsOpen(true);
-		setLoading(true);
 	};
 	const renderDeleteSurvivorModal = () => {
 		setDeleteModalOpen(true);
-		setLoading(true);
+	};
+
+	const renderUpdateSurvivorModal = () => {
+		setIsUpdating(true);
+		setUpdateModalOpen(true);
+	};
+
+	const closeUpdateSurvivorModal = () => {
+		setUpdateModalOpen(false);
 	};
 
 	const closeModal = () => {
 		setIsOpen(false);
-		setDeleteModalOpen(false)
+		setDeleteModalOpen(false);
 	};
 
 	const router = createBrowserRouter(
@@ -40,7 +48,6 @@ function App() {
 					element={
 						<Dashboard
 							renderUpdateForm={renderUpdateForm}
-							loading={loading}
 							isOpen={isOpen}
 							closeModal={closeModal}
 						/>
@@ -50,11 +57,17 @@ function App() {
 					path="/survivor/:id"
 					element={
 						<SurvivorsDetails
+							setUpdateModalOpen={setUpdateModalOpen}
+							closeUpdateSurvivorModal={closeUpdateSurvivorModal}
+							updateModalOpen={updateModalOpen}
 							deleteModalOpen={deleteModalOpen}
 							setDeleteModalOpen={setDeleteModalOpen}
 							closeModal={closeModal}
+							renderUpdateSurvivorModal={renderUpdateSurvivorModal}
 							renderDeleteSurvivorModal={renderDeleteSurvivorModal}
 							setIsOpen={setIsOpen}
+							isUpdating={isUpdating}
+							setIsUpdating={setIsUpdating}
 						/>
 					}
 				/>
