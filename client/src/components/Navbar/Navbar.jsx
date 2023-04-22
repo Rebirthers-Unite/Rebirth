@@ -33,16 +33,16 @@ const Navbar = () => {
 					Programs
 				</NavLink>
 				<NavLink
-					to='/contact'
-					className='p-4 hover:text-yellow-300 hover:font-bold'>
-					{' '}
-					Contact{' '}
-				</NavLink>
-				<NavLink
 					to='/support'
 					className='p-4 hover:text-yellow-300 hover:font-bold'>
 					{' '}
 					Support{' '}
+				</NavLink>
+				<NavLink
+					to='/contact'
+					className='p-4 hover:text-yellow-300 hover:font-bold'>
+					{' '}
+					Contact{' '}
 				</NavLink>
 			</ul>
 			<div

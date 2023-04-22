@@ -1,9 +1,12 @@
 import React from 'react';
 import './About.css'
 import Logo from '../../../assets/teamwork.JPG';
-import { BsArrowRightCircle } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
 
 function About() {
+
+	const navigate = useNavigate()
+
 	return (
 		<div className='w-full bg-white py-10 px-2'>
 			<div className='max-w-[1240px] mx-auto grid md:grid-cols-2'>
@@ -21,7 +24,7 @@ function About() {
 						Nairobi Kenya.
 					</p>
 					<div className='flex items-center justify-center'>
-						<button id='learn-more-button'>
+						<button id='learn-more-button' onClick={() => {navigate('/aboutus')}}>
 							Learn More   <i class="fa-solid fa-arrow-right"></i>
 						</button>
 					</div>
