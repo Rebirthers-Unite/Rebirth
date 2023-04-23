@@ -6,7 +6,7 @@ import {GoQuote }from 'react-icons/go'
 function Survivors() {
 	return (
 		<div className='sm:py-[8rem] sm:pb-[2rem] md:pb-[2rem] md:py-[8rem] px-4 bg-[#9a9a9a]'>
-			<div className='text-yellow-400 font-bold max-w-[800px] mt-[-24rem] w-full h-screen mx-auto text-center flex flex-col justify-center'>
+			<div className='text-yellow-400 font-serif font-bold max-w-[800px] mt-[-24rem] w-full h-screen mx-auto text-center flex flex-col justify-center'>
 				<h1 className='md:text-5xl sm:text-4xl text-4xl sm:pt-8 md:pt-14 md:py-6'>
 					{' '}
 					Hear from some of our Survivors{' '}

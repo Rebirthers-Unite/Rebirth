@@ -15,7 +15,7 @@ function Footer() {
 		<div className='max-w-[100vw] bg-black mx-auto py-6 px-6 grid lg:grid-cols-3 gap-8 text-gray-300'>
 			<div className='md:lg:col-span-3 md:grid-cols-3 md:pl-2 sm:gap-20 sm:grid-cols-2 md:gap-6 md:grid justify-between cursor-pointer'>
 				<div>
-					<h1 className='font-bold sm:text-xl md:text-2xl text-[#824cc6]'>
+					<h1 className='font-bold font-serif sm:text-xl md:text-2xl text-[#824cc6]'>
 						Useful Links
 					</h1>
 					<ul style={{lineHeight: '30px'}}>
@@ -27,7 +27,7 @@ function Footer() {
 					</ul>
 				</div>
 				<div>
-					<h1 className='font-bold sm:text-xl sm:py-2 md:text-2xl text-[#824cc6]'>
+					<h1 className='font-bold font-serif sm:text-xl sm:py-2 md:text-2xl text-[#824cc6]'>
 						Our Programs
 					</h1>
 					<ul style={{lineHeight: '30px'}}>
@@ -39,7 +39,7 @@ function Footer() {
 					</ul>
 				</div>
 				<div>
-					<h1 className='font-bold sm:text-xl sm:py-2 md:text-2xl text-[#824cc6]'>
+					<h1 className='font-bold font-serif sm:text-xl sm:py-2 md:text-2xl text-[#824cc6]'>
 						Contact Us
 					</h1>
 					<ul>
@@ -63,7 +63,7 @@ function Footer() {
 					</ul>
 				</div>
 				<div>
-					<h1 className='w-full text-3xl font-bold text-[#ffcc3d]'>REBIRTH</h1>
+					<h1 className='w-full text-3xl font-bold font-serif text-[#ffcc3d]'>REBIRTH OF A QUEEN</h1>
 					<div className='flex sm:gap-10 md:gap-12 py-2 justify-between'>
 						<a href='https://www.facebook.com/RebirthofaQueen'>
 							<FaFacebook
