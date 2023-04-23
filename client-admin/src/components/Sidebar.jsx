@@ -37,6 +37,16 @@ const Sidebar = () => {
 						Profile
 					</NavLink>
 				</ListItem>
+				<ListItem>
+					<NavLink to={'/login'}>
+						Login
+					</NavLink>
+				</ListItem>
+				<ListItem>
+					<NavLink to={'/signup'}>
+						Signup
+					</NavLink>
+				</ListItem>
 			</List>
 		</div>
 	);

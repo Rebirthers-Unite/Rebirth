@@ -13,8 +13,10 @@ import StaffList from '../components/StaffList';
 import Search from '../components/Search';
 import UpdateSurvivorModal from '../components/UpdateSurvivorModal';
 import AddBlog from '../forms/AddBlog';
+import useAuthStore from '../store/Token';
 
 const Dashboard = ({ renderUpdateForm, isOpen, closeModal, loading }) => {
+	const token = useAuthStore((state) => state.token);
 	const [search, setSearch] = useState('');
 	const [survivors, setSurvivors] = useState([]);
 
@@ -23,6 +25,8 @@ const Dashboard = ({ renderUpdateForm, isOpen, closeModal, loading }) => {
 			r.ok ? r.json().then((data) => setSurvivors(data)) : 'Problems!';
 		});
 	}, []);
+
+	console.log(token)
 
 	return (
 		<Box>

@@ -11,7 +11,8 @@ import {
 } from '@chakra-ui/react';
 
 import { EmailIcon, LockIcon, PhoneIcon } from '@chakra-ui/icons';
-
+import { useState } from 'react'
+import useAuthStore from '../store/Token';
 import { Link } from 'react-router-dom';
 
 const Signup = () => {
@@ -41,7 +42,7 @@ const Signup = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = { username, email, password };
-    fetch('http://127.0.0.1:3000/signup', {
+    fetch('https://rebirth-drtz.onrender.com/signup', {
       method: 'POST',
       headers: {
 		Authorization: `Bearer ${token}`,
@@ -90,8 +91,7 @@ const Signup = () => {
 					<Input type="email" placeholder="email address" value={email} onChange={handleEmailChange} required />
 				</HStack>
 				<HStack p={'1rem'}>
-					<PhoneIcon fontSize={'3rem'} color="#666" />
-					<Input type="email" placeholder="email or phone number" value={role} onChange={handleRoleChange}  required />
+					<Input type="text" placeholder="Role" value={role} onChange={handleRoleChange}  required />
 				</HStack>
 				<HStack p={'1rem'}>
 					<LockIcon fontSize={'3rem'} color="#666" />

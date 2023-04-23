@@ -11,6 +11,7 @@ import {
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import { EmailIcon, LockIcon } from '@chakra-ui/icons';
+import useAuthStore from '../store/Token';
 
 const Login = () => {
 
@@ -28,8 +29,8 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const data = { username, password };
-    fetch('http://127.0.0.1:3000/login', {
+    const data = { email, password };
+    fetch('https://rebirth-drtz.onrender.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
