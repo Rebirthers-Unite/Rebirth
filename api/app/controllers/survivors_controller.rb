@@ -65,7 +65,7 @@ class SurvivorsController < ApplicationController
       # Define the survivor_params method
     def survivor_params
           # Permit only the specified attributes of the survivor object
-        params.require(:survivor).permit(:name, :age, :date_of_birth, :organization, :contact, :date_of_entry, :date_of_exit, :guardian_name, :contact_of_guardian)
+        params.require(:survivor).permit(:name, :date_of_birth, :organization, :organization_contact, :organization_email, :guardian_name, :contact_of_guardian,:level_of_education, :school, :children, :social_asset_building, :date_of_entry, :date_of_exit)
     end    
 
 
