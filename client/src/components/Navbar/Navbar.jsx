@@ -46,7 +46,7 @@ const Navbar = () => {
 					Contact{' '}
 				</NavLink>
 			</ul>
-			{/* <div
+			<div
 				onClick={handleNav}
 				className='block md:hidden hover:text-yellow-300 hover:font-bold'>
 				{!nav ? <AiOutlineClose size={28} /> : <AiOutlineMenu size={28} />}
@@ -77,7 +77,7 @@ const Navbar = () => {
 						<NavLink to='/support'>Support</NavLink>
 					</li>
 				</ul>
-			</div> */}
+			</div>
 		</div>
 	);
 };
