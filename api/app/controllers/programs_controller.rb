@@ -41,13 +41,14 @@ class ProgramsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_program
-      @program = Program.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def program_params
-      params.permit(:title, :description, :image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_program
+    @program = Program.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def program_params
+    params.permit(:title, :description, :image)
+  end
 end
