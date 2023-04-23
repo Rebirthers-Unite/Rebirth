@@ -8,7 +8,7 @@ export const BlogCard = () => {
         <div className='card-body'>
             <h3 className='card-title text-3xl font-bold'>Dawgy Dawg</h3>
             <p className='card-text'>He my Dawgy Dawg</p>
-            <Link to={`/blog/id`} style={{color: 'purple'}}>{'Read More >>'}</Link>
+            <Link to={`/blog/id`} style={{color: 'purple'}}>Read More    <i class="fa-solid fa-arrow-up-right-from-square"></i></Link>
         </div>
     </div>
   )

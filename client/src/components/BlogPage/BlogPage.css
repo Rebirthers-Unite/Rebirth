@@ -29,3 +29,20 @@
         margin-top: 10%;
     }
 }
+
+@media screen and (max-width: 768px) {
+
+    #cards-div{
+        margin-left: 5%;
+    }
+
+    #search-bar{
+        width: 250px;
+        margin-left: 18%;
+        margin-top: 10%;
+    }
+
+    #blog-card{
+        width: 450px;
+    }
+}

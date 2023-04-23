@@ -24,6 +24,12 @@
     margin-left: 60px;
 }
 
+#our-mission-image{
+    width: 500px;
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
 #our-vision-image{
     width: 500px;
     margin-top: 20px;
@@ -51,4 +57,178 @@
     margin-left: 20px;
     line-height: 30px;
     margin-top: 10px;
+}
+
+@media screen and (max-width: 480px) {
+    #who-we-are-content{
+        margin-top: 20px;
+        text-align: center;
+        width: 100%;
+        line-height: 30px;
+        margin-left: 0px;
+        font-size: 10px;
+    }
+    
+    #our-story{
+        margin-top: 100px;
+        text-align: center;
+        margin-left: 10px;
+        font-size: 30px;
+    }
+    
+    #our-story-image{
+        width: 400px;
+        margin-top: 30px;
+        margin-left: 120px;
+    }
+    
+    #our-vision-image{
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 120px;
+        text-align: center;
+    }
+    
+    #mission-text{
+        line-height: 30px;
+        margin-left: -200px;
+        text-align: center;
+        font-size: 10px;
+        padding-bottom: 100px;
+    }
+
+    #our-mission-title{
+        margin-top: 120px;
+        margin-left: -140px;
+        text-align: center;
+        font-size: 30px
+    }
+
+    #our-mission-image{
+        margin-top: -400px;
+        margin-left: 120px;
+    }
+
+    #vision-div{
+        margin-left: 0px;
+        width: 500px;
+        text-align: center;
+    }
+
+    #vision-title{
+        font-size: 30px;
+    }
+    
+    #vision-text{
+        line-height: 30px;
+        font-size: 10px;
+    }
+    
+    #values-text{
+        line-height: 30px;
+        font-size: 10px;
+        text-align: center;
+        margin-left: -200px;
+    }
+    
+    #values-list{
+        margin-left: -50px;
+        line-height: 30px;
+        margin-top: 10px;
+        font-size: 10px;
+        text-align: left;
+    }
+
+    #values-title{
+        margin-left: -200px;
+        text-align: center;
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #who-we-are-content{
+        margin-top: 20px;
+        text-align: center;
+        width: 100%;
+        line-height: 30px;
+        margin-left: 0px;
+        font-size: 10px;
+    }
+    
+    #our-story{
+        margin-top: 100px;
+        text-align: center;
+        margin-left: 10px;
+        font-size: 30px;
+    }
+    
+    #our-story-image{
+        width: 400px;
+        margin-top: 20px;
+        margin-left: 150px;
+    }
+    
+    #our-vision-image{
+        width: 100%;
+        margin-top: 20px;
+        margin-left: 160px;
+        text-align: center;
+    }
+    
+    #mission-text{
+        line-height: 30px;
+        margin-left: -350px;
+        text-align: center;
+        font-size: 10px;
+        padding-bottom: 170px;
+    }
+
+    #our-mission-title{
+        margin-top: 200px;
+        margin-left: -350px;
+        text-align: center;
+        font-size: 30px
+    }
+
+    #our-mission-image{
+        margin-top: -510px;
+        margin-left: 160px;
+    }
+
+    #vision-div{
+        margin-left: 0px;
+        width: 500px;
+        text-align: center;
+    }
+
+    #vision-title{
+        font-size: 30px;
+    }
+    
+    #vision-text{
+        line-height: 30px;
+        font-size: 10px;
+    }
+    
+    #values-text{
+        line-height: 30px;
+        font-size: 10px;
+        text-align: center;
+        margin-left: -340px;
+    }
+    
+    #values-list{
+        margin-left: -300px;
+        line-height: 30px;
+        margin-top: 10px;
+        font-size: 10px;
+        text-align: left;
+    }
+
+    #values-title{
+        margin-left: -480px;
+        text-align: center;
+        font-size: 30px;
+    }
 }
