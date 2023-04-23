@@ -17,6 +17,7 @@ import UpdateSurvivorModal from '../components/modals/UpdateSurvivorModal';
 import AddBlog from '../forms/AddBlog';
 import SurvivorsSearch from '../forms/SurvivorsSearch';
 import BlogsSearch from '../forms/BlogsSearch';
+import BlogCards from '../components/BlogCards';
 
 const Dashboard = ({
 	renderUpdateForm,
@@ -144,6 +145,7 @@ const Dashboard = ({
 					</TabPanel>
 					<TabPanel>
 						<BlogsSearch search={search} setSearch={setSearch} />
+						<BlogCards/>
 					</TabPanel>
 				</TabPanels>
 			</Tabs>
