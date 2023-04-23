@@ -183,3 +183,10 @@ test:
         read:
           mode: :primary
         max_pool_size: 1
+
+production:
+  clients:
+    default:
+      uri: mongodb://mongo:27uYzPhEq4mhhVAOEydL@containers-us-west-176.railway.app:6028
+      options:
+        server_selection_timeout: 5
