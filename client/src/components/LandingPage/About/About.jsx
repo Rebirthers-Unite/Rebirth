@@ -25,7 +25,7 @@ function About() {
 					</p>
 					<div className='flex items-center justify-center'>
 						<button id='learn-more-button' onClick={() => {navigate('/aboutus')}}>
-							Learn More   <i class="fa-solid fa-arrow-right"></i>
+							Learn More   <i className="fa-solid fa-arrow-right"></i>
 						</button>
 					</div>
 				</div>
