@@ -12,6 +12,7 @@ class ProgramsController < ApplicationController
   # GET /programs/1
   def show
     render json: @program
+    # render json: {program: @program, image_url: @program.image_url }
   end
 
   # POST /programs
