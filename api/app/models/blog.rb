@@ -5,6 +5,9 @@ class Blog
     field :description, type: String
     field :author, type: String
     # field :user_id, type: Integer
+    field :image_data, type: String
+
+    include ImageUploader::Attachment(:image)
   
     belongs_to :user
   
