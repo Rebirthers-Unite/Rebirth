@@ -122,11 +122,11 @@ const SurvivorsDetails = ({
 						{survivor.guardianContact}
 					</Text>
 				</CardBody>
-				<Image
+				{/* <Image
 					objectFit="cover"
 					src="https://placehold.co/600x400"
 					alt="Image goes here"
-				/>
+				/> */}
 			</Card>
 			<HStack justify={'center'} gap={'1rem'} mt={'1rem'}>
 				<Button onClick={renderUpdateSurvivorModal}>UPDATE DETAILS</Button>
@@ -147,6 +147,9 @@ const SurvivorsDetails = ({
 				setNewSurvivor={setNewSurvivor}
 				survivors={survivors}
 				setSurvivors={setSurvivors}
+				names={survivor.name}
+				survivor={survivor}
+				setSurvivor={setSurvivor}
 			/>
 			<DeleteSurvivorModal
 				deleteModalOpen={deleteModalOpen}

@@ -16,6 +16,9 @@ const UpdateDetailsForm = ({
 	isUpdating,
 	closeUpdateSurvivorModal,
 	survivors,
+	names,
+	survivor,
+	setSurvivor,
 	// setSurvivors,
 }) => {
 	const { id } = useParams();
@@ -42,7 +45,7 @@ const UpdateDetailsForm = ({
 			fetch(`http://localhost:8000/survivors/${id}`, {
 				method: 'PATCH',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(newSurvivor),
+				body: JSON.stringify(survivor),
 			})
 				.then((response) => {
 					if (!response.ok) {
@@ -52,7 +55,7 @@ const UpdateDetailsForm = ({
 				})
 				.then((data) => {
 					console.log(data);
-					setNewSurvivor(data);
+					setSurvivor(data);
 				})
 				.catch((error) => {
 					console.error('Error:', error);
@@ -73,7 +76,7 @@ const UpdateDetailsForm = ({
 				})
 				.then((data) => {
 					console.log(data);
-					setNewSurvivor(data);
+					setNewSurvivor("");
 				})
 				.catch((error) => {
 					console.error('Error:', error);
@@ -86,28 +89,61 @@ const UpdateDetailsForm = ({
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 
-		setNewSurvivor((prevState) => ({ ...prevState, [name]: value }));
+		isUpdating
+			? setSurvivor((prevState) => ({ ...prevState, [name]: value }))
+			: setNewSurvivor((prevState) => ({ ...prevState, [name]: value }));
+
 		console.log(newSurvivor);
+		// console.log(survivor);
 	};
 
 	return (
 		<FormControl as={'form'}>
 			<FormLabel>Name</FormLabel>
-			<Input type="text" name="name" onChange={handleChange} />
+			<Input
+				type="text"
+				name="name"
+				value={isUpdating ? survivor.name : newSurvivor.name}
+				onChange={handleChange}
+			/>
 
 			<FormLabel>Contact</FormLabel>
-			<Input type="text" name="contact" onChange={handleChange} />
+			<Input
+				type="text"
+				value={isUpdating ? survivor.contact : newSurvivor.contact}
+				name="contact"
+				onChange={handleChange}
+			/>
 
 			<FormLabel>Date of Birth</FormLabel>
-			<Input type="date" name="dateOfBirth" onChange={handleChange} />
+			<Input
+				type="date"
+				name="dateOfBirth"
+				value={isUpdating ? survivor.dateOfBirth : newSurvivor.dateOfBirth}
+				onChange={handleChange}
+			/>
 
 			<FormLabel>Referring Organization</FormLabel>
-			<Input type="text" name="referringOrganization" onChange={handleChange} />
+			<Input
+				type="text"
+				name="referringOrganization"
+				value={
+					isUpdating
+						? survivor.referringOrganization
+						: newSurvivor.referringOrganization
+				}
+				onChange={handleChange}
+			/>
 
 			<FormLabel>Referring Organization Contacts</FormLabel>
 			<Input
 				type="text"
 				name="referringOrganizationContact"
+				value={
+					isUpdating
+						? survivor.referringOrganizationContact
+						: newSurvivor.referringOrganizationContact
+				}
 				onChange={handleChange}
 			/>
 
@@ -126,16 +162,38 @@ const UpdateDetailsForm = ({
 			/> */}
 
 			<FormLabel>Date of Entry</FormLabel>
-			<Input type="date" name="dateOfEntry" onChange={handleChange} />
+			<Input
+				type="date"
+				name="dateOfEntry"
+				value={isUpdating ? survivor.dateOfEntry : newSurvivor.dateOfEntry}
+				onChange={handleChange}
+			/>
 
 			<FormLabel>Date of Exit</FormLabel>
-			<Input type="date" name="dateofExit" onChange={handleChange} />
+			<Input
+				type="date"
+				name="dateofExit"
+				value={isUpdating ? survivor.dateofExit : newSurvivor.dateofExit}
+				onChange={handleChange}
+			/>
 
 			<FormLabel>Guardian</FormLabel>
-			<Input type="text" name="guardian" onChange={handleChange} />
+			<Input
+				type="text"
+				name="guardian"
+				value={isUpdating ? survivor.guardian : newSurvivor.guardian}
+				onChange={handleChange}
+			/>
 
 			<FormLabel>Guardian Contacts</FormLabel>
-			<Input type="text" name="guardianContact" onChange={handleChange} />
+			<Input
+				type="text"
+				name="guardianContact"
+				value={
+					isUpdating ? survivor.guardianContact : newSurvivor.guardianContact
+				}
+				onChange={handleChange}
+			/>
 
 			<Button onClick={handleSubmit} type="submit" colorScheme="blue" mt={5}>
 				{isUpdating ? 'Update Survivor' : 'Add New Survivor'}

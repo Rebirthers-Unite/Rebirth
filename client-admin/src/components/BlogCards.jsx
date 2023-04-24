@@ -8,41 +8,49 @@ import {
 	Stack,
 	Text,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const BlogCards = () => {
-	return (
+	const [blogs, setBlogs] = useState([]);
+
+	useEffect(() => {
+		fetch('https://api.npoint.io/62bd0112b5ad0a6566ae/blogs/').then((r) => {
+			r.ok ? r.json().then((data) => setBlogs(data)) : 'Problems!';
+		});
+	}, []);
+
+	return blogs.map((blog) => (
 		<Card
 			direction={{ base: 'column', sm: 'row' }}
 			overflow="hidden"
 			variant="outline"
+			m={'1rem'}
 		>
 			<Image
 				objectFit="cover"
 				maxW={{ base: '100%', sm: '200px' }}
-				src="https://via.placeholder.com/300x300"
-				alt="Placeholder Image"
+				src={blog.image}
+				alt={blog.title}
 			/>
 
 			<Stack>
 				<CardBody>
-					<Heading size="md">Blog Title Goes Here</Heading>
+					<Heading size="md">{blog.title}</Heading>
 
-					<Text py="2">
-						Blog preview goes here. Blog preview goes here. Blog preview goes
-						here. Blog preview goes here. Blog preview goes here. Blog preview
-						goes here. Blog preview goes here. Blog preview goes here.
-					</Text>
+					<Text py="2">{blog.body.substring(0, 100)}...</Text>
 				</CardBody>
 
 				<CardFooter>
-					<Button variant="solid" colorScheme="blue">
-						View Blog
-					</Button>
+					<Link to={`/blog/${blog.id}`}>
+						<Button variant="solid" colorScheme="blue">
+							View Blog
+						</Button>
+					</Link>
 				</CardFooter>
 			</Stack>
 		</Card>
-	);
+	));
 };
 
 export default BlogCards;

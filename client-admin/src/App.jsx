@@ -11,6 +11,7 @@ import Dashboard from './pages/Dashboard';
 import SurvivorsDetails from './components/SurvivorsDetails';
 import RootLayout from './components/layouts/RootLayout';
 import StaffDetails from './components/StaffDetails';
+import BlogDetails from './components/BlogDetails';
 
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -19,17 +20,23 @@ function App() {
 	const [isUpdating, setIsUpdating] = useState(false);
 	const [survivors, setSurvivors] = useState([]);
 	const [staff, setStaff] = useState([]);
+	const [updateBlogsModalOpen, setUpdateBlogsModalOpen] = useState(false);
+	const [deleteBlogsModalOpen, setDeleteBlogsModalOpen] = useState(false);
+	// const [blogIsUpdating, setBlogIsUpdating] = useState(false);
 	const [newSurvivor, setNewSurvivor] = useState({
 		name: '',
-		contact: '',
-		dateOfBirth: '',
-		referringOrganization: '',
-		referringOrganizationContact: '',
-		programs: '',
+		date_of_birth: '',
+		organization: '',
+		organization_contact: '',
+		organization_email: '',
+		guardian_name: '',
+		contact_of_guardian: '',
+		level_of_education: '',
+		school: '',
+		social_asset_building: '',
+		children: '',
 		dateOfEntry: '',
-		dateofExit: '',
-		guardian: '',
-		guardianContact: '',
+		dateOfExit: '',
 	});
 
 	const renderUpdateForm = () => {
@@ -52,12 +59,28 @@ function App() {
 		setIsOpen(false);
 		setDeleteModalOpen(false);
 	};
+	const closeUpdateBlogModal = () => {
+		setUpdateBlogsModalOpen(false);
+	};
+
+	const closeDeleteBlogModal = () => {
+		setDeleteBlogsModalOpen(false);
+	
+	}
+
+	const renderDeleteBlogModal = () => {
+		setDeleteBlogsModalOpen(true);
+	};
+
+	const renderUpdateBlogModal = () => {
+		setUpdateBlogsModalOpen(true);
+	};
 
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route path="/" element={<RootLayout />}>
-				<Route path="/login" element={<Login />} />
-				<Route path="/signup" element={<Signup />} />
+				{/* <Route path="/login" element={<Login />} />
+				<Route path="/signup" element={<Signup />} /> */}
 				<Route
 					path="/dashboard"
 					element={
@@ -97,6 +120,19 @@ function App() {
 					}
 				/>
 				<Route path="/staff/:id" element={<StaffDetails />} />
+				<Route
+					path="/blog/:id"
+					element={
+						<BlogDetails
+							renderUpdateBlogModal={renderUpdateBlogModal}
+							renderDeleteBlogModal={renderDeleteBlogModal}
+							closeUpdateBlogModal={closeUpdateBlogModal}
+							updateBlogsModalOpen={updateBlogsModalOpen}
+							deleteBlogsModalOpen={deleteBlogsModalOpen}
+							closeDeleteBlogModal={closeDeleteBlogModal}
+						/>
+					}
+				/>
 			</Route>
 		)
 	);
