@@ -13,8 +13,6 @@ import {
 const DeleteBlogsModal = ({
 	deleteModalOpen,
 	closeDeleteBlogModal,
-	deleteSurvivor,
-	survivorName,
 }) => {
 	return (
 		<div>
@@ -30,13 +28,13 @@ const DeleteBlogsModal = ({
 						justifyContent={'center'}
 						textAlign={'center'}
 					>
-						Delete {survivorName} from the database?
+						Delete {"PUT BLOG NAME HERE"} from the database?
 						<br />
 						This action is irreversible
 					</ModalBody>
 					<ModalFooter>
-						<Button bg={'red.400'} mr={3} onClick={deleteSurvivor}>
-							DELETE
+						<Button bg={'red.400'} mr={3} >
+							DELETE	{/* "THIS BUTTON IS THE ONE THAT ACTUALLY MAKES THE FETCH REQUEST" PUT THE FETCH FUNCTION HERE ONCLICK*/}
 						</Button>
 						<Button color="red.400" mr={3} onClick={closeDeleteBlogModal}>
 							Cancel
