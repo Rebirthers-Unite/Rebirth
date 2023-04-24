@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import './NavBar.css'
 import logo from '../../assets/logo.png'
-import {AiOutlineClose} from 'react-icons/ai'
+import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai'
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -10,9 +9,9 @@ const Navbar = () => {
 		setNav(!nav);
 	};
 	return (
-		<div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4' id='navbar'>
-			<img src={logo} alt='logo' style={{width: '110px', marginTop: '50px'}}/>
-			<ul className='hidden md:flex'>
+		<div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4'>
+			<img src={logo} alt='logo' className='w-28 md:w-40 sm:pt-12 md:pt-20'/>
+			<ul className='hidden md:flex flex-wrap justify-end items-center gap-4'>
 				<NavLink to='/' className='p-4 hover:text-yellow-300 hover:font-bold'>
 					{' '}
 					Home{' '}
