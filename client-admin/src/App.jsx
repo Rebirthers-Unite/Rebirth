@@ -12,6 +12,8 @@ import SurvivorsDetails from './components/SurvivorsDetails';
 import RootLayout from './components/layouts/RootLayout';
 import StaffDetails from './components/StaffDetails';
 import BlogDetails from './components/BlogDetails';
+import StaffControlForm from './forms/StaffControlForm';
+import UpdateStaff from './forms/UpdateStaff';
 
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -65,8 +67,7 @@ function App() {
 
 	const closeDeleteBlogModal = () => {
 		setDeleteBlogsModalOpen(false);
-	
-	}
+	};
 
 	const renderDeleteBlogModal = () => {
 		setDeleteBlogsModalOpen(true);
@@ -133,6 +134,9 @@ function App() {
 						/>
 					}
 				/>
+				<Route path="/add-staff" element={<StaffControlForm />} />
+				<Route path="/update-staff" element={<UpdateStaff />} />
+				<Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
 			</Route>
 		)
 	);

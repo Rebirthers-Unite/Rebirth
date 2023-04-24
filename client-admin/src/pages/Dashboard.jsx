@@ -18,6 +18,8 @@ import AddBlog from '../forms/AddBlog';
 import SurvivorsSearch from '../forms/SurvivorsSearch';
 import BlogsSearch from '../forms/BlogsSearch';
 import BlogCards from '../components/BlogCards';
+import StaffControlForm from '../forms/StaffControlForm';
+import { Link } from 'react-router-dom';
 
 const Dashboard = ({
 	renderUpdateForm,
@@ -31,6 +33,9 @@ const Dashboard = ({
 	setSurvivors,
 	staff,
 	setStaff,
+	renderStaffControlModal,
+	staffControlModalIsOpen,
+	closeStaffControlModal,
 }) => {
 	const [search, setSearch] = useState('');
 
@@ -40,7 +45,7 @@ const Dashboard = ({
 		});
 	}, [newSurvivor]);
 
-	const [tabIndex, setTabIndex] = useState(0)
+	const [tabIndex, setTabIndex] = useState(0);
 
 	return (
 		<Box>
@@ -128,12 +133,11 @@ const Dashboard = ({
 								color={'white'}
 								_hover={{ bg: 'purple.500' }}
 							>
-								Add Staff
+								<Link to={"/add-staff"}>Add Staff</Link>
 							</Button>
 						</HStack>
 
 						<StaffList
-							// renderUpdateForm={renderUpdateForm}
 							staff={staff.filter((staffMember) =>
 								staffMember.name.toLowerCase().includes(search.toLowerCase())
 							)}
@@ -145,7 +149,7 @@ const Dashboard = ({
 					</TabPanel>
 					<TabPanel>
 						<BlogsSearch search={search} setSearch={setSearch} />
-						<BlogCards/>
+						<BlogCards />
 					</TabPanel>
 				</TabPanels>
 			</Tabs>

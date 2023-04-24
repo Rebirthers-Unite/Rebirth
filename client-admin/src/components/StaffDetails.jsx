@@ -17,7 +17,7 @@ import {
 import { useState, useEffect } from 'react';
 import { RiBriefcase5Fill, RiGenderlessFill, RiGenderlessLine } from 'react-icons/ri';
 import { BsGenderAmbiguous } from 'react-icons/bs';
-import { useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 const StaffDetails = () => {
 	const [staffMember, setStaffMember] = useState({});
 	const { id } = useParams();
@@ -91,7 +91,9 @@ const StaffDetails = () => {
 				/>
 			</Card>
 			<HStack justify={'center'} gap={'1rem'} mt={'1rem'}>
-				<Button>UPDATE DETAILS</Button>
+				<Button>
+					<Link to="/update-staff">UPDATE DETAILS</Link>
+				</Button>
 				<Button bg={'red.500'}>DELETE STAFF</Button>
 			</HStack>
 		</Container>
