@@ -21,7 +21,7 @@ function App() {
         <Route element={<Support/>} path='support' />
         <Route element={<Contact/>} path='contact'/>
         <Route element={<BlogPage/>} path='blogs'/>
-        <Route element={<ViewBlogPage/>} path='blog/id'/>
+        <Route element={<ViewBlogPage/>} path='blog/:id'/>
     </Routes>
    <Footer/>
    </div>

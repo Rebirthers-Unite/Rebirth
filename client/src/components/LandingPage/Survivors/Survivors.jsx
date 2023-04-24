@@ -43,7 +43,7 @@ function Survivors() {
 					<img className="h-30 w-30" src={Face} />
 					<div className="bg-white p-3">
 						<p className="font-light text-l italic font-gray-800">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit
+							"Lorem ipsum dolor sit amet, consectetur adipiscing elit"
 						</p>
 						<p className="mt-1 font-semibold text-sm text-gray-900 p-4">US transport</p>
 					</div>
