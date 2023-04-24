@@ -16,6 +16,7 @@ class UsersController < ApplicationController
       render json: @user.errors, status: :unprocessable_entity
     end
   end
+
   # # PATCH method for updating specific fields of a user
   def update
     if @user.update(user_params)
@@ -24,17 +25,20 @@ class UsersController < ApplicationController
       render json: { errors: @user.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
   # # Delete method for removing specific user
   # def destroy
   #   @user.destroy
   #   head :no_content
   # end
   private
-    def user_params
-      params.permit(:name, :email, :role, :password)
-    end
-    def set_user
-      # Find a specific user with the given id parameter
-      @user = User.find(params[:id])
-    end
+
+  def user_params
+    params.permit(:name, :email, :role, :password)
+  end
+
+  def set_user
+    # Find a specific user with the given id parameter
+    @user = User.find(params[:id])
+  end
 end

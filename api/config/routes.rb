@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :galleries
+
+  # Routes for CRUD operations programs
+  resources :programs
+  
+  # Routes for CRUD operations staff
+  resources :staffs
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
     #Route for creating a new user
@@ -6,6 +14,12 @@ Rails.application.routes.draw do
 
     #Route for Logging in an existing user
     post '/login', to: 'auth#create'
+
+    #Route for updating a user 
+    patch '/users/:id', to: 'users#update'
+
+    #Route for deleting a user
+    delete '/users/:id', to: 'users#destroy'
 
 
     # Route for retrieving all survivors
