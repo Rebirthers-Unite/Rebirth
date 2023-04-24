@@ -35,21 +35,15 @@ function Survivors() {
 						</div>
 				<div className='md:w-full sm:w-4/5 sm:ml-20 md:ml-2 shadow-xl flex bg-white text-black flex-col p-4 sm:mt-56 md:mt-2 my-4 ml-2 rounded-lg hover:scale-105 duration-300'>
 						<img className='w-30 mx-auto mt-[1rem] bg-white' src={Face} />
-
-			<div className="max-w-sm h-100 me-4">
-				<div className="shadow-lg rounded overflow-hidden">
-					<img className="h-30 w-30" src={Face} />
-					<div className="bg-white p-3">
 						<p className="font-light text-l italic font-gray-800">
 							"Lorem ipsum dolor sit amet, consectetur adipiscing elit"
 						</p>
-						<p className="mt-1 font-semibold text-sm text-gray-900 p-4">US transport</p>
+						<p className="mt-1 font-semibold text-sm text-gray-900 p-4">
+							US transport
+							</p>
 					</div>
 				</div>
 			</div>
-</div>
-			</div>
-		</div>
 	);
 }
 

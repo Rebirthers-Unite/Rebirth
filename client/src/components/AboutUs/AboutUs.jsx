@@ -5,30 +5,35 @@ import study from '../../assets/study.JPG';
 
 export const AboutUs = () => {
 	return (
-		<div id='about-us-page'>
-			<p className='text-5xl font-serif' id='our-story'>
-				Our Story
-			</p>
+		<div
+			id='about-us-page'
+			className='bg-purple-300 mt-[-100px] font-serif p-20 text-black'>
+			<div className='sm:pt-18 sm:pb-8 md:pt-20 justify-center text-center'>
+				<p className='sm:text-5xl md:text-4xl' id='our-story'>
+					Our Story
+				</p>
 
-			<p className='font-sans' id='who-we-are-content'>
-				We are a community-based organization that champions for the empowerment
-				of survivors of sexual /gender-based violence and human trafficking
-				through healing, mentorship, education and empowerment. Founded in 2019,
-				Rebirth of a Queen has been in a commitment to create a safe space for
-				survivors and the vulnerable in the community to be the voices. Our
-				Target group has and still remains to be young women, girls, teenage
-				Mothers and survivors of sexual and gender-based violence.
-			</p>
+				<p className='sm:pt-2 md:text-2xl sm:text-xl'>
+					We are a community-based organization that champions for the
+					empowerment of survivors of sexual /gender-based violence and human
+					trafficking through healing, mentorship, education and empowerment.
+					Founded in 2019, Rebirth of a Queen has been in a commitment to create
+					a safe space for survivors and the vulnerable in the community to be
+					the voices. Our Target group has and still remains to be young women,
+					girls, teenage Mothers and survivors of sexual and gender-based
+					violence.
+				</p>
+			</div>
 
-			<div className='grid grid-cols-2 gap-4'>
+			<div className='grid md:grid-cols-2 sm:grid-cols-1 gap-8'>
 				<div>
-					<img src={whoWeAre} alt='who we are' id='our-story-image' />
+					<img src={whoWeAre} alt='who we are' className='' size={28} />
 				</div>
 				<div className='flex flex-col justify-center'>
-					<p className='text-5xl font-serif' id='our-mission-title'>
+					<p className='md:text-6xl sm:text-4xl text-center font-serif'>
 						Our Mission
 					</p>
-					<p className='mt-3 font-sans' id='mission-text'>
+					<p className='mt-3 font-serif sm:text-xl text-center'>
 						To advocate and create safe spaces for survivors of sexual/
 						gender-based violence and human trafficking among vulnerable groups
 						in the community through sustainable rescues, shelters, mentorship
@@ -37,35 +42,39 @@ export const AboutUs = () => {
 				</div>
 			</div>
 
-			<div className='grid grid-cols-2 gap-4 mt-16'>
+			<div className='grid md:grid-cols-2 sm:grid-cols-1 gap-8 mt-16'>
+				<div>
+					<img src={study} alt='who we are' />
+				</div>
 				<div className='flex flex-col justify-center'>
-					<p className='text-5xl font-serif' id='vision-title'>
+					<p
+						className='sm:text-5xl md:text-6xl text-center font-serif'
+						id='vision-title'>
 						Our Vision
 					</p>
-					<p className='mt-3 font-sans' id='vision-text'>
+					<p className='mt-3 text-center sm:text-xl font-serif'>
 						A frontier organization in ending sexual/ gender-based violence and
 						human trafficking in the community{' '}
 					</p>
 				</div>
-				<div>
-					<img src={study} alt='who we are' id='our-vision-image' />
-				</div>
 			</div>
 
-			<div className='grid grid-cols-2 gap-4 mt-16'>
+			<div className='grid md:grid-cols-2 sm:grid-cols-1 gap-8 mt-16'>
 				<div>
-					<img src={teamWork} alt='who we are' id='our-mission-image' />
+					<img src={teamWork} alt='who we are' />
 				</div>
 				<div className='flex flex-col justify-center'>
-					<p className='text-5xl font-serif' id='values-title'>
+					<p
+						className='sm:text-5xl md:text-6xl text-center font-serif'
+						id='values-title'>
 						Our Values
 					</p>
-					<p className='mt-3 font-sans' id='values-text'>
+					<p className='mt-3  sm:text-xl font-serif' id='values-text'>
 						As a young team, we take pride in the values of our organization
 						that makes us who we are and the impact we intend to make in the
 						community.{' '}
 					</p>
-					<ul className='list-disc' id='values-list'>
+					<ul className='list-disc sm:text-xl sm:pl-4'>
 						<li>Authenticity</li>
 						<li>Compassion</li>
 						<li>Integrity</li>
