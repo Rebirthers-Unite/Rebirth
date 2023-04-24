@@ -7,7 +7,7 @@ import study from '../../assets/study.JPG'
 export const AboutUs = () => {
   return (
     <div id='about-us-page'>
-        <p className='text-5xl font-bold font-serif' id='our-story'>Our Story</p>
+        <p className='text-5xl font-serif' id='our-story'>Our Story</p>
 
           <p className='font-sans' id='who-we-are-content'> 
             We are a community-based organization that champions for the empowerment of survivors of sexual /gender-based
@@ -21,7 +21,7 @@ export const AboutUs = () => {
               <img src={whoWeAre} alt='who we are' id='our-story-image'/>
             </div>
             <div className='col-6 mt-5'>
-              <p className='text-5xl font-serif'>Our Mission</p>
+              <p className='text-5xl font-serif' id='our-mission-title'>Our Mission</p>
               <p className='mt-3 font-sans' id='mission-text'>To advocate and create safe spaces for survivors of sexual/ gender-based violence and human 
                 trafficking among vulnerable groups in the community through sustainable rescues, shelters, 
                 mentorship and empowerment. </p>
@@ -31,7 +31,7 @@ export const AboutUs = () => {
 
           <div className='row'>
             <div className='col-6 mt-5' id='vision-div'>
-              <p className='text-5xl font-serif' >Our Vision</p>
+              <p className='text-5xl font-serif' id='vision-title' >Our Vision</p>
               <p className='mt-3 font-sans' id='vision-text'>A frontier organization in ending sexual/ gender-based violence and human trafficking in the community </p>
             </div> 
             <div className='col-6'>
@@ -41,10 +41,10 @@ export const AboutUs = () => {
 
           <div className='row'>
             <div className='col-6'>
-              <img src={teamWork} alt='who we are' id='our-story-image'/>
+              <img src={teamWork} alt='who we are' id='our-mission-image'/>
             </div>
             <div className='col-6 mt-5'>
-              <p className='text-5xl font-serif' >Our Values</p>
+              <p className='text-5xl font-serif' id='values-title'>Our Values</p>
               <p className='mt-3 font-sans' id='values-text'>As a young team, we take pride in the values of our organization 
               that makes us who we are and the impact we intend to make in the community. </p>
               <ul className='list-disc' id='values-list'>

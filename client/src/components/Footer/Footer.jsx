@@ -4,12 +4,6 @@ import { MdEmail } from 'react-icons/md'
 import {Link} from 'react-router-dom'
 
 function Footer() {
-	const usefulLinks = [
-		'Our Team',
-		'Privacy Policy',
-		'Our Blogs',
-		'Our Sponsors',
-	];
 	const ourPrograms = [
 		'Safe House',
 		'Elimisha Project',
@@ -21,27 +15,31 @@ function Footer() {
 		<div className='max-w-[100vw] bg-black mx-auto py-6 px-6 grid lg:grid-cols-3 gap-8 text-gray-300'>
 			<div className='md:lg:col-span-3 md:grid-cols-3 md:pl-2 sm:gap-20 sm:grid-cols-2 md:gap-6 md:grid justify-between cursor-pointer'>
 				<div>
-					<h1 className='font-bold sm:text-xl md:text-2xl text-[#824cc6]'>
+					<h1 className='font-bold font-serif sm:text-xl md:text-2xl text-[#824cc6]'>
 						Useful Links
 					</h1>
-					<ul>
-						{usefulLinks.map((e, index) => (
-							<li key={index} className='py-1 text-medium'> {e} </li>
-						))}
+					<ul style={{lineHeight: '30px'}}>
+						<Link to='/aboutus'>About</Link><br></br>
+						<Link to='/blogs'>Blogs</Link><br></br>
+						<Link to='/programs'>Programs</Link><br></br>
+						<Link to='/contact'>Support</Link><br></br>
+						<Link to='/support'>Contact</Link><br></br>
 					</ul>
 				</div>
 				<div>
-					<h1 className='font-bold sm:text-xl sm:py-2 md:text-2xl text-[#824cc6]'>
+					<h1 className='font-bold font-serif sm:text-xl sm:py-2 md:text-2xl text-[#824cc6]'>
 						Our Programs
 					</h1>
-					<ul>
+					<ul style={{lineHeight: '30px'}}>
 						{ourPrograms.map((e, index) => (
-							<li key={index} className='py-1 text-medium'>{e}</li>
+							<div key={index}>
+								<Link key={index} className='py-1 text-medium' to='/programs'>{e}</Link><br></br>
+							</div>
 						))}
 					</ul>
 				</div>
 				<div>
-					<h1 className='font-bold sm:text-xl sm:py-2 md:text-2xl text-[#824cc6]'>
+					<h1 className='font-bold font-serif sm:text-xl sm:py-2 md:text-2xl text-[#824cc6]'>
 						Contact Us
 					</h1>
 					<ul>
@@ -65,7 +63,7 @@ function Footer() {
 					</ul>
 				</div>
 				<div>
-					<h1 className='w-full text-3xl font-bold text-[#ffcc3d]'>REBIRTH</h1>
+					<h1 className='w-full text-3xl font-bold font-serif text-[#ffcc3d]'>REBIRTH OF A QUEEN</h1>
 					<div className='flex sm:gap-10 md:gap-12 py-2 justify-between'>
 						<a href='https://www.facebook.com/RebirthofaQueen'>
 							<FaFacebook

@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
-import { FiUser } from 'react-icons/fi';// Import the FiUser icon from React Icons Linkbrary
-import { Link } from 'react-router-dom';
+import './NavBar.css'
+import logo from '../../assets/logo.png'
+import {AiOutlineClose} from 'react-icons/ai'
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
 	const [nav, setNav] = useState(false);
@@ -8,42 +10,41 @@ const Navbar = () => {
 		setNav(!nav);
 	};
 	return (
-		<div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4'>
-			<h1 className='w-full text-3xl font-bold text-[#ffcc3d] flex'>REBIRTH</h1>
-			<h1 className='w-full text-3xl font-bold text-[#ffcc3d] flex'>REBIRTH</h1>
+		<div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4' id='navbar'>
+			<img src={logo} alt='logo' style={{width: '110px', marginTop: '50px'}}/>
 			<ul className='hidden md:flex'>
-				<Link to='/' className='p-4 hover:text-yellow-300 hover:font-bold'>
+				<NavLink to='/' className='p-4 hover:text-yellow-300 hover:font-bold'>
 					{' '}
 					Home{' '}
-				</Link>
-				<Link
+				</NavLink>
+				<NavLink
 					to='/aboutus'
 					className='p-4 hover:text-yellow-300 hover:font-bold'>
 					{' '}
 					About{' '}
-				</Link>
-				<Link
+				</NavLink>
+				<NavLink
 					to='/blogs'
 					className='p-4 hover:text-yellow-300 hover:font-bold'>
 					Blogs
-				</Link>
-				<Link
+				</NavLink>
+				<NavLink
 					to='/programs'
 					className='p-4 hover:text-yellow-300 hover:font-bold'>
 					Programs
-				</Link>
-				<Link
-					to='/contact'
-					className='p-4 hover:text-yellow-300 hover:font-bold'>
-					{' '}
-					Contact{' '}
-				</Link>
-				<Link
+				</NavLink>
+				<NavLink
 					to='/support'
 					className='p-4 hover:text-yellow-300 hover:font-bold'>
 					{' '}
 					Support{' '}
-				</Link>
+				</NavLink>
+				<NavLink
+					to='/contact'
+					className='p-4 hover:text-yellow-300 hover:font-bold'>
+					{' '}
+					Contact{' '}
+				</NavLink>
 			</ul>
 			<div
 				onClick={handleNav}
@@ -58,22 +59,22 @@ const Navbar = () => {
 				}>
 				<ul className='p-12 uppercase'>
 					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
-						<Link to='/'>Home </Link>
+						<NavLink to='/'>Home </NavLink>
 					</li>
 					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
-						<Link to='/aboutus'>About </Link>
+						<NavLink to='/aboutus'>About </NavLink>
 					</li>
 					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
-						<Link to='/blogs'>Blogs</Link>
+						<NavLink to='/blogs'>Blogs</NavLink>
 					</li>
 					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
-						<Link to='/programs'>Programs </Link>
+						<NavLink to='/programs'>Programs </NavLink>
 					</li>
 					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
-						<Link to='/contact'>Contact </Link>
+						<NavLink to='/contact'>Contact </NavLink>
 					</li>
 					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
-						<Link to='/support'>Support</Link>
+						<NavLink to='/support'>Support</NavLink>
 					</li>
 				</ul>
 			</div>

@@ -1,60 +1,42 @@
 import React from 'react'
 import './contact.css'
+import {BsSend} from 'react-icons/bs'
 import { Container, Row, Col } from 'react-bootstrap'
 
 function Contact() {
   return (
-		<Container className='pb-12'>
-			<Row className='mb-5 mt-3'>
-				<Col lg='8'>
-					<h1 className='display-4 mb-4'>Contact Us</h1>
-				</Col>
-			</Row>
-			<Row className='sec_sp'>
-				<Col lg='5' className='mb-5'>
-					<strong className='color_sec py-4'>Get in touch</strong>
-					<address>
-						<strong> Email: rebirthofaqueen20@gmail.com </strong>
-						<br />
-						<br />
-						<p>
-							<strong> Phone: +254720339204</strong>
-						</p>
-					</address>
-				</Col>
-				<Col lg='7' className='d-flex align-items-center'>
-					<form className='contact_form w-100'>
-						<Row>
-							<Col lg='6' className='form-group'>
-								<input
-									className='form-control'
-									id='name'
-									name='name'
-									placeholder='Name'
-									type='text'
-								/>
-							</Col>
-							<Col lg='6' className='form-group'>
-								<input
-									className='form-control'
-									id='email'
-									name='email'
-									placeholder='Email'
-									type='email'
-								/>
-							</Col>
-						</Row>
-                        <textarea className='form-control' id='message' name='message' placeholder='Message' rows='5'></textarea>
-                        <br/>
-                        <Row>
-                            <Col lg='12' className='form-group'>
-                                <button className='btn sc_btn' type='submit'> Send </button>
-                            </Col>
-                        </Row>
-					</form>
-				</Col>
-			</Row>
-		</Container>
+		<div id='contact-page'>
+		<div id='div-content'>
+			<div className='mb-5 mt-3' >
+					<h1 className='text-5xl mb-5 font-serif' style={{textAlign:'center'}} id='contact-title'>Contact Us</h1>
+					<h5 style={{textAlign: 'center'}} className='text-3xl' id='contact-welcome'>Got a question or proposal, or just want to say hello? Go ahead.</h5>
+			</div>
+					<form id='contacts-form'>
+					<div className="row mb-3">
+
+						<div className="col-6">
+							<label className="form-label">Your Name</label><br></br>
+							<input type="text" placeholder="Enter your name." className='form-control' required onChange={e => setName(e.target.value)} id='name'/>
+						</div>
+
+						<div className="col-6">
+							<label className='form-label'>Email Address</label><br></br>
+							<input type="email" placeholder="Enter your email address." className='form-control' required onChange={e => setEmail(e.target.value)} id='email'/>
+						</div>
+
+					</div>
+
+					<div className="row mb-3">
+						<label className="form-label">Your Message</label>
+						<textarea type="text" rows='3' placeholder='Enter your message.' className='form-control' required onChange={e => setMessage(e.target.value)} id='message'/>
+					</div>
+
+					<div style={{textAlign: 'center'}}>
+					<button type="submit" id='send-button'>Send Message  <i className="fa-regular fa-paper-plane"></i></button> 
+					</div>		
+				</form>
+			</div>
+		</div>
 	);
 }
 
