@@ -9,7 +9,7 @@ function Contact() {
 		<div id='div-content'>
 			<div className='mb-5 mt-3' >
 					<h1 className='text-5xl mb-5 font-serif' style={{textAlign:'center'}} id='contact-title'>Contact Us</h1>
-					<h5 style={{textAlign: 'center'}} className='text-3xl' id='contact-welcome'>Got a question or proposal, or just want to say hello? Go ahead.</h5>
+					<h5 style={{textAlign: 'center'}} className='md:text-xl sm:text-4xl font-serif'>Got a question or proposal, or just want to say hello? Go ahead.</h5>
 			</div>
 					<form id='contacts-form'>
 					<div className="row mb-3">
