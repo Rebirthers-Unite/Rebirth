@@ -29,7 +29,8 @@ const BlogDetails = ({
 	const navigate = useNavigate();
 	const toast = useToast();
 	useEffect(() => {
-		fetch('http://localhost:8000/blogs/' + id).then(
+		console.log(id)
+		fetch('https://rebirth-ktaf.onrender.com/blogs/' + id).then(
 			(r) => {
 				r.ok
 					? r.json().then((data) => {
@@ -44,7 +45,7 @@ const BlogDetails = ({
 		<Container maxW={'70%'}>
 			<Heading>{blog.title}</Heading>
 			<VStack>
-				<Image src="https://placehold.co/900x500" alt="Image goes here" />
+				<Image src={blog.image_url} alt="Image goes here" />
 				<HStack justify={'space-between'}>
 					<HStack>
 						<Avatar size={'sm'} name={blog.author} />

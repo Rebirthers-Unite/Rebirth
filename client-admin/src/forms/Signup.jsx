@@ -37,7 +37,7 @@ const Signup = () => {
 			email: email, 
 			role: role, 
 			password: password };
-		fetch('https://rebirth-drtz.onrender.com/signup', {
+		fetch('https://rebirth-ktaf.onrender.com/signup', {
 			method: 'POST',
 			headers: {
 				Authorization: `Bearer ${token}`,

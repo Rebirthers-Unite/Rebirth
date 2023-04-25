@@ -32,9 +32,9 @@ const AddBlog = () => {
 	const handleSubmit = (e) => {
 		console.log(newBlog);
 		e.preventDefault();
-		fetch('https://rebirth-drtz.onrender.com/blogs/', {
+		fetch('https://rebirth-ktaf.onrender.com/blogs/', {
 			method: 'POST',
-			headers: { 
+			headers: {
 				Authorization: `Bearer ${token}`,
 				'Content-Type': 'application/json'
 			 },

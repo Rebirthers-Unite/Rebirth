@@ -9,11 +9,19 @@ import {
 	ModalBody,
 	ModalCloseButton,
 } from '@chakra-ui/react';
+import useAuthStore from '../../store/Token';
+
 
 const DeleteBlogsModal = ({ deleteModalOpen, closeDeleteBlogModal, blog }) => {
+	const token = useAuthStore((state) => state.token);
+
 	const deleteBlog = () => {
-		fetch(`http://localhost:8000/blogs/${blog.id}`, {
+		fetch(`https://rebirth-ktaf.onrender.com/blogs/${blog.id["$oid"]}`, {
 			method: 'DELETE',
+			headers: { 
+				Authorization: `Bearer ${token}`,
+				'Content-Type': 'application/json'
+			 },
 		});
 	};
 
