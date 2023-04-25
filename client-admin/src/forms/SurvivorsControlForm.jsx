@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react';
 import React from 'react';
 import { useParams } from 'react-router';
+import useAuthStore from '../store/Token';
 
 const UpdateDetailsForm = ({
 	closeModal,
@@ -21,6 +22,7 @@ const UpdateDetailsForm = ({
 	setSurvivor,
 	// setSurvivors,
 }) => {
+	const token = useAuthStore((state) => state.token);
 	const { id } = useParams();
 
 	const toast = useToast();
@@ -42,9 +44,12 @@ const UpdateDetailsForm = ({
 		console.log(newSurvivor);
 
 		if (isUpdating) {
-			fetch(`http://localhost:8000/survivors/${id}`, {
+			fetch(`https://rebirth-ktaf.onrender.com/${id}`, {
 				method: 'PATCH',
-				headers: { 'Content-Type': 'application/json' },
+				headers: {
+					'Content-Type': 'application/json',
+					Authorization: `Bearer ${token}`,
+				},
 				body: JSON.stringify(survivor),
 			})
 				.then((response) => {
@@ -63,9 +68,12 @@ const UpdateDetailsForm = ({
 			closeUpdateSurvivorModal();
 			window.location.reload();
 		} else {
-			fetch('http://localhost:8000/survivors/', {
+			fetch('https://rebirth-ktaf.onrender.com/survivors/', {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
+				headers: {
+					'Content-Type': 'application/json',
+					Authorization: `Bearer ${token}`,
+				},
 				body: JSON.stringify(newSurvivor),
 			})
 				.then((response) => {
@@ -76,7 +84,7 @@ const UpdateDetailsForm = ({
 				})
 				.then((data) => {
 					console.log(data);
-					setNewSurvivor("");
+					setNewSurvivor('');
 				})
 				.catch((error) => {
 					console.error('Error:', error);
@@ -107,59 +115,101 @@ const UpdateDetailsForm = ({
 				onChange={handleChange}
 			/>
 
-			<FormLabel>Contact</FormLabel>
-			<Input
-				type="text"
-				value={isUpdating ? survivor.contact : newSurvivor.contact}
-				name="contact"
-				onChange={handleChange}
-			/>
-
 			<FormLabel>Date of Birth</FormLabel>
 			<Input
 				type="date"
-				name="dateOfBirth"
-				value={isUpdating ? survivor.dateOfBirth : newSurvivor.dateOfBirth}
+				name="date_of_birth"
+				value={isUpdating ? survivor.date_of_birth : newSurvivor.date_of_birth}
 				onChange={handleChange}
 			/>
 
-			<FormLabel>Referring Organization</FormLabel>
+			<FormLabel>Organization</FormLabel>
 			<Input
 				type="text"
-				name="referringOrganization"
+				name="organization"
+				value={isUpdating ? survivor.organization : newSurvivor.organization}
+				onChange={handleChange}
+			/>
+
+			<FormLabel>Organization Contacts</FormLabel>
+			<Input
+				type="text"
+				name="organization_contact"
 				value={
 					isUpdating
-						? survivor.referringOrganization
-						: newSurvivor.referringOrganization
+						? survivor.organization_contact
+						: newSurvivor.organization_contact
 				}
 				onChange={handleChange}
 			/>
 
-			<FormLabel>Referring Organization Contacts</FormLabel>
+			<FormLabel>Organization Email</FormLabel>
 			<Input
 				type="text"
-				name="referringOrganizationContact"
 				value={
 					isUpdating
-						? survivor.referringOrganizationContact
-						: newSurvivor.referringOrganizationContact
+						? survivor.organization_email
+						: newSurvivor.organization_email
 				}
+				name="organization_email"
+				onChange={handleChange}
+			/>
+			<FormLabel>Guardian Name</FormLabel>
+			<Input
+				type="text"
+				value={isUpdating ? survivor.guardian_name : newSurvivor.guardian_name}
+				name="guardian_name"
+				onChange={handleChange}
+			/>
+			<FormLabel>Guardian Contact</FormLabel>
+			<Input
+				type="text"
+				value={
+					isUpdating
+						? survivor.contact_of_guardian
+						: newSurvivor.contact_of_guardian
+				}
+				name="contact_of_guardian"
+				onChange={handleChange}
+			/>
+			<FormLabel>Education</FormLabel>
+			<Input
+				type="text"
+				value={
+					isUpdating
+						? survivor.level_of_education
+						: newSurvivor.level_of_education
+				}
+				name="level_of_education"
+				onChange={handleChange}
+			/>
+			<FormLabel>School</FormLabel>
+			<Input
+				type="text"
+				value={isUpdating ? survivor.school : newSurvivor.school}
+				name="school"
 				onChange={handleChange}
 			/>
 
-			<FormLabel>Programs</FormLabel>
-			<select name="programs" onChange={handleChange}>
-				<option value="Test 1">Test 1</option>
-				<option value="Test 1">Test 2</option>
-				<option value="Test 1">Test 3</option>
-				<option value="Test 1">Test 4</option>
-			</select>
-			{/* <Input
-				type="select"
-				name="programs"
-				value={programs}
+			<FormLabel>Social Assset Building</FormLabel>
+			<Input
+				type="text"
+				value={
+					isUpdating
+						? survivor.social_asset_building
+						: newSurvivor.social_asset_building
+				}
+				name="social_asset_building"
 				onChange={handleChange}
-			/> */}
+			/>
+
+			<FormLabel>Children</FormLabel>
+			<Input
+				type="text"
+				value={isUpdating ? survivor.children : newSurvivor.children}
+				name="children"
+				onChange={handleChange}
+			/>
 
 			<FormLabel>Date of Entry</FormLabel>
 			<Input
@@ -174,24 +224,6 @@ const UpdateDetailsForm = ({
 				type="date"
 				name="dateofExit"
 				value={isUpdating ? survivor.dateofExit : newSurvivor.dateofExit}
-				onChange={handleChange}
-			/>
-
-			<FormLabel>Guardian</FormLabel>
-			<Input
-				type="text"
-				name="guardian"
-				value={isUpdating ? survivor.guardian : newSurvivor.guardian}
-				onChange={handleChange}
-			/>
-
-			<FormLabel>Guardian Contacts</FormLabel>
-			<Input
-				type="text"
-				name="guardianContact"
-				value={
-					isUpdating ? survivor.guardianContact : newSurvivor.guardianContact
-				}
 				onChange={handleChange}
 			/>
 

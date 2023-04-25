@@ -20,9 +20,10 @@ import BlogsSearch from '../forms/BlogsSearch';
 import BlogCards from '../components/BlogCards';
 import StaffControlForm from '../forms/StaffControlForm';
 import { Link } from 'react-router-dom';
+import useAuthStore from '../store/Token';
 
 const Dashboard = ({
-	renderUpdateForm,
+	renderupdateform,
 	isOpen,
 	closeModal,
 	loading,
@@ -37,17 +38,24 @@ const Dashboard = ({
 	staffControlModalIsOpen,
 	closeStaffControlModal,
 	newStaff,
-	setNewStaff
+	setNewStaff,
 }) => {
+	const token = useAuthStore((state) => state.token);
 	const [search, setSearch] = useState('');
 
 	useEffect(() => {
-		fetch('http://localhost:8000/survivors').then((r) => {
+		fetch('https://rebirth-ktaf.onrender.com/survivors/', {
+			method: 'GET',
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		}).then((r) => {
 			r.ok ? r.json().then((data) => setSurvivors(data)) : 'Problems!';
 		});
 	}, [newSurvivor]);
 
 	const [tabIndex, setTabIndex] = useState(0);
+	const [searchStaff, setSearchStaff] = useState('');
 
 	return (
 		<Box>
@@ -106,14 +114,14 @@ const Dashboard = ({
 								bg={'purple.300'}
 								color={'white'}
 								_hover={{ bg: 'purple.500' }}
-								onClick={renderUpdateForm}
+								onClick={renderupdateform}
 							>
 								Add Survivor
 							</Button>
 						</HStack>
 
 						<SurvivorsList
-							renderUpdateForm={renderUpdateForm}
+							renderupdateform={renderupdateform}
 							survivors={survivors.filter((survivor) =>
 								survivor.name.toLowerCase().includes(search.toLowerCase())
 							)}
@@ -129,13 +137,16 @@ const Dashboard = ({
 					</TabPanel>
 					<TabPanel>
 						<HStack justify={'space-between'}>
-							<SearchStaff search={search} setSearch={setSearch} />
+							<SearchStaff
+								searchStaff={searchStaff}
+								setSearchStaff={setSearchStaff}
+							/>
 							<Button
 								bg={'purple.300'}
 								color={'white'}
 								_hover={{ bg: 'purple.500' }}
 							>
-								<Link to={"/add-staff"}>Add Staff</Link>
+								<Link to={'/add-staff'}>Add Staff</Link>
 							</Button>
 						</HStack>
 

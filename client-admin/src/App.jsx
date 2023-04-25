@@ -49,14 +49,14 @@ function App() {
 		gender: '',
 	});
 
-	const renderUpdateForm = () => {
+	const renderupdateform = () => {
 		setIsOpen(true);
 	};
 	const renderDeleteSurvivorModal = () => {
 		setDeleteModalOpen(true);
 	};
 
-	const renderUpdateSurvivorModal = () => {
+	const renderupdatesurvivormodal = () => {
 		setIsUpdating(true);
 		setUpdateModalOpen(true);
 	};
@@ -94,7 +94,7 @@ function App() {
 					path="/dashboard"
 					element={
 						<Dashboard
-							renderUpdateForm={renderUpdateForm}
+							renderupdateform={renderupdateform}
 							isOpen={isOpen}
 							closeModal={closeModal}
 							newSurvivor={newSurvivor}
@@ -107,7 +107,7 @@ function App() {
 					}
 				/>
 				<Route
-					path="/survivor/:id"
+					path="/survivors/:id"
 					element={
 						<SurvivorsDetails
 							setUpdateModalOpen={setUpdateModalOpen}
@@ -116,7 +116,7 @@ function App() {
 							deleteModalOpen={deleteModalOpen}
 							setDeleteModalOpen={setDeleteModalOpen}
 							closeModal={closeModal}
-							renderUpdateSurvivorModal={renderUpdateSurvivorModal}
+							renderupdatesurvivormodal={renderupdatesurvivormodal}
 							renderDeleteSurvivorModal={renderDeleteSurvivorModal}
 							setIsOpen={setIsOpen}
 							isUpdating={isUpdating}

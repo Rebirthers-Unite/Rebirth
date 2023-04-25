@@ -10,20 +10,8 @@ import {
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SurvivorsList = ({ renderUpdateForm, survivors }) => {
-	const tableFields = [
-		'NAME',
-		'DATE OF BIRTH',
-		'REFERRING ORGANIZATION',
-		'CONTACT',
-		// 'REFERRING ORGANIZATION CONTACT',
-		// 'PROGRAMS',
-		// 'DATE OF ENTRY',
-		// 'DATE OF EXIT',
-		// 'GUARDIAN',
-		// 'GUARDIAN CONTACT',
-		// 'ACTIONS',
-	];
+const SurvivorsList = ({ renderupdateform, survivors }) => {
+	const tableFields = ['NAME', 'DATE OF BIRTH', 'ORGANIZATION', 'CONTACT'];
 
 	return (
 		<TableContainer>
@@ -44,35 +32,16 @@ const SurvivorsList = ({ renderUpdateForm, survivors }) => {
 				</Thead>
 				<Tbody>
 					{survivors.map((survivor) => (
-						<Tr key={survivor.id}>
+						<Tr key={survivor.id['$oid']}>
 							<Link
-								to={`/survivor/${survivor.id}`}
-								renderUpdateForm={renderUpdateForm}
+								to={`/survivors/${survivor.id['$oid']}`}
+								
 							>
 								<Td>{survivor.name}</Td>
 							</Link>
-							<Td>{survivor.dateOfBirth}</Td>
-							<Td>{survivor.referringOrganization}</Td>
-							<Td>{survivor.contact}</Td>
-							{/* <Td>{survivor.referringOrganizationContact}</Td> */}
-							{/* <Td>{survivor.programs}</Td> */}
-							{/* <Td>{survivor.dateOfEntry}</Td> */}
-							{/* <Td>{survivor.dateOfExit}</Td> */}
-							{/* <Td>{survivor.guardian}</Td> */}
-							{/* <Td>{survivor.guardianContact}</Td> */}
-							{/* <HStack className="buttons" justify={'center'}>
-								<Button onClick={renderUpdateForm}>UPDATE</Button>
-								<Button
-									bg={'red.500'}
-									onClick={() => {
-										setSurvId(survivor.id);
-										deleteSurvivor();
-									}}
-									_hover={{color: 'whitesmoke'}}
-								>
-									DELETE
-								</Button>
-							</HStack> */}
+							<Td>{survivor.date_of_birth}</Td>
+							<Td>{survivor.organization}</Td>
+							<Td>{survivor.organization_contact}</Td>
 						</Tr>
 					))}
 				</Tbody>

@@ -19,12 +19,14 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import DeleteSurvivorModal from './modals/DeleteSurvivorModal';
 import UpdateSurvivorModal from './modals/UpdateSurvivorModal';
+import useAuthStore from '../store/Token';
+
 const SurvivorsDetails = ({
 	updateModalOpen,
 	setUpdateModalOpen,
-	renderUpdateSurvivorModal,
+	renderupdatesurvivormodal,
 	closeUpdateSurvivorModal,
-	renderUpdateForm,
+	// renderupdateform,
 	renderDeleteSurvivorModal,
 	deleteModalOpen,
 	isOpen,
@@ -37,6 +39,7 @@ const SurvivorsDetails = ({
 	survivors,
 	setSurvivors,
 }) => {
+	const token = useAuthStore((state) => state.token);
 	const [survivor, setSurvivor] = useState({});
 	const { id } = useParams();
 	const navigate = useNavigate();
@@ -55,7 +58,12 @@ const SurvivorsDetails = ({
 	};
 
 	useEffect(() => {
-		fetch('http://localhost:8000/survivors/' + id).then((r) => {
+		fetch('https://rebirth-ktaf.onrender.com/survivors/' + id, {
+			method: 'GET',
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		}).then((r) => {
 			r.ok
 				? r.json().then((data) => {
 						setSurvivor(data);
@@ -65,8 +73,11 @@ const SurvivorsDetails = ({
 	}, []);
 
 	const deleteSurvivor = () => {
-		fetch('  http://localhost:8000/survivors/' + id, {
+		fetch('  https://rebirth-ktaf.onrender.com/survivors/' + id, {
 			method: 'DELETE',
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
 		}).then(() => {
 			setDeleteModalOpen(false);
 			showToast();
@@ -85,10 +96,7 @@ const SurvivorsDetails = ({
 							<Box>
 								<Heading size="sm">{survivor.name}</Heading>
 								<Text>
-									<span>D.O.B: </span> {survivor.dateOfBirth}
-								</Text>
-								<Text>
-									<PhoneIcon /> {survivor.contact}
+									<span>D.O.B: </span> {survivor.date_of_birth}
 								</Text>
 							</Box>
 						</Flex>
@@ -97,39 +105,47 @@ const SurvivorsDetails = ({
 				<CardBody>
 					<Text>
 						<span>Referring Organization: </span>
-						{survivor.referringOrganization}
+						{survivor.organization}
 					</Text>
 					<Text>
 						<span>Referring Organization Address: </span>
-						{survivor.referringOrganizationContact}
+						{survivor.organization_contact}
 					</Text>
 					<Text>
-						<span>Programs: </span> {survivor.programs}
+						<span>Organization Email: </span> {survivor.organization_email}
+					</Text>
+					<Text>
+						<span>Guadian: </span> {survivor.guardian_name}
+					</Text>
+					<Text>
+						<span>Guadian of Contact: </span> {survivor.contact_of_guardian}
+					</Text>
+					<Text>
+						<span>Level of Education: </span> {survivor.level_of_education}
+					</Text>
+					<Text>
+						<span>School: </span> {survivor.school}
+					</Text>
+					<Text>
+						<span>Social Asset Building: </span> {survivor.social_asset_building}
+					</Text>
+					<Text>
+						<span>Children: </span> {survivor.children}
 					</Text>
 					<Text>
 						{' '}
-						<span>Date of Entry: </span> {survivor.dateOfEntry}
+						<span>Date of Entry: </span> {survivor.date_of_entry}
 					</Text>
 					<Text>
 						{' '}
-						<span>Date of Exit: </span> {survivor.dateOfExit}
+						<span>Date of Exit: </span> {survivor.date_of_exit}
 					</Text>
-					<Text>
-						<span>Guardian: </span> {survivor.guardian}
-					</Text>
-					<Text>
-						<span>Guardian Contact: </span>
-						{survivor.guardianContact}
-					</Text>
+					
 				</CardBody>
-				{/* <Image
-					objectFit="cover"
-					src="https://placehold.co/600x400"
-					alt="Image goes here"
-				/> */}
+
 			</Card>
 			<HStack justify={'center'} gap={'1rem'} mt={'1rem'}>
-				<Button onClick={renderUpdateSurvivorModal}>UPDATE DETAILS</Button>
+				<Button onClick={renderupdatesurvivormodal}>UPDATE DETAILS</Button>
 				<Button bg={'red.500'} onClick={renderDeleteSurvivorModal}>
 					DELETE SURVIVOR
 				</Button>
