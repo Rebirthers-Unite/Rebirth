@@ -15,7 +15,7 @@ const BlogCards = () => {
 	const [blogs, setBlogs] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:8000/blogs/').then((r) => {
+		fetch('https://rebirth-ktaf.onrender.com/blogs/').then((r) => {
 			r.ok ? r.json().then((data) => setBlogs(data)) : 'Problems!';
 		});
 	}, []);
@@ -30,7 +30,7 @@ const BlogCards = () => {
 			<Image
 				objectFit="cover"
 				maxW={{ base: '100%', sm: '200px' }}
-				src={blog.image}
+				src={blog.image_url}
 				alt={blog.title}
 			/>
 
@@ -42,7 +42,7 @@ const BlogCards = () => {
 				</CardBody>
 
 				<CardFooter>
-					<Link to={`/blog/${blog.id}`}>
+					<Link to={`/blog/${blog.id["$oid"]}`}>
 						<Button variant="solid" colorScheme="blue">
 							View Blog
 						</Button>

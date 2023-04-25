@@ -44,7 +44,7 @@ const BlogDetails = ({
 		<Container maxW={'70%'}>
 			<Heading>{blog.title}</Heading>
 			<VStack>
-				<Image src="https://placehold.co/900x500" alt="Image goes here" />
+				<Image src={blog.image_url} alt="Image goes here" />
 				<HStack justify={'space-between'}>
 					<HStack>
 						<Avatar size={'sm'} name={blog.author} />

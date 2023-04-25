@@ -13,6 +13,7 @@ const UpdateBlog = ({
 	closeUpdateBlogModal,
 	updateBlogsModalOpen,
 }) => {
+	const token = useAuthStore((state) => state.token);
 	const [updateBlog, setUpdateBlog] = useState({});
 	useEffect(() => setUpdateBlog(blog), []);
 	const showToast = () => {
@@ -33,8 +34,8 @@ const UpdateBlog = ({
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		fetch(`http://localhost:8000/blogs/${blog.id}`, {
-			method: 'PATCH',
+		fetch(`https://rebirth-ktaf.onrender.com/blogs/${blog.id["$oid"]}`, {
+			method: 'PUT',
 			headers: { 
 				Authorization: `Bearer ${token}`,
 				'Content-Type': 'application/json' },
