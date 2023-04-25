@@ -1,7 +1,8 @@
 import React from 'react';
 import './Survivor.css'
-import Face from '../../../assets/again.jpeg'
-import {GoQuote }from 'react-icons/go'
+import survivor1 from '../../../assets/survivor1.HEIC'
+import survivor2 from '../../../assets/survivor2.JPG'
+import survivor3 from '../../../assets/survivor3.HEIC'
 
 function Survivors() {
 	return (
@@ -16,36 +17,36 @@ function Survivors() {
 
 			<div className="max-w-sm h-100 me-4">
 				<div className="shadow-lg rounded overflow-hidden">
-					<img className="h-30 w-30" src={Face} />
+					<img className="h-30 w-30" src={survivor1} />
 					<div className="bg-white p-3">
 						<p className="font-light text-l italic font-gray-800">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit
+							"Thanks to Rebirth of a queen i can now put food on the table for my family"
 						</p>
-						<p className="mt-1 font-semibold text-sm text-gray-900 p-4">US transport</p>
+						<p className="mt-1 font-semibold text-sm text-gray-900 p-4">Roselyne Mwende</p>
 					</div>
 				</div>
 			</div>
 
 			<div className="max-w-sm h-100 me-4">
 				<div className="shadow-lg rounded overflow-hidden">
-					<img className="h-30 w-30" src={Face} />
+					<img className="h-30 w-30" src={survivor2} />
 					<div className="bg-white p-3">
 						<p className="font-light text-l italic font-gray-800">
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit
+							"I was a victim of Gender Based Violence and Rebirth of a Queen took me in, clothed me and educated me."
 						</p>
-						<p className="mt-1 font-semibold text-sm text-gray-900 p-4">US transport</p>
+						<p className="mt-1 font-semibold text-sm text-gray-900 p-4">Beatrice Atieno</p>
 					</div>
 				</div>
 			</div>
 
 			<div className="max-w-sm h-100 me-4">
 				<div className="shadow-lg rounded overflow-hidden">
-					<img className="h-30 w-30" src={Face} />
+					<img className="h-30 w-30" src={survivor3} />
 					<div className="bg-white p-3">
 						<p className="font-light text-l italic font-gray-800">
-							"Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+							"Thanks to Rebirth of a Queen I can now work towards my dream of becoming a lawyer."
 						</p>
-						<p className="mt-1 font-semibold text-sm text-gray-900 p-4">US transport</p>
+						<p className="mt-1 font-semibold text-sm text-gray-900 p-4">Joan Wairimu</p>
 					</div>
 				</div>
 			</div>
