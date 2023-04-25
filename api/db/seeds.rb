@@ -60,7 +60,6 @@ Blog.create!(
   body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sapien vel bibendum bibendum, velit sapien bibendum sapien, vel bibendum sapien sapien vel bibendum sapien.",
   author: "John Doe",
   date: Date.today,
-  user: user1,
   image: File.new("#{Rails.root}/app/assets/images/youth_empowerment.JPG"),
 )
 
@@ -69,7 +68,6 @@ Blog.create!(
   body: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed euismod, sapien vel bibendum bibendum, velit sapien bibendum sapien, vel bibendum sapien sapien vel bibendum sapien.",
   author: "Jane Smith",
   date: Date.today - 1,
-  user: user2,
   image: File.new("#{Rails.root}/app/assets/images/youth_empowerment.JPG"),
 )
 
@@ -78,7 +76,6 @@ Blog.create!(
   body: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed euismod, sapien vel bibendum bibendum, velit sapien bibendum sapien, vel bibendum sapien sapien vel bibendum sapien.",
   author: "Bob Johnson",
   date: Date.today - 2,
-  user: user3,
   image: File.new("#{Rails.root}/app/assets/images/youth_empowerment.JPG"),
 )
 

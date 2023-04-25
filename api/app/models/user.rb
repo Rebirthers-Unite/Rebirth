@@ -10,7 +10,6 @@ class User
 
   has_secure_password
 
-  has_many :blogs
   
   validates :name, :role, presence: true
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP }
