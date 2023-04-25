@@ -6,9 +6,9 @@ import Survivors from './Survivors/Survivors';
 export const LandingPage = () => {
 	return (
 		<div>
-			<Hero />
-			<About />
-			<Survivors />
+			<Hero data-testid='hero' />
+			<About data-testid='about' />
+			<Survivors data-testid='survivors' />
 		</div>
 	);
 };
