@@ -15,7 +15,7 @@ const BlogCards = () => {
 	const [blogs, setBlogs] = useState([]);
 
 	useEffect(() => {
-		fetch('https://api.npoint.io/62bd0112b5ad0a6566ae/blogs/').then((r) => {
+		fetch('http://localhost:8000/blogs/').then((r) => {
 			r.ok ? r.json().then((data) => setBlogs(data)) : 'Problems!';
 		});
 	}, []);

@@ -36,6 +36,8 @@ const Dashboard = ({
 	renderStaffControlModal,
 	staffControlModalIsOpen,
 	closeStaffControlModal,
+	newStaff,
+	setNewStaff
 }) => {
 	const [search, setSearch] = useState('');
 

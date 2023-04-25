@@ -41,6 +41,14 @@ function App() {
 		dateOfExit: '',
 	});
 
+	const [newStaff, setNewStaff] = useState({
+		name: '',
+		email: '',
+		phoneNumber: '',
+		position: '',
+		gender: '',
+	});
+
 	const renderUpdateForm = () => {
 		setIsOpen(true);
 	};
@@ -95,6 +103,8 @@ function App() {
 							setSurvivors={setSurvivors}
 							staff={staff}
 							setStaff={setStaff}
+							// newStaff={newStaff}
+							// setNewStaff={setNewStaff}
 						/>
 					}
 				/>
@@ -120,7 +130,12 @@ function App() {
 						/>
 					}
 				/>
-				<Route path="/staff/:id" element={<StaffDetails />} />
+				<Route
+					path="/staff/:id"
+					element={
+						<StaffDetails newStaff={newStaff} setNewStaff={setNewStaff} />
+					}
+				/>
 				<Route
 					path="/blog/:id"
 					element={
@@ -134,8 +149,16 @@ function App() {
 						/>
 					}
 				/>
-				<Route path="/add-staff" element={<StaffControlForm />} />
-				<Route path="/update-staff" element={<UpdateStaff />} />
+				<Route
+					path="/add-staff"
+					element={
+						<StaffControlForm newStaff={newStaff} setNewStaff={setNewStaff} />
+					}
+				/>
+				<Route
+					path="/update-staff"
+					element={<UpdateStaff staff={staff} setStaff={setStaff} />}
+				/>
 				<Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
 			</Route>
 		)

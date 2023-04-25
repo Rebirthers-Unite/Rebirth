@@ -1,26 +1,90 @@
 import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
-import React from 'react';
+import React, {useState} from 'react';
 
-const UpdateStaff = ({}) => {
+const StaffControlForm = ({ staff, setStaff }) => {
+	const [staffId, setStaffId] = useState(0);
+
+	const updateStaff = (e) => {
+		e.preventDefault();
+		setStaffId(staff.id);
+		console.log(staffId);
+
+		fetch('http://localhost:8000/staff/' + staffId, {
+			method: 'PATCH',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(staff),
+		})
+			.then((response) => {
+				if (!response.ok) {
+					throw new Error('Network response was not ok');
+				}
+				return response.json();
+			})
+			.then((data) => {
+				console.log(data);
+				setStaff('');
+			})
+			.catch((error) => {
+				console.error('Error:', error);
+			});
+	};
+
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+
+		setStaff((prevState) => ({ ...prevState, [name]: value }));
+
+		console.log(staff);
+		// console.log(survivor);
+	};
+
 	return (
-		<FormControl as={'form'}>
+		<FormControl as={'form'} onSubmit={updateStaff}>
 			<FormLabel>Name</FormLabel>
-			<Input type="text" name="name" />
+			<Input
+				type="text"
+				name="name"
+				value={staff.name}
+				onChange={handleChange}
+			/>
 
 			<FormLabel>Email</FormLabel>
-			<Input type="text" name="contact" />
+			<Input
+				type="text"
+				name="email"
+				value={staff.email}
+				onChange={handleChange}
+			/>
 
 			<FormLabel>Phone Number</FormLabel>
-			<Input type="text" name="dateOfBirth" />
+			<Input
+				type="text"
+				name="phoneNumber"
+				value={staff.phoneNumber}
+				onChange={handleChange}
+			/>
 
 			<FormLabel>Position</FormLabel>
-			<Input type="text" name="referringOrganization" />
+			<Input
+				type="text"
+				name="position"
+				value={staff.position}
+				onChange={handleChange}
+			/>
 
-			<Button type="submit" colorScheme="blue" mt={5}>
-				Add New Staff
+			<FormLabel>Gender</FormLabel>
+			<Input
+				type="text"
+				name="gender"
+				value={staff.gender}
+				onChange={handleChange}
+			/>
+
+			<Button type="submit" colorScheme="blue" mt={5} onClick={updateStaff}>
+				Update Staff
 			</Button>
 		</FormControl>
 	);
 };
 
-export default UpdateStaff;
+export default StaffControlForm;

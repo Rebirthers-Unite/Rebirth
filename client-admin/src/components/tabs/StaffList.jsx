@@ -15,10 +15,10 @@ const StaffList = ({ staff, setStaff }) => {
 	const tableFields = ['NAME', 'EMAIL', 'PHONE NUMBER', 'POSITION', 'GENDER'];
 
 	useEffect(() => {
-		fetch('https://api.npoint.io/b172964f10df703c167c/staff/').then((r) => {
+		fetch('http://localhost:8000/staff/').then((r) => {
 			r.ok ? r.json().then((data) => setStaff(data)) : 'Problems!';
 		});
-	}, [staff]);
+	}, []);
 
 	return (
 		<TableContainer>
@@ -37,21 +37,21 @@ const StaffList = ({ staff, setStaff }) => {
 						))}
 					</Tr>
 				</Thead>
-			
-					<Tbody>
-						{staff.map((e) => (
-							<Tr key={e.id}>
-								<Link to={`/staff/${e.id}`}>
-									<Td>{e.name}</Td>
-								</Link>
 
-								<Td>{e.email}</Td>
-								<Td>{e.phoneNumber}</Td>
-								<Td>{e.position}</Td>
-								<Td>{e.gender}</Td>
-							</Tr>
-						))}
-					</Tbody>
+				<Tbody>
+					{staff.map((e) => (
+						<Tr key={e.id}>
+							<Link to={`/staff/${e.id}`}>
+								<Td>{e.name}</Td>
+							</Link>
+
+							<Td>{e.email}</Td>
+							<Td>{e.phoneNumber}</Td>
+							<Td>{e.position}</Td>
+							<Td>{e.gender}</Td>
+						</Tr>
+					))}
+				</Tbody>
 			</Table>
 		</TableContainer>
 	);

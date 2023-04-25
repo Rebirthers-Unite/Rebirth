@@ -15,13 +15,18 @@ import {
 	useToast,
 } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
-import { RiBriefcase5Fill, RiGenderlessFill, RiGenderlessLine } from 'react-icons/ri';
+import {
+	RiBriefcase5Fill,
+	RiGenderlessFill,
+	RiGenderlessLine,
+} from 'react-icons/ri';
 import { BsGenderAmbiguous } from 'react-icons/bs';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 const StaffDetails = () => {
 	const [staffMember, setStaffMember] = useState({});
 	const { id } = useParams();
 	const navigate = useNavigate();
+
 	const toast = useToast();
 
 	const showToast = () => {
@@ -37,22 +42,19 @@ const StaffDetails = () => {
 	};
 
 	useEffect(() => {
-		fetch('https://api.npoint.io/b172964f10df703c167c/staff/' + id).then(
-			(r) => {
-				r.ok
-					? r.json().then((data) => {
-							setStaffMember(data);
-					  })
-					: 'Wahala!!';
-			}
-		);
+		fetch('http://localhost:8000/staff/' + id).then((r) => {
+			r.ok
+				? r.json().then((data) => {
+						setStaffMember(data);
+				  })
+				: 'Wahala!!';
+		});
 	}, []);
 
 	const deleteStaffMember = () => {
-		fetch('  http://localhost:8000/survivors/' + id, {
+		fetch('  http://localhost:8000/staff/' + id, {
 			method: 'DELETE',
 		}).then(() => {
-			setDeleteModalOpen(false);
 			showToast();
 			navigate('/dashboard');
 		});
@@ -94,7 +96,9 @@ const StaffDetails = () => {
 				<Button>
 					<Link to="/update-staff">UPDATE DETAILS</Link>
 				</Button>
-				<Button bg={'red.500'}>DELETE STAFF</Button>
+				<Button bg={'red.500'} onClick={deleteStaffMember}>
+					DELETE STAFF
+				</Button>
 			</HStack>
 		</Container>
 	);

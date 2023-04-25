@@ -10,10 +10,13 @@ import {
 	ModalCloseButton,
 } from '@chakra-ui/react';
 
-const DeleteBlogsModal = ({
-	deleteModalOpen,
-	closeDeleteBlogModal,
-}) => {
+const DeleteBlogsModal = ({ deleteModalOpen, closeDeleteBlogModal, blog }) => {
+	const deleteBlog = () => {
+		fetch(`http://localhost:8000/blogs/${blog.id}`, {
+			method: 'DELETE',
+		});
+	};
+
 	return (
 		<div>
 			<Modal isOpen={deleteModalOpen} onClose={closeDeleteBlogModal}>
@@ -28,13 +31,13 @@ const DeleteBlogsModal = ({
 						justifyContent={'center'}
 						textAlign={'center'}
 					>
-						Delete {"PUT BLOG NAME HERE"} from the database?
+						Delete blog from the database?
 						<br />
 						This action is irreversible
 					</ModalBody>
 					<ModalFooter>
-						<Button bg={'red.400'} mr={3} >
-							DELETE	{/* "THIS BUTTON IS THE ONE THAT ACTUALLY MAKES THE FETCH REQUEST" PUT THE FETCH FUNCTION HERE ONCLICK*/}
+						<Button bg={'red.400'} mr={3} onClick={deleteBlog}>
+							DELETE
 						</Button>
 						<Button color="red.400" mr={3} onClick={closeDeleteBlogModal}>
 							Cancel

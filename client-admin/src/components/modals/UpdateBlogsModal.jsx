@@ -10,8 +10,9 @@ import {
 	ModalCloseButton,
 } from '@chakra-ui/react';
 import UpdateBlog from '../../forms/UpdateBlog';
-
 const UpdateBlogsModal = ({
+	blog,
+	setBlog,
 	updateBlogsModalOpen,
 	closeUpdateBlogModal,
 }) => {
@@ -28,10 +29,14 @@ const UpdateBlogsModal = ({
 						alignItems={'center'}
 						justifyContent={'center'}
 					>
-						<UpdateBlog />
+						<UpdateBlog
+							blog={blog}
+							setBlog={setBlog}
+							closeUpdateBlogModal={closeUpdateBlogModal}
+						/>
 					</ModalBody>
 					<ModalFooter>
-						<Button color="red.400" mr={3}>
+						<Button onClick={closeUpdateBlogModal} color="red.400" mr={3}>
 							Close
 						</Button>
 					</ModalFooter>
@@ -40,5 +45,4 @@ const UpdateBlogsModal = ({
 		</div>
 	);
 };
-
 export default UpdateBlogsModal;

@@ -16,7 +16,6 @@ import { useNavigate, useParams } from 'react-router';
 import UpdateBlog from '../forms/UpdateBlog';
 import UpdateBlogsModal from './modals/UpdateBlogsModal';
 import DeleteBlogsModal from './modals/DeleteBlogsModal';
-
 const BlogDetails = ({
 	renderDeleteBlogModal,
 	renderUpdateBlogModal,
@@ -29,19 +28,18 @@ const BlogDetails = ({
 	const { id } = useParams();
 	const navigate = useNavigate();
 	const toast = useToast();
-
 	useEffect(() => {
-		fetch('https://api.npoint.io/62bd0112b5ad0a6566ae/blogs/' + id).then(
+		fetch('http://localhost:8000/blogs/' + id).then(
 			(r) => {
 				r.ok
 					? r.json().then((data) => {
+						console.log(data);
 							setBlog(data);
 					  })
 					: 'Wahala!!';
 			}
 		);
 	}, []);
-
 	return (
 		<Container maxW={'70%'}>
 			<Heading>{blog.title}</Heading>
@@ -57,7 +55,6 @@ const BlogDetails = ({
 					<Text as={'p'}>{blog.date}</Text>
 				</HStack>
 			</VStack>
-
 			<Text>{blog.body}</Text>
 			<HStack justify={'center'}>
 				<Button onClick={renderUpdateBlogModal}>UPDATE BLOG</Button>
@@ -65,20 +62,21 @@ const BlogDetails = ({
 					DELETE BLOG
 				</Button>
 			</HStack>
-
 			<UpdateBlogsModal
 				// renderUpdateBlogModal={renderUpdateBlogModal}
+				blog={blog}
+				setBlog={setBlog}
 				closeUpdateBlogModal={closeUpdateBlogModal}
 				updateBlogsModalOpen={updateBlogsModalOpen}
-				/>
+			/>
 			<DeleteBlogsModal
 				// renderDeleteBlogModal={renderDeleteBlogModal}
-			// renderDeleteBlogModal={renderDeleteBlogModal}
+				// renderDeleteBlogModal={renderDeleteBlogModal}
 				deleteModalOpen={deleteBlogsModalOpen}
 				closeDeleteBlogModal={closeDeleteBlogModal}
+				blog={blog}
 			/>
 		</Container>
 	);
 };
-
 export default BlogDetails;
