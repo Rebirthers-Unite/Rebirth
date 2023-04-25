@@ -1,9 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './contact.css'
-import {BsSend} from 'react-icons/bs'
-import { Container, Row, Col } from 'react-bootstrap'
+import {send} from 'emailjs-com';
 
 function Contact() {
+
+	const [name, setName] = useState('')
+	const [email, setEmail] = useState('')
+	const [message, setMessage] = useState('')
+
+	const contactData = {name, email, message}
+
+	function submitMessage(e){
+		e.preventDefault()
+		send('service_wd1l46j', 'template_47noz1o', contactData, 'xoQ_pF4Ba_0kMMQk-')
+	}
+
   return (
 		<div id='contact-page'>
 		<div id='div-content'>
@@ -11,7 +22,7 @@ function Contact() {
 					<h1 className='text-5xl mb-5 font-serif' style={{textAlign:'center'}} id='contact-title'>Contact Us</h1>
 					<h5 style={{textAlign: 'center'}} className='text-3xl' id='contact-welcome'>Got a question or proposal, or just want to say hello? Go ahead.</h5>
 			</div>
-					<form id='contacts-form'>
+					<form id='contacts-form' onSubmit={submitMessage}>
 					<div className="row mb-3">
 
 						<div className="col-6">

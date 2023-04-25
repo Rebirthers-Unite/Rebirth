@@ -10,22 +10,22 @@ export const SupportCards = () => {
 
         <div className='card shadow support'>
             <FaSchool className='icon'/>
-            <p>Educating the vulnerable</p>
+            <p class='paragraph'>Educating the vulnerable</p>
         </div>
 
         <div className='card shadow support'>
             <GiTakeMyMoney className='icon'/>
-            <p>To equip victims with skills that can help in job marketing</p>
+            <p class='paragraph'>To equip victims with skills that can help in job marketing</p>
         </div>
 
         <div className='card shadow support'>
             <HiSpeakerphone className='icon'/>
-            <p>Mentorship to raise awareness on mental health</p>
+            <p class='paragraph'>Mentorship to raise awareness on mental health</p>
         </div>
 
         <div className='card shadow support'>
             <BsHouseHeartFill className='icon'/>
-            <p>Operational safehouse that rescues victims from all parts of the country </p>
+            <p class='paragraph'>Operational safehouse that rescues victims from all parts of the country </p>
         </div>
 
     </div>
