@@ -1,9 +1,9 @@
 puts "start"
 
 # Create a user to associate with the blogs
-user1 = User.create(name: "John Doe", email: "john333444@example.com", role: "admin", password: "password")
-user2 = User.create(name: "Jane Smith", email: "jane323444@example.com", role: "editor", password: "password")
-user3 = User.create(name: "David Lee", email: "david2133444@example.com", role: "user", password: "password")
+user1 = User.create(name: "John Doe", email: "john33344455@example.com", role: "admin", password: "password")
+user2 = User.create(name: "Jane Smith", email: "jane32344455@example.com", role: "editor", password: "password")
+user3 = User.create(name: "David Lee", email: "david213344455@example.com", role: "user", password: "password")
 
 # Create some survivors
 Survivor.create!(
@@ -82,7 +82,7 @@ Blog.create!(
 # Create staff
 Staff.create!(
   name: "John Doe",
-  email: "johndoe22@example.com",
+  email: "johndoe221@example.com",
   phone_number: "555-555-5555",
   position: "Manager",
   gender: "Male",
@@ -90,7 +90,7 @@ Staff.create!(
 
 Staff.create!(
   name: "Jane Smith",
-  email: "janesmith22@example.com",
+  email: "janesmith221@example.com",
   phone_number: "555-555-5555",
   position: "Sales Associate",
   gender: "Female",
@@ -98,7 +98,7 @@ Staff.create!(
 
 Staff.create!(
   name: "Bob Johnson",
-  email: "bobjohnson22@example.com",
+  email: "bobjohnson221@example.com",
   phone_number: "555-555-5555",
   position: "Customer Service Representative",
   gender: "Male",
