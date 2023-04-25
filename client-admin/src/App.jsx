@@ -88,8 +88,8 @@ function App() {
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route path="/" element={<RootLayout />}>
-				{/* <Route path="/login" element={<Login />} />
-				<Route path="/signup" element={<Signup />} /> */}
+				<Route path="/login" element={<Login />} />
+				<Route path="/signup" element={<Signup />} />
 				<Route
 					path="/dashboard"
 					element={
@@ -103,8 +103,6 @@ function App() {
 							setSurvivors={setSurvivors}
 							staff={staff}
 							setStaff={setStaff}
-							// newStaff={newStaff}
-							// setNewStaff={setNewStaff}
 						/>
 					}
 				/>
