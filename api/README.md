@@ -1,6 +1,6 @@
 # Rebirth
 
-- The deployed link is: [https://rebirth-of-a-queen.vercel.app/]
+- The deployed link is: [https://rebirth-ktaf.onrender.com/]
 
 ## Controllers
 
@@ -520,7 +520,7 @@ The User model represents a user of the application. It has fields for a name, e
 
 - The API will be available at http://localhost:3000.
 
-- The deployed link is: [https://rebirth-of-a-queen.vercel.app/]
+- The deployed link is: [https://rebirth-ktaf.onrender.com/]
 
 - Test the endpoints using a tool like Postman or cURL.
 
