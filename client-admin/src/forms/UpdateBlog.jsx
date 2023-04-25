@@ -1,6 +1,3 @@
-// import {} from 'react-router-dom';
-import { React, useState } from 'react';
-import useAuthStore from '../store/Token';
 import {
 	Button,
 	FormControl,
@@ -8,37 +5,40 @@ import {
 	Input,
 	Textarea,
 } from '@chakra-ui/react';
-const AddBlog = () => {
-	const token = useAuthStore((state) => state.token);
-
-	const [newBlog, setNewBlog] = useState({});
-	// const showToast = () => {
-	// 	toast({
-	// 		title: 'Added Blog',
-	// 		description: `Successfully added ${newBlog.title}`,
-	// 		duration: 3000,
-	// 		isClosable: true,
-	// 		status: 'success',
-	// 		position: 'top',
-	// 		icon: <CheckIcon />,
-	// 	});
-	// };
-
+import { React, useEffect, useState } from 'react';
+import useAuthStore from '../store/Token';
+const UpdateBlog = ({
+	blog,
+	setBlog,
+	closeUpdateBlogModal,
+	updateBlogsModalOpen,
+}) => {
+	const [updateBlog, setUpdateBlog] = useState({});
+	useEffect(() => setUpdateBlog(blog), []);
+	const showToast = () => {
+		toast({
+			title: 'Updated Blog',
+			description: `Successfully updated ${updateBlog.title}`,
+			duration: 3000,
+			isClosable: true,
+			status: 'success',
+			position: 'top',
+			icon: <CheckIcon />,
+		});
+	};
 	const handleChange = (e) => {
 		const { name, value } = e.target;
-		setNewBlog((prevState) => ({ ...prevState, [name]: value }));
-		console.log(newBlog);
+		setUpdateBlog((prevState) => ({ ...prevState, [name]: value }));
+		console.log(updateBlog);
 	};
 	const handleSubmit = (e) => {
-		console.log(newBlog);
 		e.preventDefault();
-		fetch('https://rebirth-drtz.onrender.com/blogs/', {
-			method: 'POST',
+		fetch(`http://localhost:8000/blogs/${blog.id}`, {
+			method: 'PATCH',
 			headers: { 
 				Authorization: `Bearer ${token}`,
-				'Content-Type': 'application/json'
-			 },
-			body: JSON.stringify(newBlog),
+				'Content-Type': 'application/json' },
+			body: JSON.stringify(updateBlog),
 		})
 			.then((response) => {
 				if (!response.ok) {
@@ -48,19 +48,21 @@ const AddBlog = () => {
 			})
 			.then((data) => {
 				console.log(data);
-				setNewBlog('');
+				setUpdateBlog(data);
 			})
 			.catch((error) => {
 				console.error('Error:', error);
 			});
-		// showToast();
+		showToast();
+		closeUpdateBlogModal();
+		window.location.reload();
 	};
 	return (
 		<FormControl onSubmit={handleSubmit}>
 			<FormLabel>Blog Title</FormLabel>
 			<Input
 				type="text"
-				value={newBlog.title}
+				value={updateBlog.title}
 				onChange={handleChange}
 				name="title"
 				required
@@ -68,15 +70,16 @@ const AddBlog = () => {
 			<FormLabel>Image Source</FormLabel>
 			<Input
 				type="file"
-				value={newBlog.image}
+				accept="image/png, image/jpeg"
+				// value={updateBlog.image}
 				onChange={handleChange}
 				name="image"
-				accept="image/png, image/jpeg"
+				required
 			/>
 			<FormLabel> Author</FormLabel>
 			<Input
 				type="text"
-				value={newBlog.author}
+				value={updateBlog.author}
 				onChange={handleChange}
 				name="author"
 				required
@@ -84,7 +87,7 @@ const AddBlog = () => {
 			<FormLabel>Date</FormLabel>
 			<Input
 				type="date"
-				value={newBlog.date}
+				value={updateBlog.date}
 				onChange={handleChange}
 				name="date"
 				required
@@ -92,17 +95,15 @@ const AddBlog = () => {
 			<FormLabel>Blog Body</FormLabel>
 			<Textarea
 				h={'20rem'}
-				value={newBlog.body}
+				value={updateBlog.body}
 				onChange={handleChange}
 				name="body"
 				minLength={50}
 				resize={'none'}
 				required
 			/>
-			<Button type="submit" onClick={handleSubmit}>
-				POST BLOG
-			</Button>
+			<Button onClick={handleSubmit}>POST BLOG</Button>
 		</FormControl>
 	);
 };
-export default AddBlog;
+export default UpdateBlog;

@@ -1,4 +1,4 @@
-import { PhoneIcon } from '@chakra-ui/icons';
+import { DeleteIcon, PhoneIcon } from '@chakra-ui/icons';
 import {
 	Avatar,
 	Box,
@@ -13,13 +13,46 @@ import {
 	IconButton,
 	Image,
 	Text,
+	useToast,
 } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-
-const SurvivorsDetails = () => {
+import { useNavigate, useParams } from 'react-router-dom';
+import DeleteSurvivorModal from './modals/DeleteSurvivorModal';
+import UpdateSurvivorModal from './modals/UpdateSurvivorModal';
+const SurvivorsDetails = ({
+	updateModalOpen,
+	setUpdateModalOpen,
+	renderUpdateSurvivorModal,
+	closeUpdateSurvivorModal,
+	renderUpdateForm,
+	renderDeleteSurvivorModal,
+	deleteModalOpen,
+	isOpen,
+	closeModal,
+	setDeleteModalOpen,
+	setIsUpdating,
+	isUpdating,
+	newSurvivor,
+	setNewSurvivor,
+	survivors,
+	setSurvivors,
+}) => {
 	const [survivor, setSurvivor] = useState({});
 	const { id } = useParams();
+	const navigate = useNavigate();
+	const toast = useToast();
+
+	const showToast = () => {
+		toast({
+			title: 'Deleted Survivor',
+			description: `Successfully deleted ${survivor.name}`,
+			duration: 3000,
+			isClosable: true,
+			status: 'success',
+			position: 'top',
+			icon: <DeleteIcon />,
+		});
+	};
 
 	useEffect(() => {
 		fetch('http://localhost:8000/survivors/' + id).then((r) => {
@@ -30,6 +63,16 @@ const SurvivorsDetails = () => {
 				: 'Wahala!!';
 		});
 	}, []);
+
+	const deleteSurvivor = () => {
+		fetch('  http://localhost:8000/survivors/' + id, {
+			method: 'DELETE',
+		}).then(() => {
+			setDeleteModalOpen(false);
+			showToast();
+			navigate('/dashboard');
+		});
+	};
 
 	return (
 		<Container h={'100vh'}>
@@ -49,12 +92,6 @@ const SurvivorsDetails = () => {
 								</Text>
 							</Box>
 						</Flex>
-						<IconButton
-							variant="ghost"
-							colorScheme="gray"
-							aria-label="See menu"
-							// icon={<BsThreeDotsVertical />}
-						/>
 					</Flex>
 				</CardHeader>
 				<CardBody>
@@ -85,37 +122,41 @@ const SurvivorsDetails = () => {
 						{survivor.guardianContact}
 					</Text>
 				</CardBody>
-				<Image
+				{/* <Image
 					objectFit="cover"
 					src="https://placehold.co/600x400"
 					alt="Image goes here"
-				/>
-
-				{/* 
-	<CardFooter
-		justify="space-between"
-		flexWrap="wrap"
-		sx={{
-			'& > button': {
-				minW: '136px',
-			},
-		}}
-	>
-		<Button flex="1" variant="ghost" leftIcon={<BiLike />}>
-			Like
-		</Button>
-		<Button flex="1" variant="ghost" leftIcon={<BiChat />}>
-			Comment
-		</Button>
-		<Button flex="1" variant="ghost" leftIcon={<BiShare />}>
-			Share
-		</Button>
-	</CardFooter> */}
+				/> */}
 			</Card>
 			<HStack justify={'center'} gap={'1rem'} mt={'1rem'}>
-				<Button>UPDATE DETAILS</Button>
-				<Button bg={'red.500'}>DELETE SURVIVOR</Button>
+				<Button onClick={renderUpdateSurvivorModal}>UPDATE DETAILS</Button>
+				<Button bg={'red.500'} onClick={renderDeleteSurvivorModal}>
+					DELETE SURVIVOR
+				</Button>
 			</HStack>
+
+			<UpdateSurvivorModal
+				isOpen={isOpen}
+				updateModalOpen={updateModalOpen}
+				closeModal={closeModal}
+				closeUpdateSurvivorModal={closeUpdateSurvivorModal}
+				isUpdating={isUpdating}
+				setIsUpdating={setIsUpdating}
+				setUpdateModalOpen={setUpdateModalOpen}
+				newSurvivor={newSurvivor}
+				setNewSurvivor={setNewSurvivor}
+				survivors={survivors}
+				setSurvivors={setSurvivors}
+				names={survivor.name}
+				survivor={survivor}
+				setSurvivor={setSurvivor}
+			/>
+			<DeleteSurvivorModal
+				deleteModalOpen={deleteModalOpen}
+				closeModal={closeModal}
+				deleteSurvivor={deleteSurvivor}
+				survivorName={survivor.name}
+			/>
 		</Container>
 	);
 };

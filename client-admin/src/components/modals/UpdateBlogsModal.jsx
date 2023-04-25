@@ -9,15 +9,19 @@ import {
 	ModalBody,
 	ModalCloseButton,
 } from '@chakra-ui/react';
-import UpdateDetailsForm from './UpdateDetailsForm';
-
-const UpdateSurvivorModal = ({ isOpen, closeModal }) => {
+import UpdateBlog from '../../forms/UpdateBlog';
+const UpdateBlogsModal = ({
+	blog,
+	setBlog,
+	updateBlogsModalOpen,
+	closeUpdateBlogModal,
+}) => {
 	return (
 		<div>
-			<Modal isOpen={isOpen} onClose={closeModal}>
+			<Modal isOpen={updateBlogsModalOpen} onClose={closeUpdateBlogModal}>
 				<ModalOverlay />
 				<ModalContent>
-					<ModalHeader>UPDATE DETAILS</ModalHeader>
+					<ModalHeader>Update Blog</ModalHeader>
 					<ModalCloseButton />
 					<ModalBody
 						as={'form'}
@@ -25,10 +29,14 @@ const UpdateSurvivorModal = ({ isOpen, closeModal }) => {
 						alignItems={'center'}
 						justifyContent={'center'}
 					>
-						<UpdateDetailsForm />
+						<UpdateBlog
+							blog={blog}
+							setBlog={setBlog}
+							closeUpdateBlogModal={closeUpdateBlogModal}
+						/>
 					</ModalBody>
 					<ModalFooter>
-						<Button color="red.400" mr={3} onClick={closeModal}>
+						<Button onClick={closeUpdateBlogModal} color="red.400" mr={3}>
 							Close
 						</Button>
 					</ModalFooter>
@@ -37,5 +45,4 @@ const UpdateSurvivorModal = ({ isOpen, closeModal }) => {
 		</div>
 	);
 };
-
-export default UpdateSurvivorModal;
+export default UpdateBlogsModal;

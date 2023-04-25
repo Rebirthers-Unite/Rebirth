@@ -25,25 +25,24 @@ const Sidebar = () => {
 						Dashboard
 					</NavLink>
 				</ListItem>
-				<ListItem>
-					<NavLink to={'/create'}>
-						<ListIcon as={EditIcon} color={'whatsapp.200'} />
-						New Task
-					</NavLink>
-				</ListItem>
+
 				<ListItem>
 					<NavLink to={'/profile'}>
 						<ListIcon as={AtSignIcon} color={'wheat'} />
 						Profile
 					</NavLink>
 				</ListItem>
+
 				<ListItem>
 					<NavLink to={'/login'}>
+						{/* <ListIcon as={AtSignIcon} color={'wheat'} /> */}
 						Login
 					</NavLink>
 				</ListItem>
+
 				<ListItem>
 					<NavLink to={'/signup'}>
+						{/* <ListIcon as={AtSignIcon} color={'wheat'} /> */}
 						Signup
 					</NavLink>
 				</ListItem>
