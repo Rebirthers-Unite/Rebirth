@@ -1,9 +1,9 @@
 puts "start"
 
 # Create a user to associate with the blogs
-user1 = User.create(name: "John Doe", email: "john333@example.com", role: "admin", password: "password")
-user2 = User.create(name: "Jane Smith", email: "jane323@example.com", role: "editor", password: "password")
-user3 = User.create(name: "David Lee", email: "david2133@example.com", role: "user", password: "password")
+user1 = User.create(name: "John Doe", email: "john3334@example.com", role: "admin", password: "password")
+user2 = User.create(name: "Jane Smith", email: "jane3234@example.com", role: "editor", password: "password")
+user3 = User.create(name: "David Lee", email: "david21334@example.com", role: "user", password: "password")
 
 # Create some survivors
 Survivor.create!(
