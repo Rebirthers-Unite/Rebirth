@@ -25,12 +25,7 @@ const Sidebar = () => {
 						Dashboard
 					</NavLink>
 				</ListItem>
-				<ListItem>
-					<NavLink to={'/create'}>
-						<ListIcon as={EditIcon} color={'whatsapp.200'} />
-						New Task
-					</NavLink>
-				</ListItem>
+
 				<ListItem>
 					<NavLink to={'/profile'}>
 						<ListIcon as={AtSignIcon} color={'wheat'} />
