@@ -57,8 +57,13 @@ end
 
 group :development, :test do
   gem "dotenv-rails"
-  gem 'rspec-rails', '~> 4.1'
+  # gem 'rspec-rails', '~> 4.1'
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'database_cleaner-mongoid'
+  gem 'mongoid-rspec'
+
 
   # provides breakpoint handling and bindings for stack frames among other things and it comes with an easy to use command line interface.
   gem "byebug", "~> 11.1", ">= 11.1.3"
