@@ -1,17 +1,24 @@
 import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
-import React, {useState} from 'react';
+import React from 'react';
+import useAuthStore from '../store/Token';
+import useIodStore from '../store/User';
 
 const StaffControlForm = ({ staff, setStaff }) => {
-	const [staffId, setStaffId] = useState(0);
+	const token = useAuthStore((state) => state.token);
+	const iod = useIodStore((state) => state.iod);
+	
+	// const [staffId, setStaffId] = useState(0);
 
 	const updateStaff = (e) => {
 		e.preventDefault();
-		setStaffId(staff.id);
-		console.log(staffId);
+		// setStaffId(staff.id['$oid']);
+		// console.log(staffId);
 
-		fetch('http://localhost:8000/staff/' + staffId, {
+		fetch(`https://rebirth-ktaf.onrender.com/staffs/${iod}`, {
 			method: 'PATCH',
-			headers: { 'Content-Type': 'application/json' },
+			headers: {
+				Authorization: `Bearer ${token}`,
+				'Content-Type': 'application/json' },
 			body: JSON.stringify(staff),
 		})
 			.then((response) => {

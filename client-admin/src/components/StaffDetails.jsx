@@ -22,7 +22,13 @@ import {
 } from 'react-icons/ri';
 import { BsGenderAmbiguous } from 'react-icons/bs';
 import { Link, useNavigate, useParams } from 'react-router-dom';
+import useAuthStore from '../store/Token';
+import useIodStore from '../store/User';
+
 const StaffDetails = () => {
+	const token = useAuthStore((state) => state.token);
+	const setIod = useIodStore((state) => state.setIod);
+
 	const [staffMember, setStaffMember] = useState({});
 	const { id } = useParams();
 	const navigate = useNavigate();
@@ -41,19 +47,30 @@ const StaffDetails = () => {
 		});
 	};
 
-	useEffect(() => {
-		fetch('http://localhost:8000/staff/' + id).then((r) => {
+		useEffect(() => {
+		fetch(`https://rebirth-drtz.onrender.com/staffs/${id}`, {
+			method: 'GET',
+			headers: {
+				Authorization: `Bearer ${token}`,
+				'Content-Type': 'application/json',
+			}
+		}).then((r) => {
 			r.ok
 				? r.json().then((data) => {
 						setStaffMember(data);
+						setIod(data.id['$oid'])
 				  })
 				: 'Wahala!!';
 		});
 	}, []);
 
 	const deleteStaffMember = () => {
-		fetch('  http://localhost:8000/staff/' + id, {
+		fetch(`https://rebirth-drtz.onrender.com/staffs/${id}`, {
 			method: 'DELETE',
+			headers: {
+				Authorization: `Bearer ${token}`,
+				'Content-Type': 'application/json',
+			}
 		}).then(() => {
 			showToast();
 			navigate('/dashboard');
@@ -86,11 +103,6 @@ const StaffDetails = () => {
 					</Flex>
 				</CardHeader>
 
-				<Image
-					objectFit="cover"
-					src="https://placehold.co/600x400"
-					alt="Image goes here"
-				/>
 			</Card>
 			<HStack justify={'center'} gap={'1rem'} mt={'1rem'}>
 				<Button>

@@ -26,10 +26,10 @@ const BlogDetails = ({
 }) => {
 	const [blog, setBlog] = useState({});
 	const { id } = useParams();
-	const navigate = useNavigate();
-	const toast = useToast();
+	// const navigate = useNavigate();
+	// const toast = useToast();
 	useEffect(() => {
-		fetch('http://localhost:8000/blogs/' + id).then(
+		fetch('https://rebirth-ktaf.onrender.com/blogs/' + id).then(
 			(r) => {
 				r.ok
 					? r.json().then((data) => {

@@ -10,12 +10,20 @@ import {
 } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import useAuthStore from '../../store/Token';
 
 const StaffList = ({ staff, setStaff }) => {
+	const token = useAuthStore((state) => state.token);
 	const tableFields = ['NAME', 'EMAIL', 'PHONE NUMBER', 'POSITION', 'GENDER'];
 
 	useEffect(() => {
-		fetch('http://localhost:8000/staff/').then((r) => {
+		fetch('https://rebirth-ktaf.onrender.com/staffs', {
+			method: 'GET',
+			headers: {
+				Authorization: `Bearer ${token}`,
+				'Content-Type': 'application/json',
+			}
+		}).then((r) => {
 			r.ok ? r.json().then((data) => setStaff(data)) : 'Problems!';
 		});
 	}, []);
@@ -40,8 +48,8 @@ const StaffList = ({ staff, setStaff }) => {
 
 				<Tbody>
 					{staff.map((e) => (
-						<Tr key={e.id}>
-							<Link to={`/staff/${e.id}`}>
+						<Tr key={e.id['$oid']}>
+							<Link to={`/staff/${e.id['$oid']}`}>
 								<Td>{e.name}</Td>
 							</Link>
 

@@ -30,7 +30,7 @@ const Login = () => {
 			email: email,
 			password: password 
 		};
-		fetch('https://rebirth-drtz.onrender.com/login', {
+		fetch('https://rebirth-ktaf.onrender.com/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

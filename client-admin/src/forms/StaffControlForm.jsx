@@ -1,15 +1,22 @@
 import { Button, FormControl, FormLabel, Input } from '@chakra-ui/react';
 import React from 'react';
+import useAuthStore from '../store/Token';
+import { useNavigate } from 'react-router';
 
 const StaffControlForm = ({ newStaff, setNewStaff }) => {
+	const token = useAuthStore((state) => state.token);
+
+	const redirect = useNavigate();
 	
 	const addNewStaff = (e) => {
 		e.preventDefault();
 		console.log(newStaff);
 
-		fetch('http://localhost:8000/staff/', {
+		fetch('https://rebirth-ktaf.onrender.com/staffs', {
 			method: 'POST',
-			headers: { 'Content-Type': 'application/json' },
+			headers: { 
+				Authorization: `Bearer ${token}`,
+				'Content-Type': 'application/json' },
 			body: JSON.stringify(newStaff),
 		})
 			.then((response) => {
@@ -20,7 +27,7 @@ const StaffControlForm = ({ newStaff, setNewStaff }) => {
 			})
 			.then((data) => {
 				console.log(data);
-				setNewStaff('');
+				redirect('/')
 			})
 			.catch((error) => {
 				console.error('Error:', error);
@@ -45,7 +52,7 @@ const StaffControlForm = ({ newStaff, setNewStaff }) => {
 			<Input type="text" name="email" onChange={handleChange} />
 
 			<FormLabel>Phone Number</FormLabel>
-			<Input type="text" name="phoneNumber" onChange={handleChange} />
+			<Input type="text" name="phone_number" onChange={handleChange} />
 
 			<FormLabel>Position</FormLabel>
 			<Input type="text" name="position" onChange={handleChange} />
