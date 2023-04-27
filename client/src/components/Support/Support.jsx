@@ -2,9 +2,9 @@ import React from 'react';
 import { SupportCards } from './SupportCards';
 import happy from '../../assets/again.jpeg';
 
-const Support = () => {
+export const Support = () => {
 	return (
-		<div id='support-page' className='bg-purple-200 sm:m-[-20px] md:m-0 pb-[100px]'>
+		<div id='support-page' className='bg-purple-200 sm:m-0 md:m-0 pb-[100px]'>
 			<img
 				src={
 					'https://images.unsplash.com/photo-1509099836639-18ba1795216d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=731&q=80'
@@ -21,12 +21,12 @@ const Support = () => {
 			<h1 className='text-3xl pb-4 pt-4 font-serif mt-24 text-center text-black'>
 				Your donation will support...
 			</h1>
-			<SupportCards />
+			<SupportCards/>
 			<h1 className='text-5xl font-serif mt-4 text-center text-black'>
 				You can donate through
 			</h1>
 
-			<div className='grid sm:grid-cols-1 sm:justify-center sm:align-center md:grid-cols-3 text-center md:py-8 md:pr-48'>
+			<div className='grid sm:grid-cols-1 sm:justify-center sm:align-center md:grid-cols-3 text-center md:py-8 md:pr-4 sm:pl-52'>
 				<div className='col-4'>
 					<a href='https://gofund.me/bc18e7b5'>
 						<img
@@ -61,4 +61,3 @@ const Support = () => {
 	);
 };
 
-export default Support;

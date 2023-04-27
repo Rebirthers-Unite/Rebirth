@@ -13,7 +13,7 @@ function Survivors() {
 			</div>
 			<div
 				className='max-w-[1240px] mx-auto grid sm:grid-cols-1 md:grid-cols-3 gap-8'>
-				<div className='md:w-full sm:w-4/5 sm:ml-20 md:ml-2 shadow-xl flex bg-white text-black flex-col p-4 md:mt-4 my-4 ml-2 rounded-lg hover:scale-105 duration-300'>
+				<div className='md:w-full sm:w-4/5 sm:ml-20 md:ml-2 shadow-xl flex bg-white text-black flex-col p-4 md:mt-4 my-4 ml-2 rounded-lg duration-300'>
 						<img className='w-30 mx-auto mt-[1rem] bg-white' src={Face} />
 							<p className='font-light text-l italic font-gray-800'>
 								Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -23,7 +23,7 @@ function Survivors() {
 							</p>
 					</div>
 
-					<div className='md:w-full sm:w-4/5 sm:mt-8 sm:ml-20 md:ml-2 shadow-xl flex bg-white text-black flex-col p-4 sm:py-56 md:mt-2 my-4 ml-2 rounded-lg hover:scale-105 duration-300'>
+					<div className='md:w-full sm:w-4/5 sm:mt-8 sm:ml-20 md:ml-2 shadow-xl flex bg-white text-black flex-col p-4 sm:py-56 md:mt-2 my-4 ml-2 rounded-lg  duration-300'>
 						<img className='w-30 mx-auto mt-[1rem] bg-white' src={Face} />
 						
 							<p className='font-light text-l italic font-gray-800'>
@@ -33,7 +33,7 @@ function Survivors() {
 								US transport
 							</p>
 						</div>
-				<div className='md:w-full sm:w-4/5 sm:ml-20 md:ml-2 shadow-xl flex bg-white text-black flex-col p-4 sm:mt-56 md:mt-2 my-4 ml-2 rounded-lg hover:scale-105 duration-300'>
+				<div className='md:w-full sm:w-4/5 sm:ml-20 md:ml-2 shadow-xl flex bg-white text-black flex-col p-4 sm:mt-56 md:mt-2 my-4 ml-2 rounded-lg duration-300'>
 						<img className='w-30 mx-auto mt-[1rem] bg-white' src={Face} />
 						<p className="font-light text-l italic font-gray-800">
 							"Lorem ipsum dolor sit amet, consectetur adipiscing elit"
