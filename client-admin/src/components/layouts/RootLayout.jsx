@@ -5,6 +5,7 @@ import Sidebar from '../Sidebar';
 
 export default function RootLayout() {
 	return (
+<>
 		<Grid templateColumns={'repeat(6, 1fr)'} bg={'gray.50'} w={'100vw'} minH={"100vh"}>
 			<GridItem
 				as={'aside'}
@@ -35,5 +36,6 @@ export default function RootLayout() {
 				<Outlet />
 			</GridItem>
 		</Grid>
+		 	</>
 	);
 }

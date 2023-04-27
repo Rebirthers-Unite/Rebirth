@@ -10,7 +10,7 @@ import {
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SurvivorsList = ({ renderupdateform, survivors }) => {
+const SurvivorsList = ({ renderUpdateForm, survivors }) => {
 	const tableFields = ['NAME', 'DATE OF BIRTH', 'ORGANIZATION', 'CONTACT'];
 
 	return (
@@ -33,10 +33,7 @@ const SurvivorsList = ({ renderupdateform, survivors }) => {
 				<Tbody>
 					{survivors.map((survivor) => (
 						<Tr key={survivor.id['$oid']}>
-							<Link
-								to={`/survivors/${survivor.id['$oid']}`}
-								
-							>
+							<Link to={`/survivors/${survivor.id['$oid']}`}>
 								<Td>{survivor.name}</Td>
 							</Link>
 							<Td>{survivor.date_of_birth}</Td>

@@ -28,6 +28,17 @@ const Navbar = () => {
 		});
 	};
 
+	const signOutUser = () => {
+			fetch('  https://rebirth-ktaf.onrender.com/signout/' + id, {
+				method: 'DELETE',
+				headers: {
+					Authorization: `Bearer ${token}`,
+				},
+			});
+		
+		showToast;
+	}
+
 	return (
 		<Flex as={'nav'} p={'10px'} align={'center'} mb={'40px'}>
 			<Heading as={'h1'}>Dashboard</Heading>
@@ -43,7 +54,7 @@ const Navbar = () => {
 					</AvatarBadge>
 				</Avatar>
 				<Text>superuser@rebirth.com</Text>
-				<Button colorScheme="purple" onClick={showToast}>
+				<Button colorScheme="purple" onClick={signOutUser}>
 					Logout
 				</Button>
 			</HStack>

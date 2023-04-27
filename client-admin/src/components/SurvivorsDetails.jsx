@@ -24,9 +24,9 @@ import useAuthStore from '../store/Token';
 const SurvivorsDetails = ({
 	updateModalOpen,
 	setUpdateModalOpen,
-	renderupdatesurvivormodal,
+	renderUpdateSurvivorModal,
 	closeUpdateSurvivorModal,
-	// renderupdateform,
+	// renderUpdateForm,
 	renderDeleteSurvivorModal,
 	deleteModalOpen,
 	isOpen,
@@ -127,7 +127,8 @@ const SurvivorsDetails = ({
 						<span>School: </span> {survivor.school}
 					</Text>
 					<Text>
-						<span>Social Asset Building: </span> {survivor.social_asset_building}
+						<span>Social Asset Building: </span>{' '}
+						{survivor.social_asset_building}
 					</Text>
 					<Text>
 						<span>Children: </span> {survivor.children}
@@ -140,12 +141,10 @@ const SurvivorsDetails = ({
 						{' '}
 						<span>Date of Exit: </span> {survivor.date_of_exit}
 					</Text>
-					
 				</CardBody>
-
 			</Card>
 			<HStack justify={'center'} gap={'1rem'} mt={'1rem'}>
-				<Button onClick={renderupdatesurvivormodal}>UPDATE DETAILS</Button>
+				<Button onClick={renderUpdateSurvivorModal}>UPDATE DETAILS</Button>
 				<Button bg={'red.500'} onClick={renderDeleteSurvivorModal}>
 					DELETE SURVIVOR
 				</Button>

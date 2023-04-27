@@ -56,7 +56,7 @@ function App() {
 		setDeleteModalOpen(true);
 	};
 
-	const renderupdatesurvivormodal = () => {
+	const renderUpdateSurvivorModal = () => {
 		setIsUpdating(true);
 		setUpdateModalOpen(true);
 	};
@@ -116,7 +116,7 @@ function App() {
 							deleteModalOpen={deleteModalOpen}
 							setDeleteModalOpen={setDeleteModalOpen}
 							closeModal={closeModal}
-							renderupdatesurvivormodal={renderupdatesurvivormodal}
+							renderUpdateSurvivorModal={renderUpdateSurvivorModal}
 							renderDeleteSurvivorModal={renderDeleteSurvivorModal}
 							setIsOpen={setIsOpen}
 							isUpdating={isUpdating}
