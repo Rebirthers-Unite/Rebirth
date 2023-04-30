@@ -16,6 +16,7 @@ const StaffList = ({ staff, setStaff }) => {
 	const token = useAuthStore((state) => state.token);
 	const tableFields = ['NAME', 'EMAIL', 'PHONE NUMBER', 'POSITION', 'GENDER'];
 
+
 	useEffect(() => {
 		fetch('https://rebirth-ktaf.onrender.com/staffs', {
 			method: 'GET',

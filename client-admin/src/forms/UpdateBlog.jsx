@@ -4,9 +4,14 @@ import {
 	FormLabel,
 	Input,
 	Textarea,
+	useToast,
 } from '@chakra-ui/react';
 import { React, useEffect, useState } from 'react';
 import useAuthStore from '../store/Token';
+import { CheckIcon } from '@chakra-ui/icons';
+import { Navigate, useNavigate } from 'react-router';
+
+
 const UpdateBlog = ({
 	blog,
 	setBlog,
@@ -15,6 +20,10 @@ const UpdateBlog = ({
 }) => {
 	const token = useAuthStore((state) => state.token);
 	const [updateBlog, setUpdateBlog] = useState({});
+	
+
+	const navigate = useNavigate();
+	const toast = useToast();
 	useEffect(() => setUpdateBlog(blog), []);
 	const showToast = () => {
 		toast({
@@ -34,11 +43,16 @@ const UpdateBlog = ({
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		fetch(`https://rebirth-ktaf.onrender.com/blogs/${blog.id["$oid"]}`, {
-			method: 'PUT',
-			headers: { 
+
+		const content = convertToRaw(editorState.getCurrentContent());
+		const plainText = JSON.stringify(content);
+
+		fetch(`https://rebirth-ktaf.onrender.com/blogs/${blog.id['$oid']}`, {
+			method: 'PATCH',
+			headers: {
 				Authorization: `Bearer ${token}`,
-				'Content-Type': 'application/json' },
+				'Content-Type': 'application/json',
+			},
 			body: JSON.stringify(updateBlog),
 		})
 			.then((response) => {
@@ -56,7 +70,7 @@ const UpdateBlog = ({
 			});
 		showToast();
 		closeUpdateBlogModal();
-		window.location.reload();
+		navigate('#viewBlogs');
 	};
 	return (
 		<FormControl onSubmit={handleSubmit}>
@@ -103,6 +117,7 @@ const UpdateBlog = ({
 				resize={'none'}
 				required
 			/>
+
 			<Button onClick={handleSubmit}>POST BLOG</Button>
 		</FormControl>
 	);

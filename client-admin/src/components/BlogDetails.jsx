@@ -23,6 +23,8 @@ const BlogDetails = ({
 	updateBlogsModalOpen,
 	deleteBlogsModalOpen,
 	closeDeleteBlogModal,
+	newBlog,
+	setNewBlog
 }) => {
 	const [blog, setBlog] = useState({});
 	const { id } = useParams();

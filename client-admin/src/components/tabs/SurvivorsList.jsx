@@ -7,11 +7,24 @@ import {
 	Thead,
 	Tr,
 } from '@chakra-ui/react';
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import Pagination from '../Pagination';
 
 const SurvivorsList = ({ renderUpdateForm, survivors }) => {
 	const tableFields = ['NAME', 'DATE OF BIRTH', 'ORGANIZATION', 'CONTACT'];
+	const [currentPage, setCurrentPage] = useState(1);
+	const [postsPerPage] = useState(10);
+
+	// Get curent posts
+	const indexOfLastPost = currentPage * postsPerPage
+	const indexOfFirstPost = indexOfLastPost - postsPerPage
+	const currentPosts = survivors.slice(indexOfFirstPost, indexOfLastPost)
+
+// Change page
+	const paginate = (pageNumber) => {
+		setCurrentPage(pageNumber)
+	}
 
 	return (
 		<TableContainer>
@@ -31,7 +44,7 @@ const SurvivorsList = ({ renderUpdateForm, survivors }) => {
 					</Tr>
 				</Thead>
 				<Tbody>
-					{survivors.map((survivor) => (
+					{currentPosts.map((survivor) => (
 						<Tr key={survivor.id['$oid']}>
 							<Link to={`/survivors/${survivor.id['$oid']}`}>
 								<Td>{survivor.name}</Td>
@@ -43,6 +56,7 @@ const SurvivorsList = ({ renderUpdateForm, survivors }) => {
 					))}
 				</Tbody>
 			</Table>
+			<Pagination postPerPage={postsPerPage} totalPosts={survivors.length} paginate={paginate}/>
 		</TableContainer>
 	);
 };

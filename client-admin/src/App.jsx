@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import {
 	createBrowserRouter,
 	createRoutesFromElements,
+	Navigate,
 	Route,
 	RouterProvider,
 } from 'react-router-dom';
@@ -48,6 +49,9 @@ function App() {
 		position: '',
 		gender: '',
 	});
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+	const [newBlog, setNewBlog] = useState({});
 
 	const renderupdateform = () => {
 		setIsOpen(true);
@@ -85,10 +89,26 @@ function App() {
 		setUpdateBlogsModalOpen(true);
 	};
 
+	// const userToken = localStorage.getItem('token');
+
 	const router = createBrowserRouter(
 		createRoutesFromElements(
-			<Route path="/" element={<RootLayout />}>
-				<Route path="/login" element={<Login />} />
+			<Route
+				path="/"
+				element={
+					isLoggedIn ? (
+						<RootLayout isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+					) : (
+						<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+					)
+				}
+			>
+				{/* <Route
+					path="/login"
+					element={
+						<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
+					}
+				/> */}
 				<Route path="/signup" element={<Signup />} />
 				<Route
 					path="/dashboard"
@@ -103,6 +123,8 @@ function App() {
 							setSurvivors={setSurvivors}
 							staff={staff}
 							setStaff={setStaff}
+							newBlog={newBlog}
+							setNewBlog={setNewBlog}
 						/>
 					}
 				/>
@@ -144,6 +166,8 @@ function App() {
 							updateBlogsModalOpen={updateBlogsModalOpen}
 							deleteBlogsModalOpen={deleteBlogsModalOpen}
 							closeDeleteBlogModal={closeDeleteBlogModal}
+							newBlog={newBlog}
+							setNewBlog={setNewBlog}
 						/>
 					}
 				/>

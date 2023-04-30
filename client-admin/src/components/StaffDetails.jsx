@@ -12,6 +12,7 @@ import {
 	Heading,
 	Image,
 	Text,
+	VStack,
 	useToast,
 } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
@@ -47,18 +48,18 @@ const StaffDetails = () => {
 		});
 	};
 
-		useEffect(() => {
+	useEffect(() => {
 		fetch(`https://rebirth-drtz.onrender.com/staffs/${id}`, {
 			method: 'GET',
 			headers: {
 				Authorization: `Bearer ${token}`,
 				'Content-Type': 'application/json',
-			}
+			},
 		}).then((r) => {
 			r.ok
 				? r.json().then((data) => {
 						setStaffMember(data);
-						setIod(data.id['$oid'])
+						setIod(data.id['$oid']);
 				  })
 				: 'Wahala!!';
 		});
@@ -70,7 +71,7 @@ const StaffDetails = () => {
 			headers: {
 				Authorization: `Bearer ${token}`,
 				'Content-Type': 'application/json',
-			}
+			},
 		}).then(() => {
 			showToast();
 			navigate('/dashboard');
@@ -82,27 +83,59 @@ const StaffDetails = () => {
 			<Card maxW="md">
 				<CardHeader>
 					<Flex spacing="4">
-						<Flex flex="1" gap="4" alignItems="center" flexWrap="wrap">
+						<Flex
+							flex="1"
+							direction={'column'}
+							gap="4"
+							alignItems="center"
+							flexWrap="wrap"
+						>
 							<Avatar name={staffMember.name} src="" />
 
+							<Heading size="md" fontSize={'3rem'} p={'1rem'}>
+								{staffMember.name}
+							</Heading>
+
 							<Box>
-								<Heading size="md" p={'1rem'}>
-									{staffMember.name}
-								</Heading>
-								<Text fontSize={'1.5rem'} p={'1rem'}>
-									<EmailIcon /> {staffMember.email}
-								</Text>
-								<Text fontSize={'1.5rem'} p={'1rem'}>
-									<RiBriefcase5Fill /> {staffMember.position}
-								</Text>
-								<Text fontSize={'1.5rem'} p={'1rem'}>
-									<BsGenderAmbiguous /> {staffMember.gender}
-								</Text>
+								<VStack
+									bg={'purple.300'}
+									w={'100%'}
+									borderRadius={'8px'}
+									m={'5px 0'}
+									p={'1rem'}
+								>
+									<EmailIcon fontSize={'2rem'} color={'white'} />
+									<Text fontSize={'1.5rem'} p={'1rem'}>
+										{staffMember.email}
+									</Text>
+								</VStack>
+								<VStack
+									w={'100%'}
+									borderRadius={'8px'}
+									m={'1rem 0'}
+									// p={'1rem'}
+								>
+									<RiBriefcase5Fill fontSize={'2rem'} />
+									<Text fontSize={'1.5rem'} p={'1rem'}>
+										{staffMember.position}
+									</Text>
+								</VStack>
+								<VStack
+									bg={'purple.300'}
+									w={'100%'}
+									borderRadius={'8px'}
+									m={'5px 0'}
+									p={'1rem'}
+								>
+									<BsGenderAmbiguous fontSize={'2rem'} color={'white'} />{' '}
+									<Text fontSize={'1.5rem'} p={'1rem'}>
+										{staffMember.gender}
+									</Text>
+								</VStack>
 							</Box>
 						</Flex>
 					</Flex>
 				</CardHeader>
-
 			</Card>
 			<HStack justify={'center'} gap={'1rem'} mt={'1rem'}>
 				<Button>

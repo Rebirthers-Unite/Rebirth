@@ -14,7 +14,7 @@ import SurvivorsList from '../components/tabs/SurvivorsList';
 import StaffList from '../components/tabs/StaffList';
 import SearchStaff from '../forms/SearchStaff';
 import UpdateSurvivorModal from '../components/modals/UpdateSurvivorModal';
-import AddBlog from '../forms/AddBlog';
+import AddBlog from '../components/tabs/AddBlog';
 import SurvivorsSearch from '../forms/SurvivorsSearch';
 import BlogsSearch from '../forms/BlogsSearch';
 import BlogCards from '../components/BlogCards';
@@ -39,6 +39,8 @@ const Dashboard = ({
 	closeStaffControlModal,
 	newStaff,
 	setNewStaff,
+	newBlog,
+	setNewBlog,
 }) => {
 	const token = useAuthStore((state) => state.token);
 	const [search, setSearch] = useState('');
@@ -60,6 +62,9 @@ const Dashboard = ({
 	return (
 		<Box>
 			<Tabs
+				isManual
+				isLazy
+				variant={'soft-rounded'}
 				mt={'40px'}
 				p={'20px'}
 				colorScheme="purple"
@@ -102,6 +107,7 @@ const Dashboard = ({
 							bg: 'purple.400',
 							borderTopRightRadius: '60px',
 						}}
+						id="#viewBlogs"
 					>
 						View Blogs
 					</Tab>
@@ -158,7 +164,7 @@ const Dashboard = ({
 						/>
 					</TabPanel>
 					<TabPanel>
-						<AddBlog />
+						<AddBlog newBlog={newBlog} setNewBlog={setNewBlog} />
 					</TabPanel>
 					<TabPanel>
 						<BlogsSearch search={search} setSearch={setSearch} />

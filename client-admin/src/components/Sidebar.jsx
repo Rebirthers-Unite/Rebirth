@@ -26,26 +26,26 @@ const Sidebar = () => {
 					</NavLink>
 				</ListItem>
 
-				<ListItem>
+				{/* <ListItem>
 					<NavLink to={'/profile'}>
 						<ListIcon as={AtSignIcon} color={'wheat'} />
 						Profile
 					</NavLink>
-				</ListItem>
+				</ListItem> */}
 
-				<ListItem>
-					<NavLink to={'/login'}>
+				{/* <ListItem> */}
+					{/* <NavLink to={'/login'}> */}
 						{/* <ListIcon as={AtSignIcon} color={'wheat'} /> */}
-						Login
-					</NavLink>
-				</ListItem>
+						{/* Login */}
+					{/* </NavLink> */}
+				{/* </ListItem> */}
 
-				<ListItem>
-					<NavLink to={'/signup'}>
+				{/* <ListItem> */}
+					{/* <NavLink to={'/signup'}> */}
 						{/* <ListIcon as={AtSignIcon} color={'wheat'} /> */}
-						Signup
-					</NavLink>
-				</ListItem>
+						{/* Signup */}
+					{/* </NavLink> */}
+				{/* </ListItem> */}
 			</List>
 		</div>
 	);

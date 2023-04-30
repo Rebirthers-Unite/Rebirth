@@ -118,7 +118,7 @@ const SurvivorsDetails = ({
 						<span>Guadian: </span> {survivor.guardian_name}
 					</Text>
 					<Text>
-						<span>Guadian of Contact: </span> {survivor.contact_of_guardian}
+						<span>Contact of Guardian: </span> {survivor.contact_of_guardian}
 					</Text>
 					<Text>
 						<span>Level of Education: </span> {survivor.level_of_education}
