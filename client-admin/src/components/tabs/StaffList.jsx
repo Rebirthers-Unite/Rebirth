@@ -31,7 +31,7 @@ const StaffList = ({ staff, setStaff }) => {
 
 	return (
 		<TableContainer>
-			<Table>
+			<Table className='table'>
 				<Thead>
 					<Tr bg={'purple.400'}>
 						{tableFields.map((e, i) => (

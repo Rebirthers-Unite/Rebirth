@@ -35,7 +35,15 @@ const Navbar = ({ isLoggedIn, setIsLoggedIn }) => {
 	};
 
 	return (
-		<Flex as={'nav'} p={'10px'} align={'center'} mb={'40px'}>
+		<Flex
+			as={'nav'}
+			p={'10px'}
+			align={'center'}
+			mb={{
+				base: "10px",
+				md: '40px',
+			}}
+		>
 			<Heading as={'h1'}>Dashboard</Heading>
 
 			<Spacer />

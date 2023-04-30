@@ -15,7 +15,7 @@ import Pagination from './Pagination';
 const BlogCards = () => {
 	const [blogs, setBlogs] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [postsPerPage] = useState(4);
+	const [postsPerPage] = useState(3);
 
 	// Get curent posts
 	const indexOfLastSurvivor = currentPage * postsPerPage;

@@ -3,7 +3,7 @@ import React from 'react';
 
 const SurvivorsSearch = ({ search, setSearch }) => {
 	return (
-		<Flex justify={''} mr={'2rem'}>
+		<Flex mr={'2rem'}>
 			<FormControl onSubmit={(e) => e.preventDefault()} mb={"1rem"}>
 				<FormLabel>Search Survivor</FormLabel>
 				<Input

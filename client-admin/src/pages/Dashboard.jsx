@@ -80,6 +80,14 @@ const Dashboard = ({
 							bg: 'purple.400',
 							borderTopLeftRadius: '60px',
 						}}
+						h={{
+							base: '2rem',
+							md: '3rem',
+						}}
+						fontSize={{
+							base: '0.7rem',
+							md: '1rem',
+						}}
 					>
 						Survivors
 					</Tab>
@@ -88,6 +96,14 @@ const Dashboard = ({
 							color: 'white',
 							bg: 'purple.400',
 							// borderTopRightRadius: '10px',
+						}}
+						h={{
+							base: '2rem',
+							md: '3rem',
+						}}
+						fontSize={{
+							base: '0.7rem',
+							md: '1rem',
 						}}
 					>
 						Staff
@@ -98,6 +114,14 @@ const Dashboard = ({
 							bg: 'purple.400',
 							// borderTopRightRadius: '10px',
 						}}
+						h={{
+							base: '2rem',
+							md: '3rem',
+						}}
+						fontSize={{
+							base: '0.7rem',
+							md: '1rem',
+						}}
 					>
 						Post Blogs
 					</Tab>
@@ -106,6 +130,14 @@ const Dashboard = ({
 							color: 'white',
 							bg: 'purple.400',
 							borderTopRightRadius: '60px',
+						}}
+						h={{
+							base: '2rem',
+							md: '3rem',
+						}}
+						fontSize={{
+							base: '0.7rem',
+							md: '1rem',
 						}}
 						id="#viewBlogs"
 					>
@@ -117,6 +149,9 @@ const Dashboard = ({
 						<HStack justify={'space-between'}>
 							<SurvivorsSearch search={search} setSearch={setSearch} />
 							<Button
+								fontSize={{
+									base: '0.8rem',
+								}}
 								bg={'purple.300'}
 								color={'white'}
 								_hover={{ bg: 'purple.500' }}
@@ -148,9 +183,12 @@ const Dashboard = ({
 								setSearchStaff={setSearchStaff}
 							/>
 							<Button
+								fontSize={{
+									base: '0.8rem',
+								}}
 								bg={'purple.300'}
 								color={'white'}
-								_hover={{ bg: 'purple.500' }}
+								_hover={{ bg: 'purple.500', color: 'white' }}
 							>
 								<Link to={'/add-staff'}>Add Staff</Link>
 							</Button>

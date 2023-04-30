@@ -35,7 +35,14 @@ export default function RootLayout({isLoggedIn, setIsLoggedIn}) {
 						lg: 4,
 						xl: 5,
 					}}
-					p={'40px'}
+					p={{
+						base: '10px',
+						md: "40px"
+					}}
+					m={{
+
+						md: "0px",
+					}}
 				>
 					<Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
 					<Outlet />
