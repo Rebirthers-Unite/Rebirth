@@ -119,8 +119,8 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
 						_placeholder={{
 							color: 'black',
 						}}
-						type="Password"
-						placeholder="password"
+						type="password"
+						placeholder="Password"
 						value={password}
 						onChange={handlePasswordChange}
 						required

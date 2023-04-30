@@ -21,7 +21,10 @@ const Pagination = ({ postPerPage, totalPosts, paginate }) => {
 								color: '#fff',
 								bg: 'purple.600',
 							}}
-							onClick={() => paginate(number)}
+							_focus={{
+								bg: "purple.600"
+							}}
+							onClick={() => {paginate(number)}}
 						>
 							{number}
 						</Button>

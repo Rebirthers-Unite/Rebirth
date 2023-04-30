@@ -18,9 +18,12 @@ const BlogCards = () => {
 	const [postsPerPage] = useState(4);
 
 	// Get curent posts
-	const indexOfLastPost = currentPage * postsPerPage;
-	const indexOfFirstPost = indexOfLastPost - postsPerPage;
-	const currentPosts = blogs.slice(indexOfFirstPost, indexOfLastPost);
+	const indexOfLastSurvivor = currentPage * postsPerPage;
+	const indexOfFirstSurvivor = indexOfLastSurvivor - postsPerPage;
+	const currentSurvivors = blogs.slice(
+		indexOfFirstSurvivor,
+		indexOfLastSurvivor
+	);
 
 	// Change page
 	const paginate = (pageNumber) => {
@@ -35,7 +38,7 @@ const BlogCards = () => {
 
 	return (
 		<div>
-			{currentPosts.map((blog) => (
+			{currentSurvivors.map((blog) => (
 				<Card
 					direction={{ base: 'column', sm: 'row' }}
 					overflow="hidden"
