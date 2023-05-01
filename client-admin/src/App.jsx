@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
 	createBrowserRouter,
 	createRoutesFromElements,
@@ -21,6 +21,7 @@ function App() {
 	const [updateModalOpen, setUpdateModalOpen] = useState(false);
 	const [deleteModalOpen, setDeleteModalOpen] = useState(false);
 	const [isUpdating, setIsUpdating] = useState(false);
+	const [isModalOpen, setIsModalOpen] = useState(true);
 	const [survivors, setSurvivors] = useState([]);
 	const [staff, setStaff] = useState([]);
 	const [updateBlogsModalOpen, setUpdateBlogsModalOpen] = useState(false);
@@ -38,9 +39,11 @@ function App() {
 		school: '',
 		social_asset_building: '',
 		children: '',
-		dateOfEntry: '',
-		dateOfExit: '',
+		date_of_entry: '',
+		date_of_exit: '',
 	});
+
+
 
 	const [newStaff, setNewStaff] = useState({
 		name: '',
@@ -87,6 +90,9 @@ function App() {
 
 	const renderUpdateBlogModal = () => {
 		setUpdateBlogsModalOpen(true);
+		useEffect(() => {
+			setIsModalOpen(true);
+		}, []);
 	};
 
 	// const userToken = localStorage.getItem('token');
@@ -125,6 +131,8 @@ function App() {
 							setStaff={setStaff}
 							newBlog={newBlog}
 							setNewBlog={setNewBlog}
+							isModalOpen={isModalOpen}
+							setIsModalOpen={setIsModalOpen}
 						/>
 					}
 				/>
@@ -147,6 +155,8 @@ function App() {
 							setNewSurvivor={setNewSurvivor}
 							survivors={survivors}
 							setSurvivors={setSurvivors}
+							isModalOpen={isModalOpen}
+							setIsModalOpen={setIsModalOpen}
 						/>
 					}
 				/>

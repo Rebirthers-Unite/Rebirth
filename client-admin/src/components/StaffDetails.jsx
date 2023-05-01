@@ -98,6 +98,17 @@ const StaffDetails = () => {
 
 							<Box>
 								<VStack
+									w={'100%'}
+									borderRadius={'8px'}
+									m={'1rem 0'}
+									// p={'1rem'}
+								>
+									<PhoneIcon fontSize={'2rem'} />
+									<Text fontSize={'1.5rem'} p={'1rem'}>
+										{staffMember.phone_number}
+									</Text>
+								</VStack>
+								<VStack
 									bg={'purple.300'}
 									w={'100%'}
 									borderRadius={'8px'}
@@ -109,6 +120,7 @@ const StaffDetails = () => {
 										{staffMember.email}
 									</Text>
 								</VStack>
+
 								<VStack
 									w={'100%'}
 									borderRadius={'8px'}

@@ -41,6 +41,8 @@ const Dashboard = ({
 	setNewStaff,
 	newBlog,
 	setNewBlog,
+	isModalOpen,
+	setIsModalOpen
 }) => {
 	const token = useAuthStore((state) => state.token);
 	const [search, setSearch] = useState('');
@@ -174,6 +176,8 @@ const Dashboard = ({
 							loading={loading}
 							newSurvivor={newSurvivor}
 							setNewSurvivor={setNewSurvivor}
+							isModalOpen={isModalOpen}
+							setIsModalOpen={setIsModalOpen}
 						/>
 					</TabPanel>
 					<TabPanel>

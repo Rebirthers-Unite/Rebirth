@@ -46,9 +46,14 @@ const BlogDetails = ({
 		<Container maxW={'70%'}>
 			<Heading>{blog.title}</Heading>
 			<VStack>
-				<Image src={blog.image_url} alt="Image goes here" />
+				<Image
+					src={blog.image_url}
+					alt={blog.title}
+					borderRadius={'10px'}
+					mb={'1rem'}
+				/>
 				<HStack justify={'space-between'}>
-					<HStack>
+					<HStack m={'1rem'}>
 						<Avatar size={'sm'} name={blog.author} />
 						<Text as={'h6'} fontWeight={'bold'}>
 							{blog.author}
@@ -57,8 +62,8 @@ const BlogDetails = ({
 					<Text as={'p'}>{blog.date}</Text>
 				</HStack>
 			</VStack>
-			<Text>{blog.body}</Text>
-			<HStack justify={'center'}>
+			<Text mb={"1rem"}>{blog.body}</Text>
+			<HStack justify={'center'} gap={"1rem"}>
 				<Button onClick={renderUpdateBlogModal}>UPDATE BLOG</Button>
 				<Button bg={'red.500'} onClick={renderDeleteBlogModal}>
 					DELETE BLOG

@@ -16,8 +16,6 @@ const UpdateDetailsForm = ({
 	setNewSurvivor,
 	isUpdating,
 	closeUpdateSurvivorModal,
-	survivors,
-	names,
 	survivor,
 	setSurvivor,
 	// setSurvivors,
@@ -66,7 +64,7 @@ const UpdateDetailsForm = ({
 					console.error('Error:', error);
 				});
 			closeUpdateSurvivorModal();
-			window.location.reload();
+			// window.location.reload();
 		} else {
 			fetch('https://rebirth-ktaf.onrender.com/survivors/', {
 				method: 'POST',
@@ -78,6 +76,7 @@ const UpdateDetailsForm = ({
 			})
 				.then((response) => {
 					if (!response.ok) {
+						console.log(response);
 						throw new Error('Network response was not ok');
 					}
 					return response.json();
@@ -102,7 +101,7 @@ const UpdateDetailsForm = ({
 			: setNewSurvivor((prevState) => ({ ...prevState, [name]: value }));
 
 		console.log(newSurvivor);
-		// console.log(survivor);
+		console.log(survivor);
 	};
 
 	return (
@@ -114,7 +113,6 @@ const UpdateDetailsForm = ({
 				value={isUpdating ? survivor.name : newSurvivor.name}
 				onChange={handleChange}
 			/>
-
 			<FormLabel>Date of Birth</FormLabel>
 			<Input
 				type="date"
@@ -154,6 +152,7 @@ const UpdateDetailsForm = ({
 				name="organization_email"
 				onChange={handleChange}
 			/>
+
 			<FormLabel>Guardian Name</FormLabel>
 			<Input
 				type="text"
@@ -203,33 +202,39 @@ const UpdateDetailsForm = ({
 				onChange={handleChange}
 			/>
 
-			<FormLabel>Children</FormLabel>
-			<Input
-				type="text"
-				value={isUpdating ? survivor.children : newSurvivor.children}
-				name="children"
-				onChange={handleChange}
-			/>
+			{/*			<FormLabel>Children</FormLabel>
+					<Input
+						type="text"
+						value={isUpdating ? survivor.children : newSurvivor.children}
+						name="children"
+						onChange={handleChange}
+					/>
+				*/}
 
-			<FormLabel>Date of Entry</FormLabel>
-			<Input
-				type="date"
-				name="dateOfEntry"
-				value={isUpdating ? survivor.dateOfEntry : newSurvivor.dateOfEntry}
-				onChange={handleChange}
-			/>
+					<FormLabel>Date of Entry</FormLabel>
+					<Input
+						type="date"
+						name="date_of_entry"
+						value={isUpdating ? survivor.dateOfEntry : newSurvivor.dateOfEntry}
+						onChange={handleChange}
+					/>
 
-			<FormLabel>Date of Exit</FormLabel>
-			<Input
-				type="date"
-				name="dateofExit"
-				value={isUpdating ? survivor.dateofExit : newSurvivor.dateofExit}
-				onChange={handleChange}
-			/>
+					<FormLabel>Date of Exit</FormLabel>
+					<Input
+						type="date"
+						name="date_of_exit"
+						value={isUpdating ? survivor.dateofExit : newSurvivor.dateofExit}
+						onChange={handleChange}
+					/>
 
-			<Button onClick={handleSubmit} type="submit" colorScheme="blue" mt={5}>
-				{isUpdating ? 'Update Survivor' : 'Add New Survivor'}
-			</Button>
+					<Button
+						onClick={handleSubmit}
+						type="submit"
+						colorScheme="blue"
+						mt={5}
+					>
+						{isUpdating ? 'Update Survivor' : 'Add New Survivor'}
+					</Button> 
 		</FormControl>
 	);
 };

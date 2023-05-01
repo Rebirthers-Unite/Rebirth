@@ -10,6 +10,7 @@ import {
 	ModalCloseButton,
 } from '@chakra-ui/react';
 import UpdateDetailsForm from '../../forms/SurvivorsControlForm';
+import { useEffect } from 'react';
 
 const UpdateSurvivorModal = ({
 	isOpen,
@@ -26,6 +27,8 @@ const UpdateSurvivorModal = ({
 	names,
 	survivor,
 	setSurvivor,
+	isModalOpen,
+	setIsModalOpen,
 }) => {
 	return (
 		<div>
@@ -60,6 +63,8 @@ const UpdateSurvivorModal = ({
 							names={names}
 							survivor={survivor}
 							setSurvivor={setSurvivor}
+							isModalOpen={isModalOpen}
+							setIsModalOpen={setIsModalOpen}
 						/>
 					</ModalBody>
 					<ModalFooter>

@@ -55,7 +55,7 @@ const StaffList = ({ staff, setStaff }) => {
 							</Link>
 
 							<Td>{e.email}</Td>
-							<Td>{e.phoneNumber}</Td>
+							<Td>{e.phone_number}</Td>
 							<Td>{e.position}</Td>
 							<Td>{e.gender}</Td>
 						</Tr>

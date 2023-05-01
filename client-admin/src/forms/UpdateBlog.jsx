@@ -11,7 +11,6 @@ import useAuthStore from '../store/Token';
 import { CheckIcon } from '@chakra-ui/icons';
 import { Navigate, useNavigate } from 'react-router';
 
-
 const UpdateBlog = ({
 	blog,
 	setBlog,
@@ -20,7 +19,6 @@ const UpdateBlog = ({
 }) => {
 	const token = useAuthStore((state) => state.token);
 	const [updateBlog, setUpdateBlog] = useState({});
-	
 
 	const navigate = useNavigate();
 	const toast = useToast();
@@ -118,7 +116,7 @@ const UpdateBlog = ({
 				required
 			/>
 
-			<Button onClick={handleSubmit}>POST BLOG</Button>
+			<Button onClick={handleSubmit}>UPDATE BLOG</Button>
 		</FormControl>
 	);
 };
