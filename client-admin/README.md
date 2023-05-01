@@ -96,6 +96,6 @@ This app is fully responsive across devices:
 * [Brian Isaboke](https://github.com/Osorabrian)
 
 
-### ISC License (MIT)
+### MIT License (MIT)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
