@@ -1,0 +1,120 @@
+{
+  "survivors": [
+    {
+      "id": 4,
+      "name": "Avery Owino",
+      "contact": "avery@gmail.com",
+      "dateOfBirth": "25/09/2015",
+      "referringOrganization": "UNICEF",
+      "referringOrganizationContact": "42nd Street, Manhattan",
+      "programs": "Nutrition Support",
+      "dateOfEntry": "5/05/2021",
+      "dateOfExit": "",
+      "guardian": "Karen Lee",
+      "guardianContact": "212-555-4321"
+    },
+    {
+      "name": "Sam Scrum",
+      "contact": "0722270979",
+      "dateOfBirth": "2023-04-25",
+      "referringOrganization": "Unicef",
+      "referringOrganizationContact": "0722270969",
+      "programs": "",
+      "dateOfEntry": "",
+      "dateOfExit": "",
+      "guardian": "Somebody Else",
+      "guardianContact": "0722270969",
+      "id": 10
+    },
+    {
+      "name": "Msee",
+      "contact": "0711111111",
+      "dateOfBirth": "2023-04-28",
+      "referringOrganization": "Unicef",
+      "referringOrganizationContact": "0722270969",
+      "programs": "",
+      "dateOfEntry": "2023-04-20",
+      "dateOfExit": "2023-04-30",
+      "guardian": "Guardian",
+      "guardianContact": "0722270969",
+      "id": 11
+    },
+    {
+      "name": "Ismahan Abdirizak",
+      "contact": "0722270969",
+      "dateOfBirth": "2023-04-28",
+      "referringOrganization": "Unicef",
+      "referringOrganizationContact": "0711098765",
+      "programs": "",
+      "dateOfEntry": "2023-04-01",
+      "dateOfExit": "2023-04-30",
+      "guardian": "Some Guardian",
+      "guardianContact": "0711111111",
+      "id": 12
+    },
+    {
+      "name": "Final Test",
+      "contact": "0711111000",
+      "dateOfBirth": "2023-04-20",
+      "referringOrganization": "Save A Child",
+      "referringOrganizationContact": "0711098765",
+      "programs": "",
+      "dateOfEntry": "2023-04-01",
+      "dateOfExit": "2023-04-02",
+      "guardian": "Brian Osoro",
+      "guardianContact": "0877899234",
+      "id": 14
+    }
+  ],
+  "blogs": [
+    {
+      "id": 2,
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et finibus nulla. Suspendisse vitae maximus libero. Sed euismod scelerisque sapien, eget fringilla augue ullamcorper vel. Mauris semper nisi nec dui bibendum, vel hendrerit ipsum ullamcorper. Quisque rhoncus augue id turpis congue suscipit. Nulla facilisi. Duis in mauris vel velit pellentesque fermentum. Nam auctor tellus eu ex consectetur, et pretium ipsum rutrum. Fusce quis purus vel libero venenatis posuere.",
+      "date": "2023-04-24",
+      "image": "https://via.placeholder.com/200x200",
+      "title": "Lorem Ipsum",
+      "author": "John Doen II"
+    },
+    {
+      "title": "Blog goes here",
+      "author": "Bob Oyier",
+      "date": "2023-01-01",
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu magna quis metus posuere fermentum. Etiam auctor dolor mauris, iaculis mollis ante elementum ut. Sed consectetur fringilla eros consequat eleifend. Vivamus pharetra malesuada magna in pulvinar. Nam lobortis ex interdum sodales facilisis. Suspendisse eget suscipit nisi. Aliquam faucibus aliquet cursus. Nunc aliquet iaculis justo, sit amet venenatis nisi aliquet vitae.\\n\n\nSuspendisse eget nisi dui. Integer iaculis purus libero, non ornare lectus feugiat et. Aenean ac augue eu quam aliquet cursus. Etiam cursus sed enim vel maximus. Cras convallis odio a feugiat laoreet. Integer bibendum libero finibus dolor lacinia posuere. Aenean iaculis metus sit amet pulvinar pharetra. Nunc vestibulum odio magna, eget convallis justo sollicitudin vitae. Morbi gravida ac est id blandit. Nullam at dolor eget magna sagittis lobortis. Quisque consequat, magna at laoreet auctor, augue odio facilisis odio, et condimentum nunc enim non elit. Ut in efficitur leo, et egestas orci. Sed id pretium turpis, nec aliquam ante.\n\nVivamus posuere massa luctus, finibus nibh ac, egestas felis. Nulla sollicitudin luctus velit, et volutpat ante bibendum cursus. Quisque feugiat sem vitae venenatis viverra. Mauris sodales et nulla vel ullamcorper. Nullam facilisis gravida dui vitae mattis. Quisque congue lacus sit amet sapien dapibus laoreet. Donec mollis felis enim, sit amet tincidunt ipsum tempus id. Vestibulum suscipit eros pellentesque erat viverra dapibus. Etiam posuere non sapien sit amet tristique. In auctor semper lorem sed eleifend. Morbi ante dui, commodo eget eros sed, sollicitudin consequat sem. Quisque id maximus arcu.\n\nNullam cursus facilisis sem. Nullam sagittis sapien id urna gravida, rutrum gravida nisl bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas porta risus et dui laoreet, id egestas enim feugiat. Nam mattis, lectus a efficitur eleifend, felis quam tempus metus, ut efficitur orci lacus sed tortor. Maecenas pellentesque, nisi eu interdum laoreet, tellus risus bibendum sem, ac aliquam nisi nisi sit amet arcu. Vestibulum nec varius magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras bibendum purus vel nunc ultricies, a ornare ipsum ultrices. Morbi fermentum nisi ex, quis commodo ex consequat non. Nunc ultrices a nibh a volutpat. Nullam auctor massa ac ante egestas, at sagittis tortor commodo. Proin maximus volutpat ligula, sed lobortis tortor placerat a. Vivamus ut eros sem.\n\nSuspendisse at purus sapien. In non nunc nibh. Praesent tincidunt felis in ultricies ultrices. Aliquam in tellus nulla. Sed consequat lobortis augue eu vestibulum. Sed semper egestas euismod. Duis egestas nisi blandit urna scelerisque, luctus egestas massa volutpat. Duis venenatis mauris sem, sit amet finibus diam interdum ac. Sed commodo a dolor quis pulvinar. Morbi ut lacus ut justo vestibulum tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tincidunt lorem non nisl venenatis lacinia. Etiam a felis bibendum, luctus ex non, sodales leo. Sed tincidunt diam sit amet leo mollis accumsan. Vestibulum venenatis nisl elit, et molestie nulla finibus vitae. Nunc id pretium elit.",
+      "id": 3
+    }
+  ],
+  "staff": [
+    {
+      "id": 1,
+      "name": "Zack Njuguna",
+      "email": "zacknjugus@gmail.com",
+      "gender": "Male",
+      "position": "Marketing",
+      "phoneNumber": "0722901821"
+    },
+    {
+      "id": 2,
+      "name": "Anna Kim",
+      "email": "anna.kim@example.com",
+      "gender": "Female",
+      "position": "Freelancer",
+      "phoneNumber": "(555) 123-4567"
+    },
+    {
+      "id": 3,
+      "name": "David Rodriguez",
+      "email": "david.rodriguez@example.com",
+      "gender": "Male",
+      "position": "Volunteer",
+      "phoneNumber": "(123) 456-7890"
+    },
+    {
+      "id": 5,
+      "name": "John Smith",
+      "email": "john.smith@example.com",
+      "gender": "Male",
+      "position": "Customer",
+      "phoneNumber": "(555) 555-5555"
+    }
+  ]
+}
