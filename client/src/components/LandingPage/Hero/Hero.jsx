@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 function Hero() {
 	return (
 		<div className='text-yellow-300 bg-center bg-cover hover:font-bold' style={{ backgroundImage: `url(${Girl})` }}>
-			<div className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center'>
+			<div className='max-w-[800px] mt-[-96px] w-full h-screen mx-auto text-center flex flex-col justify-center testHeader'>
 				<h1 className='md:text-7xl sm:text-6xl text-4xl md:py-6'>
 					REBIRTH OF A QUEEN
 				</h1>

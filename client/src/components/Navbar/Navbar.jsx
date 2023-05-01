@@ -9,51 +9,57 @@ const Navbar = () => {
 		setNav(!nav);
 	};
 	return (
-		<div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4'>
-			<NavLink to='/'>
+		<div className="text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4">
+			<NavLink to="/">
 				<img
 					src={logo}
-					alt='logo'
-					className='sm:w-28 md:w-20 md: md:h-30 sm:pt-12 md:pt-2'
+					alt="logo"
+					className="sm:w-28 md:w-20 md: md:h-30 sm:pt-12 md:pt-2 client-logo"
 				/>
 			</NavLink>
-			<ul className='hidden md:flex flex-wrap justify-end items-center gap-4'>
-				<NavLink to='/' className='p-4 hover:text-yellow-300 hover:font-bold'>
+			<ul className="hidden md:flex flex-wrap justify-end items-center gap-4 navbar">
+				<NavLink to="/" className="p-4 hover:text-yellow-300 hover:font-bold">
 					{' '}
 					Home{' '}
 				</NavLink>
 				<NavLink
-					to='/aboutus'
-					className='p-4 hover:text-yellow-300 hover:font-bold'>
+					to="/aboutus"
+					className="p-4 hover:text-yellow-300 hover:font-bold"
+				>
 					{' '}
 					About{' '}
 				</NavLink>
 				<NavLink
-					to='/blogs'
-					className='p-4 hover:text-yellow-300 hover:font-bold'>
+					to="/blogs"
+					className="p-4 hover:text-yellow-300 hover:font-bold"
+				>
 					Blogs
 				</NavLink>
 				<NavLink
-					to='/programs'
-					className='p-4 hover:text-yellow-300 hover:font-bold'>
+					to="/programs"
+					className="p-4 hover:text-yellow-300 hover:font-bold"
+				>
 					Programs
 				</NavLink>
 				<NavLink
-					to='/support'
-					className='p-4 hover:text-yellow-300 hover:font-bold'>
+					to="/support"
+					className="p-4 hover:text-yellow-300 hover:font-bold"
+				>
 					{' '}
 					Support{' '}
 				</NavLink>
 				<NavLink
-					to='/contact'
-					className='p-4 hover:text-yellow-300 hover:font-bold'>
+					to="/contact"
+					className="p-4 hover:text-yellow-300 hover:font-bold"
+				>
 					{' '}
 					Contact{' '}
 				</NavLink>
 			</ul>
 			<div
 				onClick={handleNav}
-				className='block md:hidden hover:text-yellow-300 hover:font-bold'>
+				className="block md:hidden hover:text-yellow-300 hover:font-bold"
+			>
 				{!nav ? <AiOutlineClose size={28} /> : <AiOutlineMenu size={28} />}
 			</div>
 			<div
@@ -61,25 +67,26 @@ const Navbar = () => {
 					!nav
 						? 'fixed left-0 top-0 w-[37%] z-30 md:hidden h-full border-r-gray-900 bg-gray-600 ease-in-out duration-500'
 						: 'fixed left-[-100%]'
-				}>
-				<ul className='p-12 uppercase'>
-					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
-						<NavLink to='/'>Home </NavLink>
+				}
+			>
+				<ul className="p-12 uppercase">
+					<li className="p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold">
+						<NavLink to="/">Home </NavLink>
 					</li>
-					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
-						<NavLink to='/aboutus'>About </NavLink>
+					<li className="p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold">
+						<NavLink to="/aboutus">About </NavLink>
 					</li>
-					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
-						<NavLink to='/blogs'>Blogs</NavLink>
+					<li className="p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold">
+						<NavLink to="/blogs">Blogs</NavLink>
 					</li>
-					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
-						<NavLink to='/programs'>Programs </NavLink>
+					<li className="p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold">
+						<NavLink to="/programs">Programs </NavLink>
 					</li>
-					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
-						<NavLink to='/contact'>Contact </NavLink>
+					<li className="p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold">
+						<NavLink to="/contact">Contact </NavLink>
 					</li>
-					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
-						<NavLink to='/support'>Support</NavLink>
+					<li className="p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold">
+						<NavLink to="/support">Support</NavLink>
 					</li>
 				</ul>
 			</div>
