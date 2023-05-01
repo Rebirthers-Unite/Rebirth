@@ -1,0 +1,59 @@
+#support-page{
+    background-color: #CBC2F3;
+    margin-top: -100px;
+    color: black;
+    overflow-x: hidden;
+}
+
+#title{
+    color: white;
+    position:absolute;
+    top: 105px;
+    left: 600px;
+}
+
+.paragraph{
+    color: black;
+}
+
+.icon{
+    width: 130px;
+    height: 130px;
+    margin-left: 50px;
+    display: block;
+}
+
+#support-cards{
+    margin-left:  70px;
+    max-width: 1200px;
+}
+
+.support{
+    width: 250px;
+    margin-left: 40px;
+    text-align: center;
+    color: #ffcc3d;
+    padding: 5px;
+}
+
+#donate-image{
+    width: 1400px;
+    margin-top: -850px;
+    margin-bottom: -100px;
+}
+
+#mchanga-logo{
+    width: 200px;
+    height: 110px;
+    margin-left: 140px;
+}
+
+#gofundme-logo{
+    width: 200px;
+    margin-left: 300px;
+}
+
+#or-text{
+    margin-left: 210px;
+    margin-top: 40px;
+}
