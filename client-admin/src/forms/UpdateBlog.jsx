@@ -41,17 +41,18 @@ const UpdateBlog = ({
 	};
 	const handleSubmit = (e) => {
 		e.preventDefault();
-
-		const content = convertToRaw(editorState.getCurrentContent());
-		const plainText = JSON.stringify(content);
+		const formData = new FormData();
+		for (const x in updateBlog) {
+			formData.append(`${x}`, updateBlog[x]);
+		}
 
 		fetch(`https://rebirth-ktaf.onrender.com/blogs/${blog.id['$oid']}`, {
-			method: 'PATCH',
+			method: 'PUT',
 			headers: {
 				Authorization: `Bearer ${token}`,
-				'Content-Type': 'application/json',
+				// 'Content-Type': 'application/json',
 			},
-			body: JSON.stringify(updateBlog),
+			body: formData,
 		})
 			.then((response) => {
 				if (!response.ok) {
@@ -68,8 +69,14 @@ const UpdateBlog = ({
 			});
 		showToast();
 		closeUpdateBlogModal();
-		navigate('#viewBlogs');
+		navigate('/dashboard');
 	};
+
+	const handleImageChange = (e) => {
+		const file = e.target.files[0];
+		setUpdateBlog((prevState) => ({ ...prevState, image: file }));
+	};
+
 	return (
 		<FormControl onSubmit={handleSubmit}>
 			<FormLabel>Blog Title</FormLabel>
@@ -85,7 +92,7 @@ const UpdateBlog = ({
 				type="file"
 				accept="image/png, image/jpeg"
 				// value={updateBlog.image}
-				onChange={handleChange}
+				onChange={handleImageChange}
 				name="image"
 				required
 			/>

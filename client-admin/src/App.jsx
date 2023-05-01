@@ -43,8 +43,6 @@ function App() {
 		date_of_exit: '',
 	});
 
-
-
 	const [newStaff, setNewStaff] = useState({
 		name: '',
 		email: '',
@@ -95,8 +93,6 @@ function App() {
 		}, []);
 	};
 
-	// const userToken = localStorage.getItem('token');
-
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route
@@ -109,12 +105,6 @@ function App() {
 					)
 				}
 			>
-				{/* <Route
-					path="/login"
-					element={
-						<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />
-					}
-				/> */}
 				<Route path="/signup" element={<Signup />} />
 				<Route
 					path="/dashboard"

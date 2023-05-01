@@ -8,36 +8,33 @@ import {
 	Input,
 	Textarea,
 } from '@chakra-ui/react';
+import { useNavigate } from 'react-router';
 const AddBlog = ({ newBlog, setNewBlog }) => {
-	const token = useAuthStore((state) => state.token);
 
-	// const showToast = () => {
-	// 	toast({
-	// 		title: 'Added Blog',
-	// 		description: `Successfully added ${newBlog.title}`,
-	// 		duration: 3000,
-	// 		isClosable: true,
-	// 		status: 'success',
-	// 		position: 'top',
-	// 		icon: <CheckIcon />,
-	// 	});
-	// };
+	const navigate = useNavigate()
+
+	const token = useAuthStore((state) => state.token);
 
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setNewBlog((prevState) => ({ ...prevState, [name]: value }));
 		console.log(newBlog);
 	};
+
 	const handleSubmit = (e) => {
-		console.log(newBlog);
 		e.preventDefault();
+		const formData = new FormData();
+		for (const x in newBlog) {
+			formData.append(`${x}`, newBlog[x]);
+		}
+
 		fetch('https://rebirth-ktaf.onrender.com/blogs/', {
 			method: 'POST',
 			headers: {
 				Authorization: `Bearer ${token}`,
-				'Content-Type': 'application/json',
+				// 'Content-Type': 'application/json',
 			},
-			body: JSON.stringify(newBlog),
+			body: formData,
 		})
 			.then((response) => {
 				if (!response.ok) {
@@ -52,8 +49,16 @@ const AddBlog = ({ newBlog, setNewBlog }) => {
 			.catch((error) => {
 				console.error('Error:', error);
 			});
-		// showToast();
+		
+		navigate("/dashboard")
+		
 	};
+
+	const handleImageChange = (e) => {
+		const file = e.target.files[0];
+		setNewBlog((prevState) => ({ ...prevState, image: file }));
+	};
+
 	return (
 		<FormControl onSubmit={handleSubmit}>
 			<FormLabel>Blog Title</FormLabel>
@@ -67,8 +72,7 @@ const AddBlog = ({ newBlog, setNewBlog }) => {
 			<FormLabel>Image Source</FormLabel>
 			<Input
 				type="file"
-				value={newBlog.image}
-				onChange={handleChange}
+				onChange={handleImageChange}
 				name="image"
 				accept="image/png, image/jpeg"
 			/>

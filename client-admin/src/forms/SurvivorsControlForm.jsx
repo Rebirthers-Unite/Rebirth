@@ -42,7 +42,7 @@ const UpdateDetailsForm = ({
 		console.log(newSurvivor);
 
 		if (isUpdating) {
-			fetch(`https://rebirth-ktaf.onrender.com/${id}`, {
+			fetch(`https://rebirth-ktaf.onrender.com/survivors/${id}`, {
 				method: 'PATCH',
 				headers: {
 					'Content-Type': 'application/json',
@@ -202,14 +202,14 @@ const UpdateDetailsForm = ({
 				onChange={handleChange}
 			/>
 
-			{/*			<FormLabel>Children</FormLabel>
+						{/* <FormLabel>Children</FormLabel>
 					<Input
 						type="text"
 						value={isUpdating ? survivor.children : newSurvivor.children}
 						name="children"
 						onChange={handleChange}
 					/>
-				*/}
+				 */}
 
 					<FormLabel>Date of Entry</FormLabel>
 					<Input
