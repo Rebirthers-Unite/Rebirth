@@ -15,7 +15,7 @@ export const Support = () => {
 			/>
 			<h1
 				id='title'
-				className='text-7xl font-serif text-white absolute sm:top-32 md:top-60 left-1/2 transform -translate-x-1/2'>
+				className='text-7xl font-serif text-white absolute sm:pl-8 md:pl-0 sm:top-32 md:top-60 left-1/2 transform -translate-x-1/2'>
 				Donate
 			</h1>
 
