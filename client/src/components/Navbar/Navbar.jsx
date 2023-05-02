@@ -10,7 +10,7 @@ const Navbar = () => {
 		return () => window.removeEventListener('scroll', handleScroll)
 		}, []);
 		const handleScroll = () => {
-			if(window.scrollY > 50){
+			if(window.scrollY > 0){
 				setNav(true);
 				}else{
 					setNav(false);
