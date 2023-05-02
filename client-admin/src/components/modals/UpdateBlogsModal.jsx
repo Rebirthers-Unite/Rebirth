@@ -1,5 +1,4 @@
 import {
-	Text,
 	Button,
 	Modal,
 	ModalOverlay,
@@ -9,7 +8,9 @@ import {
 	ModalBody,
 	ModalCloseButton,
 } from '@chakra-ui/react';
+import React from 'react';
 import UpdateBlog from '../../forms/UpdateBlog';
+
 const UpdateBlogsModal = ({
 	blog,
 	setBlog,
