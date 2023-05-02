@@ -18,11 +18,6 @@ export const Support = () => {
 				className='text-7xl font-serif text-white absolute sm:top-32 md:top-60 left-1/2 transform -translate-x-1/2'>
 				Donate
 			</h1>
-			<h1 className='text-3xl pb-4 pt-14 font-serif mt-4 text-center text-black'>
-				Your donation will support...
-			</h1>
-
-			<SupportCards />
 
 			<h1 className='text-5xl font-serif mt-4 text-center pt-4 text-black'>
 				You can donate through
