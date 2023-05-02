@@ -1,9 +1,4 @@
-import {
-	RiBriefcase4Line,
-	RiLockPasswordFill,
-	RiUser3Line,
-	RiUserFill,
-} from 'react-icons/ri';
+import { RiBriefcase4Line, RiUser3Line } from 'react-icons/ri';
 import {
 	Button,
 	Flex,
@@ -13,11 +8,12 @@ import {
 	Text,
 	HStack,
 } from '@chakra-ui/react';
-import { EmailIcon, LockIcon, PhoneIcon } from '@chakra-ui/icons';
-import { useState } from 'react';
+import { EmailIcon, LockIcon } from '@chakra-ui/icons';
+import React, { useState } from 'react';
 import useAuthStore from '../store/Token';
 import { Link } from 'react-router-dom';
-const Signup = ({isLoggedIn, setIsLoggedIn}) => {
+
+const Signup = ({}) => {
 	const token = useAuthStore((state) => state.token);
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');

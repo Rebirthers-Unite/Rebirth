@@ -2,6 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { Grid, GridItem } from '@chakra-ui/react';
 import Navbar from '../Navbar';
 import Sidebar from '../Sidebar';
+import React from 'react';
 
 export default function RootLayout({isLoggedIn, setIsLoggedIn}) {
 	return (

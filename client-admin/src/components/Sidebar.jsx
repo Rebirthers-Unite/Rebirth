@@ -1,6 +1,7 @@
-import { AtSignIcon, CalendarIcon, EditIcon } from '@chakra-ui/icons';
+import { CalendarIcon } from '@chakra-ui/icons';
 import { List, ListIcon, ListItem } from '@chakra-ui/react';
 import { NavLink } from 'react-router-dom';
+import React from 'react'
 
 const Sidebar = () => {
 	return (

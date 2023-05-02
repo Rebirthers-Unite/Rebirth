@@ -1,5 +1,4 @@
 import {
-	Text,
 	Button,
 	Modal,
 	ModalOverlay,
@@ -9,6 +8,8 @@ import {
 	ModalBody,
 	ModalCloseButton,
 } from '@chakra-ui/react';
+import React from 'react';
+
 
 const DeleteSurvivorModal = ({
 	deleteModalOpen,

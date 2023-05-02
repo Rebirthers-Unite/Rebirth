@@ -1,5 +1,4 @@
 import {
-	Text,
 	Button,
 	Modal,
 	ModalOverlay,
@@ -10,6 +9,8 @@ import {
 	ModalCloseButton,
 } from '@chakra-ui/react';
 import useAuthStore from '../../store/Token';
+import React from 'react';
+
 
 
 const DeleteBlogsModal = ({ deleteModalOpen, closeDeleteBlogModal, blog }) => {
