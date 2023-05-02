@@ -1,10 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import logo from '../../assets/logo.png';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
 	const [nav, setNav] = useState(false);
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll)
+		}, []);
+		const handleScroll = () => {
+			if(window.scrollY > 50){
+				setNav(true);
+				}else{
+					setNav(false);
+				}
+			}
 	const handleNav = () => {
 		setNav(!nav);
 	};
