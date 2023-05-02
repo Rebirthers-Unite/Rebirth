@@ -43,7 +43,7 @@ export const BlogPage = () => {
 				/>
 			</div>
 
-			<div className='grid md:grid-cols-3 sm:grid-cols-1 sm:pl-20 sm:pr-4 shadow-xl justify-center mt-3'>
+			<div className='grid md:grid-cols-3 sm:grid-cols-1 sm:pl-20 sm:pr-4 shadow-xl z-0 justify-center mt-3'>
 				{cards}
 			</div>
 		</div>

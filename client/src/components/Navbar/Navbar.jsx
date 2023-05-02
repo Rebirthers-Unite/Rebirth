@@ -28,7 +28,7 @@ function Navbar() {
   }
 
   return (
-    <div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4'>
+    <div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4 z-1'>
       <NavLink to='/'>
         <img
           src={logo}
@@ -78,7 +78,7 @@ function Navbar() {
       <div
         className={
           nav
-            ? 'fixed left-0 top-0 w-[37%] z-9999 md:hidden h-full border-r-gray-900 bg-gray-600 ease-in-out duration-500'
+            ? 'fixed left-0 top-0 w-[37%] md:hidden h-full border-r-gray-900 bg-gray-600 ease-in-out duration-500'
             : 'fixed left-[-100%]'
         }>
         <ul className='p-12 uppercase'>

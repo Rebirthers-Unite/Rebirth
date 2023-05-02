@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 export const BlogCard = ({id, title, content, image}) => {
   return (
-    <div className='card me-5 z-[-100px] mb-5 px-0 pt-0 shadow p-3' id='blog-card'>
+    <div className='card me-5 mb-5 px-0 pt-0 shadow p-3' id='blog-card' style={{zIndex: '0'}}>
       <img className='card-img-top' alt='' src={image}/>
         <div className='card-body'>
             <h3 className='card-title text-3xl font-bold'>{title}</h3>
