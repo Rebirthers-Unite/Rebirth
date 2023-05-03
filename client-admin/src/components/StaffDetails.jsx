@@ -4,22 +4,18 @@ import {
 	Box,
 	Button,
 	Card,
-	CardBody,
 	CardHeader,
 	Container,
 	Flex,
 	HStack,
 	Heading,
-	Image,
 	Text,
 	VStack,
 	useToast,
 } from '@chakra-ui/react';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
 	RiBriefcase5Fill,
-	RiGenderlessFill,
-	RiGenderlessLine,
 } from 'react-icons/ri';
 import { BsGenderAmbiguous } from 'react-icons/bs';
 import { Link, useNavigate, useParams } from 'react-router-dom';

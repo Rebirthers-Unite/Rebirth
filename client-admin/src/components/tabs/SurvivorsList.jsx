@@ -16,7 +16,7 @@ const SurvivorsList = ({ renderUpdateForm, survivors }) => {
 	const [currentPage, setCurrentPage] = useState(1);
 	const [postsPerPage] = useState(10);
 
-	// Get curent posts
+	// Get curent survivors
 	const indexOfLastSurvivor = currentPage * postsPerPage;
 	const indexOfFirstSurvivor = indexOfLastSurvivor - postsPerPage;
 	const currentSurvivors = survivors.slice(

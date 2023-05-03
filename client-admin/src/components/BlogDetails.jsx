@@ -1,21 +1,18 @@
 import {
 	Avatar,
-	Box,
 	Button,
 	Container,
-	Flex,
 	HStack,
 	Heading,
 	Image,
 	Text,
 	VStack,
-	useToast,
 } from '@chakra-ui/react';
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router';
-import UpdateBlog from '../forms/UpdateBlog';
+import { useParams } from 'react-router';
 import UpdateBlogsModal from './modals/UpdateBlogsModal';
 import DeleteBlogsModal from './modals/DeleteBlogsModal';
+
 const BlogDetails = ({
 	renderDeleteBlogModal,
 	renderUpdateBlogModal,

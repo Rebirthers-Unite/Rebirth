@@ -7,7 +7,7 @@ The dashboard is designed to help the organization administrators manage:
 2. Staff Data.
 3. Blog Data.
 
-![Default Dashboard](../readme_resources/dashboard.png)
+![Default Dashboard](./readme_resources/dashboard.png)
 
 The dashboard provides a simple user-friendly interface that allows administrators to perform the following tasks:
 

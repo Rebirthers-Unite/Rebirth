@@ -6,16 +6,14 @@ import {
 	Textarea,
 	useToast,
 } from '@chakra-ui/react';
-import { React, useEffect, useState } from 'react';
+import React, {useEffect, useState } from 'react';
 import useAuthStore from '../store/Token';
 import { CheckIcon } from '@chakra-ui/icons';
-import { Navigate, useNavigate } from 'react-router';
+import { useNavigate } from 'react-router';
 
 const UpdateBlog = ({
 	blog,
-	setBlog,
 	closeUpdateBlogModal,
-	updateBlogsModalOpen,
 }) => {
 	const token = useAuthStore((state) => state.token);
 	const [updateBlog, setUpdateBlog] = useState({});
