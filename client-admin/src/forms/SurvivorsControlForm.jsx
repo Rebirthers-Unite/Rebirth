@@ -105,9 +105,10 @@ const UpdateDetailsForm = ({
 	};
 
 	return (
-		<FormControl as={'form'}>
+		<FormControl as={'form'} isRequired>
 			<FormLabel>Name</FormLabel>
 			<Input
+				
 				type="text"
 				name="name"
 				value={isUpdating ? survivor.name : newSurvivor.name}
@@ -115,6 +116,7 @@ const UpdateDetailsForm = ({
 			/>
 			<FormLabel>Date of Birth</FormLabel>
 			<Input
+				
 				type="date"
 				name="date_of_birth"
 				value={isUpdating ? survivor.date_of_birth : newSurvivor.date_of_birth}
@@ -123,6 +125,7 @@ const UpdateDetailsForm = ({
 
 			<FormLabel>Organization</FormLabel>
 			<Input
+				
 				type="text"
 				name="organization"
 				value={isUpdating ? survivor.organization : newSurvivor.organization}
@@ -131,6 +134,7 @@ const UpdateDetailsForm = ({
 
 			<FormLabel>Organization Contacts</FormLabel>
 			<Input
+				
 				type="text"
 				name="organization_contact"
 				value={
@@ -143,6 +147,7 @@ const UpdateDetailsForm = ({
 
 			<FormLabel>Organization Email</FormLabel>
 			<Input
+				
 				type="text"
 				value={
 					isUpdating
@@ -155,6 +160,7 @@ const UpdateDetailsForm = ({
 
 			<FormLabel>Guardian Name</FormLabel>
 			<Input
+				
 				type="text"
 				value={isUpdating ? survivor.guardian_name : newSurvivor.guardian_name}
 				name="guardian_name"
@@ -162,6 +168,7 @@ const UpdateDetailsForm = ({
 			/>
 			<FormLabel>Guardian Contact</FormLabel>
 			<Input
+				
 				type="text"
 				value={
 					isUpdating
@@ -173,6 +180,7 @@ const UpdateDetailsForm = ({
 			/>
 			<FormLabel>Education</FormLabel>
 			<Input
+				
 				type="text"
 				value={
 					isUpdating
@@ -184,6 +192,7 @@ const UpdateDetailsForm = ({
 			/>
 			<FormLabel>School</FormLabel>
 			<Input
+				
 				type="text"
 				value={isUpdating ? survivor.school : newSurvivor.school}
 				name="school"
@@ -192,6 +201,7 @@ const UpdateDetailsForm = ({
 
 			<FormLabel>Social Assset Building</FormLabel>
 			<Input
+				
 				type="text"
 				value={
 					isUpdating
@@ -202,7 +212,7 @@ const UpdateDetailsForm = ({
 				onChange={handleChange}
 			/>
 
-						{/* <FormLabel>Children</FormLabel>
+			{/* <FormLabel>Children</FormLabel>
 					<Input
 						type="text"
 						value={isUpdating ? survivor.children : newSurvivor.children}
@@ -211,30 +221,27 @@ const UpdateDetailsForm = ({
 					/>
 				 */}
 
-					<FormLabel>Date of Entry</FormLabel>
-					<Input
-						type="date"
-						name="date_of_entry"
-						value={isUpdating ? survivor.dateOfEntry : newSurvivor.dateOfEntry}
-						onChange={handleChange}
-					/>
+			<FormLabel>Date of Entry</FormLabel>
+			<Input
+				
+				type="date"
+				name="date_of_entry"
+				value={isUpdating ? survivor.dateOfEntry : newSurvivor.dateOfEntry}
+				onChange={handleChange}
+			/>
 
-					<FormLabel>Date of Exit</FormLabel>
-					<Input
-						type="date"
-						name="date_of_exit"
-						value={isUpdating ? survivor.dateofExit : newSurvivor.dateofExit}
-						onChange={handleChange}
-					/>
+			<FormLabel>Date of Exit</FormLabel>
+			<Input
+				
+				type="date"
+				name="date_of_exit"
+				value={isUpdating ? survivor.dateofExit : newSurvivor.dateofExit}
+				onChange={handleChange}
+			/>
 
-					<Button
-						onClick={handleSubmit}
-						type="submit"
-						colorScheme="blue"
-						mt={5}
-					>
-						{isUpdating ? 'Update Survivor' : 'Add New Survivor'}
-					</Button> 
+			<Button onClick={handleSubmit} type="submit" colorScheme="blue" mt={5}>
+				{isUpdating ? 'Update Survivor' : 'Add New Survivor'}
+			</Button>
 		</FormControl>
 	);
 };
