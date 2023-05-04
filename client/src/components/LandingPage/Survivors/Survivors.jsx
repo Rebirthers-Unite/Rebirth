@@ -13,9 +13,9 @@ function Survivors() {
 					Hear from some of our Survivors{' '}
 				</h1>
 			</div>
-			<div className='row' id='cards-row'>
+		  <div className='row' id='cards-row'>
 
-			<div className="max-w-sm h-100 me-4">
+			<div className="col-4 h-100 mb-3 ">
 				<div className="shadow-lg rounded overflow-hidden">
 					<img className="h-30 w-30" src={survivor1} />
 					<div className="bg-white p-3">
@@ -27,7 +27,7 @@ function Survivors() {
 				</div>
 			</div>
 
-			<div className="max-w-sm h-100 me-4">
+			<div className="col-4 h-100">
 				<div className="shadow-lg rounded overflow-hidden">
 					<img className="h-30 w-30" src={survivor2} />
 					<div className="bg-white p-3">
@@ -39,7 +39,7 @@ function Survivors() {
 				</div>
 			</div>
 
-			<div className="max-w-sm h-100 me-4">
+			<div className="col-4 h-100">
 				<div className="shadow-lg rounded overflow-hidden">
 					<img className="h-30 w-30" src={survivor3} />
 					<div className="bg-white p-3">
