@@ -49,8 +49,7 @@ function Footer() {
 						</p>
 						<p className='py-1 text-medium flex gap-2 sm:py-2'>
 							<FaMapMarkerAlt className='sm:h-6 sm:w-8 md:h-6 md:w-6' />
-							Service Areas: Kawangware, Nairobi, Kenya. Kajiado, Rift Valley,
-							Kenya. Kibera, Nairobi.
+							Service Areas: Kiserian, Kajiado. Kibera, Nairobi.
 						</p>
 						<h2 className='py-1 text-medium flex gap-2 sm:py-2'>
 							<FaPhoneAlt className='sm:h-6 sm:w-8 md:h-6 md:w-6' />
