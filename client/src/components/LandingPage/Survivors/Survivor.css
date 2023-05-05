@@ -21,3 +21,18 @@
         width: 100%;
     }
   }
+
+  @media screen and (max-width: 760px) {
+    #survivor-section{
+      margin-top: 370px;
+    }
+    #survivor-title{
+        margin-top: -300px;
+    }
+    #cards-row{
+        margin-top: -310px;
+    }
+    #card{
+        width: 100%;
+    }
+  }
