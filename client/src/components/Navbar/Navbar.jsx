@@ -1,50 +1,84 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './NavBar.css'
 import logo from '../../assets/logo.png'
 import {AiOutlineClose} from 'react-icons/ai'
 import { NavLink } from 'react-router-dom';
+import Dropdown from 'react-bootstrap/Dropdown';
+import NavItem from 'react-bootstrap/NavItem';
 
 const Navbar = () => {
 	const [nav, setNav] = useState(false);
+	const [programs, setPrograms] = useState([])
+
 	const handleNav = () => {
 		setNav(!nav);
 	};
+
+	useEffect(() => {
+	  fetch('https://rebirth-ktaf.onrender.com/programs')
+      .then(response => response.json())
+      .then(programData => setPrograms(programData))
+	},[])
+
+	const programLink = programs.map((program) => {
+		return (
+			<Dropdown.Item key={program.id}><NavLink to={`/program/${program.id.$oid}`}>{program.title}</NavLink></Dropdown.Item>
+		)
+	} )
+
 	return (
 		<div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4' id='navbar'>
 			<img src={logo} alt='logo' style={{width: '110px', marginTop: '50px'}}/>
 			<ul className='hidden md:flex'>
-				<NavLink to='/' className='p-4 hover:text-yellow-300 hover:font-bold'>
+				<li className='p-4'>
+					<NavLink to='/' className=' hover:text-yellow-300 hover:font-bold'>
 					{' '}
 					Home{' '}
-				</NavLink>
-				<NavLink
-					to='/aboutus'
-					className='p-4 hover:text-yellow-300 hover:font-bold'>
-					{' '}
-					About{' '}
-				</NavLink>
-				<NavLink
-					to='/blogs'
-					className='p-4 hover:text-yellow-300 hover:font-bold'>
-					Blogs
-				</NavLink>
-				<NavLink
-					to='/programs'
-					className='p-4 hover:text-yellow-300 hover:font-bold'>
-					Programs
-				</NavLink>
-				<NavLink
+					</NavLink>
+				</li>
+				
+				<li className='p-4'>
+					<NavLink
+						to='/aboutus'
+						className='hover:text-yellow-300 hover:font-bold'>
+						{' '}
+						About{' '}
+					</NavLink>	
+				</li>
+				
+				<li className='p-4'>
+					<NavLink
+						to='/blogs'
+						className='hover:text-yellow-300 hover:font-bold'>
+						Blogs
+					</NavLink>
+				</li>
+
+				<Dropdown as={NavItem} className='p-4'>
+					<Dropdown.Toggle as={NavLink}>Programs</Dropdown.Toggle>
+					<Dropdown.Menu>
+						{programLink}
+					</Dropdown.Menu>
+				</Dropdown>
+
+				<li className='p-4'>
+					<NavLink
 					to='/support'
-					className='p-4 hover:text-yellow-300 hover:font-bold'>
+					className='hover:text-yellow-300 hover:font-bold'>
 					{' '}
 					Support{' '}
-				</NavLink>
-				<NavLink
+					</NavLink>
+				</li>
+				
+				<li className='p-4'>
+					<NavLink
 					to='/contact'
-					className='p-4 hover:text-yellow-300 hover:font-bold'>
+					className='hover:text-yellow-300 hover:font-bold'>
 					{' '}
 					Contact{' '}
-				</NavLink>
+					</NavLink>
+				</li>
+				
 			</ul>
 			<div
 				onClick={handleNav}

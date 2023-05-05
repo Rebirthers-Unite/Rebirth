@@ -13,6 +13,7 @@
     "@chakra-ui/react": "^2.5.5",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@types/react-bootstrap": "^0.32.32",
     "bootstrap": "^5.2.3",
     "emailjs": "^4.0.1",
     "emailjs-com": "^3.2.0",

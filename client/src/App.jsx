@@ -9,6 +9,7 @@ import Contact from './components/Contact/Contact'
 import {BlogPage} from './components/BlogPage/BlogPage'
 import {ViewBlogPage} from './components/ViewBlogs/ViewBlogPage.jsx'
 import Footer from './components/Footer/Footer';
+import { Program } from './components/OurProgramsPage/Program';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
     <Routes>
         <Route element={<LandingPage/>} path='/' />
         <Route element={<Programs/>} path='programs' />
+        <Route element={<Program/>} path='program/:id' />
         <Route element={<AboutUs/>} path='aboutus' />
         <Route element={<Support/>} path='support' />
         <Route element={<Contact/>} path='contact'/>

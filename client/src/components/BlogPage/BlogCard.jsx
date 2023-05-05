@@ -1,10 +1,11 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import './BlogPage.css'
 
 export const BlogCard = ({id, title, content, image}) => {
   return (
     <div className='card me-5 mb-5 px-0 pt-0 shadow p-3' id='blog-card'>
-      <img className='card-img-top' alt='' src={image}/>
+      <img className='card-img-top' alt='' src={image} style={{height: '250px'}}/>
         <div className='card-body'>
             <h3 className='card-title text-3xl font-bold'>{title}</h3>
             <p className='card-text mb-3'>{content.slice(0,90) + '...'}</p>
