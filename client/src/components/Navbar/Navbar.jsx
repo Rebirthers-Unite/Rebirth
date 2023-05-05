@@ -22,7 +22,7 @@ const Navbar = () => {
 
 	const programLink = programs.map((program) => {
 		return (
-			<Dropdown.Item key={program.id}><NavLink to={`/program/${program.id.$oid}`}>{program.title}</NavLink></Dropdown.Item>
+			<Dropdown.Item key={program.id.$oid} onClick={() => window.location.reload()}><NavLink to={`/program/${program.id.$oid}`} >{program.title}</NavLink></Dropdown.Item>
 		)
 	} )
 
@@ -54,8 +54,8 @@ const Navbar = () => {
 					</NavLink>
 				</li>
 
-				<Dropdown as={NavItem} className='p-4'>
-					<Dropdown.Toggle as={NavLink}>Programs</Dropdown.Toggle>
+				<Dropdown className='p-4'>
+					<Dropdown.Toggle id='dropdown-toggle'>Programs</Dropdown.Toggle>
 					<Dropdown.Menu>
 						{programLink}
 					</Dropdown.Menu>

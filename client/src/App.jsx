@@ -2,7 +2,6 @@ import Navbar from './components/Navbar/Navbar';
 import './index.css'
 import {Routes, Route} from 'react-router-dom'
 import {LandingPage} from './components/LandingPage/LandingPage'
-import {Programs} from './components/OurProgramsPage/Programs'
 import {AboutUs} from './components/AboutUs/AboutUs'
 import {Support} from './components/Support/Support'
 import Contact from './components/Contact/Contact'
@@ -17,7 +16,6 @@ function App() {
    <Navbar/>
     <Routes>
         <Route element={<LandingPage/>} path='/' />
-        <Route element={<Programs/>} path='programs' />
         <Route element={<Program/>} path='program/:id' />
         <Route element={<AboutUs/>} path='aboutus' />
         <Route element={<Support/>} path='support' />
