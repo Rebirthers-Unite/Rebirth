@@ -8,7 +8,7 @@ function About() {
 	const navigate = useNavigate()
 
 	return (
-		<div className='w-full bg-white py-10 px-2'>
+		<div className='w-full bg-white py-10 px-2' id='about-section'>
 			<div className='max-w-[1240px] mx-auto grid md:grid-cols-2'>
 				<img src={Logo} alt='logo' className='w-[500px] mx-auto my-4' />
 				<div className='flex flex-col justify-center'>

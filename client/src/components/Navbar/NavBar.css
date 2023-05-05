@@ -4,6 +4,20 @@ ul a.active{
     font-size: 20px;
 }
 
+@media screen and (max-width: 480px) {
+    #logo{
+        height: 25px;
+        width: 25px;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    #logo{
+        height: 50px;
+        width: 50px;
+    }
+}
+
 #navbar{
     z-index: 2;
 }
