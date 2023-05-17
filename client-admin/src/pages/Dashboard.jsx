@@ -70,7 +70,7 @@ const Dashboard = ({
 				mt={'40px'}
 				p={'20px'}
 				colorScheme="purple"
-				h={'100dvh'}
+				// h={'100dvh'}
 				maxW={'100vw'}
 				// isFitted
 			>
