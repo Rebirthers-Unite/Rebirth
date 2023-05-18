@@ -10,10 +10,6 @@ const Navbar = () => {
 		setNav(!nav);
 	};
 
-  function handleNav() {
-    setNav(!nav);
-  }
-
   return (
 		<div className='text-white cursor-pointer font-serif flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4 z-1'>
 			<NavLink to='/'>
