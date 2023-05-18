@@ -9,7 +9,7 @@ const Navbar = () => {
 		setNav(!nav);
 	};
 	return (
-		<div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4' id='navbar'>
+		<div className='text-white cursor-pointer flex justify-between items-center font-serif sticky h-24 max-w-[1240px] mx-auto px-4' id='navbar'>
 			<img src={logo} alt='logo' style={{width: '110px', marginTop: '50px'}}/>
 			<ul className='hidden md:flex active:font-bold active:text-yellow-300 active:text-xl'>
 				<NavLink to='/' className='p-4 hover:text-yellow-300 hover:font-bold'>
