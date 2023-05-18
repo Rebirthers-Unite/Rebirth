@@ -10,7 +10,7 @@ const Navbar = () => {
 	};
 	return (
 		<div className='text-white cursor-pointer flex justify-between items-center font-serif sticky h-24 max-w-[1240px] mx-auto px-4' id='navbar'>
-			<img src={logo} alt='logo' style={{width: '110px', marginTop: '50px'}}/>
+			<img src={logo} alt='logo' className='sm:w-28 md:w-20 md: md:h-30 sm:pt-12 md:pt-2' />
 			<ul className='hidden md:flex font-serif active:font-bold active:text-yellow-300 active:text-xl'>
 				<NavLink to='/' className='p-4 hover:text-yellow-300 hover:font-bold'>
 					{' '}
