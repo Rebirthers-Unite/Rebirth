@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import './NavBar.css'
 import logo from '../../assets/logo.png'
 import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai'
 import { NavLink } from 'react-router-dom';
@@ -12,7 +11,7 @@ const Navbar = () => {
 	return (
 		<div className='text-white cursor-pointer flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4' id='navbar'>
 			<img src={logo} alt='logo' style={{width: '110px', marginTop: '50px'}}/>
-			<ul className='hidden md:flex active:font-bold active:text-yellow-300'>
+			<ul className='hidden md:flex active:font-bold active:text-yellow-300 active:text-xl'>
 				<NavLink to='/' className='p-4 hover:text-yellow-300 hover:font-bold'>
 					{' '}
 					Home{' '}
