@@ -9,10 +9,22 @@ const Navbar = () => {
 	const handleNav = () => {
 		setNav(!nav);
 	};
-	return (
-		<div className='text-white cursor-pointer flex justify-between items-center font-serif sticky h-24 max-w-[1240px] mx-auto px-4' id='navbar'>
-			<img src={logo} alt='logo' className='sm:w-28 md:w-20 md: md:h-30 sm:pt-12 md:pt-2' />
-			<ul className='hidden md:flex font-serif active:font-bold active:text-yellow-300 active:text-xl'>
+
+  function handleNav() {
+    setNav(!nav);
+  }
+
+  return (
+		<div className='text-white cursor-pointer font-serif flex justify-between items-center sticky h-24 max-w-[1240px] mx-auto px-4 z-1'>
+			<NavLink to='/'>
+				<img
+					src={logo}
+					alt='logo'
+					id='logo'
+					className='client-logo sm:w-28 md:w-20 md: md:h-30 sm:pt-12 md:pt-2'
+				/>
+			</NavLink>
+			<ul className='hidden md:flex flex-wrap justify-end items-center gap-4'>
 				<NavLink to='/' className='p-4 hover:text-yellow-300 hover:font-bold'>
 					{' '}
 					Home{' '}
@@ -28,11 +40,14 @@ const Navbar = () => {
 					className='p-4 hover:text-yellow-300 hover:font-bold'>
 					Blogs
 				</NavLink>
-				<NavLink
-					to='/programs'
-					className='p-4 hover:text-yellow-300 hover:font-bold'>
-					Programs
-				</NavLink>
+				<Dropdown className='p-4 mt-3'>
+					<Dropdown.Toggle
+						id='dropdown-toggle'
+						className='p-4 hover:text-yellow-300 hover:font-bold'>
+						Programs
+					</Dropdown.Toggle>
+					<Dropdown.Menu>{programLink}</Dropdown.Menu>
+				</Dropdown>
 				<NavLink
 					to='/support'
 					className='p-4 hover:text-yellow-300 hover:font-bold'>
@@ -49,11 +64,11 @@ const Navbar = () => {
 			<div
 				onClick={handleNav}
 				className='block md:hidden hover:text-yellow-300 hover:font-bold'>
-				{!nav ? <AiOutlineClose size={28} /> : <AiOutlineMenu size={28} />}
+				{nav ? <AiOutlineClose size={28} /> : <AiOutlineMenu size={28} />}
 			</div>
 			<div
 				className={
-					!nav
+					nav
 						? 'fixed left-0 top-0 w-[37%] md:hidden h-full border-r-gray-900 bg-gray-600 ease-in-out duration-500'
 						: 'fixed left-[-100%]'
 				}>
@@ -67,9 +82,13 @@ const Navbar = () => {
 					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
 						<NavLink to='/blogs'>Blogs</NavLink>
 					</li>
-					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
-						<NavLink to='/programs'>Programs </NavLink>
+					<li>
+						<Dropdown className='p-4 mt-3 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
+							<Dropdown.Toggle id='dropdown-toggle'>Programs</Dropdown.Toggle>
+							<Dropdown.Menu>{programLink}</Dropdown.Menu>
+						</Dropdown>
 					</li>
+
 					<li className='p-4 border-b border-gray-900 hover:text-yellow-300 hover:font-bold'>
 						<NavLink to='/contact'>Contact </NavLink>
 					</li>
