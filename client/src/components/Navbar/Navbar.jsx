@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import logo from '../../assets/logo.png'
+import './NavBar.css'
 import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai'
 import { NavLink } from 'react-router-dom';
 
