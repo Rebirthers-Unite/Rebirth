@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import './NavBar.css'
 import logo from '../../assets/logo.png'
-import {AiOutlineClose} from 'react-icons/ai'
+import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai'
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
