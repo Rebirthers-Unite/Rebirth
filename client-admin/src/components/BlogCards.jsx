@@ -15,7 +15,7 @@ import Pagination from './Pagination';
 const BlogCards = () => {
 	const [blogs, setBlogs] = useState([]);
 	const [currentPage, setCurrentPage] = useState(1);
-	const [postsPerPage] = useState(3);
+	const [postsPerPage] = useState(6);
 
 	// Get curent posts
 	const indexOfLastSurvivor = currentPage * postsPerPage;
@@ -37,7 +37,7 @@ const BlogCards = () => {
 	}, []);
 
 	return (
-		<div>
+		<>
 			{currentSurvivors.map((blog) => (
 				<Card
 					direction={{ base: 'column', sm: 'row' }}
@@ -76,7 +76,7 @@ const BlogCards = () => {
 				totalPosts={blogs.length}
 				paginate={paginate}
 			/>
-		</div>
+		</>
 	);
 };
 

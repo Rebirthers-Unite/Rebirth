@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
+import React,  { useState, useEffect } from 'react';
+import logo from '../../assets/logo.png'
 import { NavLink } from 'react-router-dom';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
-import logo from '../../assets/logo.png';
 import Dropdown from 'react-bootstrap/Dropdown';
 import './NavBar.css'
 

@@ -10,20 +10,23 @@ import {
 } from '@chakra-ui/react';
 import useAuthStore from '../../store/Token';
 import React from 'react';
-
-
+import { useNavigate } from 'react-router';
 
 const DeleteBlogsModal = ({ deleteModalOpen, closeDeleteBlogModal, blog }) => {
+	const navigate = useNavigate();
+
 	const token = useAuthStore((state) => state.token);
 
 	const deleteBlog = () => {
-		fetch(`https://rebirth-ktaf.onrender.com/blogs/${blog.id["$oid"]}`, {
+		fetch(`https://rebirth-ktaf.onrender.com/blogs/${blog.id['$oid']}`, {
 			method: 'DELETE',
-			headers: { 
+			headers: {
 				Authorization: `Bearer ${token}`,
-				'Content-Type': 'application/json'
-			 },
+				'Content-Type': 'application/json',
+			},
 		});
+
+		navigate('/dashboard');
 	};
 
 	return (
