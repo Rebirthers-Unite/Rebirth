@@ -1,9 +1,9 @@
 puts "start"
 
 # Create a user to associate with the blogs
-user1 = User.create(name: "John Doe", email: "john33344455@example.com", role: "admin", password: "password")
-user2 = User.create(name: "Jane Smith", email: "jane32344455@example.com", role: "editor", password: "password")
-user3 = User.create(name: "David Lee", email: "david213344455@example.com", role: "user", password: "password")
+# user1 = User.create(name: "John Doe", email: "john33344455tt1t@example.com", role: "admin", password: "password")
+# user2 = User.create(name: "Jane Smith", email: "jane32344455tt1t@example.com", role: "editor", password: "password")
+# user3 = User.create(name: "David Lee", email: "david213344455tt1t@example.com", role: "user", password: "password")
 
 # Create some survivors
 Survivor.create!(
@@ -16,7 +16,6 @@ Survivor.create!(
   contact_of_guardian: "555-555-5555",
   level_of_education: "High School",
   school: "Central High School",
-  children: "None",
   social_asset_building: "Mentorship Program",
   date_of_entry: Date.new(2021, 1, 1),
   date_of_exit: Date.new(2021, 6, 30),
@@ -32,7 +31,6 @@ Survivor.create!(
   contact_of_guardian: "555-555-5555",
   level_of_education: "Middle School",
   school: "East Middle School",
-  children: "None",
   social_asset_building: "Art Therapy",
   date_of_entry: Date.new(2021, 2, 1),
   date_of_exit: Date.new(2021, 7, 31),
@@ -48,7 +46,6 @@ Survivor.create!(
   contact_of_guardian: "555-555-5555",
   level_of_education: "College",
   school: "State University",
-  children: "None",
   social_asset_building: "Job Training",
   date_of_entry: Date.new(2020, 1, 1),
   date_of_exit: Date.new(2020, 12, 31),
@@ -80,29 +77,29 @@ Blog.create!(
 )
 
 # Create staff
-Staff.create!(
-  name: "John Doe",
-  email: "johndoe221@example.com",
-  phone_number: "555-555-5555",
-  position: "Manager",
-  gender: "Male",
-)
+# Staff.create!(
+#   name: "John Doe",
+#   email: "johndoe221tt1t@example.com",
+#   phone_number: "555-555-5555",
+#   position: "Manager",
+#   gender: "Male",
+# )
 
-Staff.create!(
-  name: "Jane Smith",
-  email: "janesmith221@example.com",
-  phone_number: "555-555-5555",
-  position: "Sales Associate",
-  gender: "Female",
-)
+# Staff.create!(
+#   name: "Jane Smith",
+#   email: "janesmith221tt1t@example.com",
+#   phone_number: "555-555-5555",
+#   position: "Sales Associate",
+#   gender: "Female",
+# )
 
-Staff.create!(
-  name: "Bob Johnson",
-  email: "bobjohnson221@example.com",
-  phone_number: "555-555-5555",
-  position: "Customer Service Representative",
-  gender: "Male",
-)
+# Staff.create!(
+#   name: "Bob Johnson",
+#   email: "bobjohnson221tt1t@example.com",
+#   phone_number: "555-555-5555",
+#   position: "Customer Service Representative",
+#   gender: "Male",
+# )
 
 # Create Gallery
 Gallery.create!(
