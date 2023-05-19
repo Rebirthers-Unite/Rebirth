@@ -12,7 +12,7 @@ function Footer() {
 	];
 
 	return (
-		<div className='max-w-[100vw] bg-black mx-auto py-6 px-6 grid lg:grid-cols-3 gap-8 text-gray-300'>
+		<div className='max-w-[100vw] bg-black mx-auto font-serif py-6 px-6 grid lg:grid-cols-3 gap-8 text-gray-300'>
 			<div className='md:lg:col-span-3 md:grid-cols-3 md:pl-2 sm:gap-20 sm:grid-cols-2 md:gap-6 md:grid justify-between cursor-pointer'>
 				<div>
 					<h1 className='font-bold font-serif sm:text-xl md:text-2xl text-[#824cc6]'>
