@@ -45,3 +45,25 @@
 #donate-button:hover:after{
     width: 100%;
   }
+
+  @media screen and (max-width: 480px) {
+    #hero-image{
+      margin-top: -100px;
+    }
+    #hero-content{
+      position: absolute;
+      margin-top: -130px;
+      left: 2%;
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    #hero-image{
+      margin-top: -100px;
+    }
+    #hero-content{
+      position: absolute;
+      top: 14%;
+      left: 1%;
+    }
+  }

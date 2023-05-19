@@ -5,5 +5,34 @@
 
 #cards-row{
     margin-top: -180px;
-    margin-left: 52px;
 }
+
+@media screen and (max-width: 480px) {
+    #survivor-section{
+      margin-top: 370px;
+    }
+    #survivor-title{
+        margin-top: -330px;
+    }
+    #cards-row{
+        margin-top: -310px;
+    }
+    #card{
+        width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 760px) {
+    #survivor-section{
+      margin-top: 370px;
+    }
+    #survivor-title{
+        margin-top: -300px;
+    }
+    #cards-row{
+        margin-top: -310px;
+    }
+    #card{
+        width: 100%;
+    }
+  }

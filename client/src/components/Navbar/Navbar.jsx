@@ -1,7 +1,7 @@
-import React,  { useState, useEffect } from 'react';
-import logo from '../../assets/logo.png'
+import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai';
+import logo from '../../assets/logo.png';
 import Dropdown from 'react-bootstrap/Dropdown';
 import './NavBar.css'
 
@@ -17,7 +17,7 @@ function Navbar() {
 
 	const programLink = programs.map((program) => {
 		return (
-			<Dropdown.Item key={program.id.$oid}><NavLink to={`/program/${program.id.$oid}`} >{program.title}</NavLink></Dropdown.Item>
+			<Dropdown.Item key={program.id.$oid} onClick={() => window.location.reload()}><NavLink to={`/program/${program.id.$oid}`} >{program.title}</NavLink></Dropdown.Item>
 		)
 	} )
 

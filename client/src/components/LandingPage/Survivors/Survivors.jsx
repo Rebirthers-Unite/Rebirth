@@ -6,16 +6,16 @@ import survivor3 from '../../../assets/survivor3.HEIC'
 
 function Survivors() {
 	return (
-		<div className='sm:py-[8rem] sm:pb-[2rem] md:pb-[2rem] md:py-[8rem] px-4 bg-[#9a9a9a]'>
+		<div className='sm:py-[8rem] sm:pb-[2rem] md:pb-[2rem] md:py-[8rem] px-4 bg-[#9a9a9a]' id='survivor-section'>
 			<div className='text-yellow-400 font-serif font-bold max-w-[800px] mt-[-24rem] w-full h-screen mx-auto text-center flex flex-col justify-center'>
-				<h1 className='md:text-5xl sm:text-4xl text-4xl sm:pt-8 md:pt-14 md:py-6'>
+				<h1 className='md:text-5xl sm:text-4xl text-4xl sm:pt-8 md:pt-14 md:py-6' id='survivor-title'>
 					{' '}
 					Hear from some of our Survivors{' '}
 				</h1>
 			</div>
-			<div className='row' id='cards-row'>
+		  <div className='row' id='cards-row'>
 
-			<div className="max-w-sm h-100 me-4">
+			<div className="col-4 h-100 mb-3 " id='card'>
 				<div className="shadow-lg rounded overflow-hidden">
 					<img className="h-30 w-30" src={survivor1} />
 					<div className="bg-white p-3">
@@ -27,7 +27,7 @@ function Survivors() {
 				</div>
 			</div>
 
-			<div className="max-w-sm h-100 me-4">
+			<div className="col-4 mb-3 h-100" id='card'>
 				<div className="shadow-lg rounded overflow-hidden">
 					<img className="h-30 w-30" src={survivor2} />
 					<div className="bg-white p-3">
@@ -39,7 +39,7 @@ function Survivors() {
 				</div>
 			</div>
 
-			<div className="max-w-sm h-100 me-4">
+			<div className="col-4 mb-3 h-100" id='card'>
 				<div className="shadow-lg rounded overflow-hidden">
 					<img className="h-30 w-30" src={survivor3} />
 					<div className="bg-white p-3">
