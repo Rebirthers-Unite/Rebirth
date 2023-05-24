@@ -9,7 +9,7 @@ export const AboutUs = () => {
 			<div className='sm:pt-18 sm:pb-8 md:pt-20 justify-center text-center'>
 				<p className='sm:text-4xl md:text-6xl'>About Us</p>
 
-				<p className='sm:pt-2 md:text-xl md:pl-20 md:pr-28 sm:text-xl'>
+				<p className='sm:pt-2 md:text-xl md:pl-20 md:pr-28 md:border-none sm:border-b sm:border-gray-900 sm:pb-8 sm:text-xl'>
 					We are a community-based organization that champions for the
 					empowerment of survivors of sexual /gender-based violence and human
 					trafficking through healing, mentorship, education and empowerment.
