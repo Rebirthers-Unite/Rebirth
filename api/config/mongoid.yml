@@ -187,6 +187,7 @@ test:
 production:
   clients:
     default:
-      uri: mongodb://mongo:27uYzPhEq4mhhVAOEydL@containers-us-west-176.railway.app:6028
+      # uri: mongodb://mongo:27uYzPhEq4mhhVAOEydL@containers-us-west-176.railway.app:6028
+      uri: mongodb://mongo:qRmDPSHsBhMTKTLDAdk4@containers-us-west-112.railway.app:7894
       options:
         server_selection_timeout: 5

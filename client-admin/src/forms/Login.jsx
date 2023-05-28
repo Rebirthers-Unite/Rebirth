@@ -58,9 +58,9 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
 	};
 	const loginPageTexts = {
 		welcomeMessage: 'Welcome Back',
-		forgotPassword: 'Forgot Password?',
-		noAccount: "Dont't have an account? ",
-		signupLink: 'Create one here',
+		// forgotPassword: 'Forgot Password?',
+		// noAccount: "Dont't have an account? ",
+		// signupLink: 'Create one here',
 	};
 
 	return (
@@ -76,7 +76,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
 				as={'h1'}
 				w={'80%'}
 				textAlign={'center'}
-				fontFamily={'Pathway Extreme'}
+				fontFamily={'Sans serif'}
 				mb={'30px'}
 			>
 				{loginPageTexts.welcomeMessage}
@@ -95,7 +95,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
 				p={'1rem'}
 			>
 				<HStack p={'1rem'}>
-					<EmailIcon fontSize={'3rem'} color="purple.700" />
+					<EmailIcon fontSize={'2rem'} color="purple.700" />
 					<Input
 						border={'none'}
 						borderBottom={'2px solid #D1D1D4'}
@@ -104,14 +104,15 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
 							color: 'black',
 						}}
 						type="email"
-						placeholder="Email or Phone Number"
+						fontFamily={'sans-serif'}
+						placeholder="Email Address"
 						value={email}
 						onChange={handleEmailChange}
 						required
 					/>
 				</HStack>
 				<HStack p={'1rem'}>
-					<LockIcon fontSize={'3rem'} color="purple.700" />
+					<LockIcon fontSize={'2rem'} color="purple.700" />
 					<Input
 						border={'none'}
 						borderBottom={'2px solid #D1D1D4'}
@@ -120,6 +121,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
 							color: 'black',
 						}}
 						type="password"
+						fontFamily={'sans-serif'}
 						placeholder="Password"
 						value={password}
 						onChange={handlePasswordChange}
