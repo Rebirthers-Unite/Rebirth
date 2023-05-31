@@ -12,7 +12,7 @@ function Navbar() {
 
 
 	useEffect(() => {
-	  fetch('https://rebirth-ktaf.onrender.com/programs')
+	  fetch('https://rebiirth.onrender.com/programs')
       .then(response => response.json())
       .then(programData => setPrograms(programData))
 	},[])

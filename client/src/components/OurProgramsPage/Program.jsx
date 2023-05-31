@@ -9,7 +9,7 @@ export const Program = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    fetch(`https://rebirth-ktaf.onrender.com/programs/${id}`)
+    fetch(`https://rebiirth.onrender.com/programs/${id}`)
     .then(response => response.json())
     .then(programData => setProgram(programData))
   },[])

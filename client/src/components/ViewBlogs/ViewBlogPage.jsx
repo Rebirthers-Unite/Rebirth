@@ -10,7 +10,7 @@ export const ViewBlogPage = () => {
   const [blog, setBlog] = useState({})
   
   useEffect(() => {
-      fetch(`https://rebirth-ktaf.onrender.com/blogs/${id}`)
+      fetch(`https://rebiirth.onrender.com/blogs/${id}`)
       .then(response => response.json())
       .then(blogData => setBlog(blogData))
   },[])

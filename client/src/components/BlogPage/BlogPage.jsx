@@ -12,7 +12,7 @@ export const BlogPage = () => {
 	const [isFocused, setIsFocused] = useState(false)
 
 	useEffect(() => {
-		fetch('https://rebirth-ktaf.onrender.com/blogs')
+		fetch('https://rebiirth.onrender.com/blogs')
 			.then((response) => response.json())
 			.then((blogData) => setBlogs(blogData));
 	}, []);
