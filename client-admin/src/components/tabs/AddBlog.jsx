@@ -28,7 +28,7 @@ const AddBlog = ({ newBlog, setNewBlog }) => {
 			formData.append(`${x}`, newBlog[x]);
 		}
 
-		fetch('https://rebirth-ktaf.onrender.com/blogs/', {
+		fetch('https://rebiirth.onrender.com/blogs/', {
 			method: 'POST',
 			headers: {
 				Authorization: `Bearer ${token}`,

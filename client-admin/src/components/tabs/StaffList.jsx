@@ -17,7 +17,7 @@ const StaffList = ({ staff, setStaff }) => {
 
 
 	useEffect(() => {
-		fetch('https://rebirth-ktaf.onrender.com/staffs', {
+		fetch('https://rebiirth.onrender.com/staffs', {
 			method: 'GET',
 			headers: {
 				Authorization: `Bearer ${token}`,

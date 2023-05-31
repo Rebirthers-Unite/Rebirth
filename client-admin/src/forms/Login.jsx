@@ -31,7 +31,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
 			email: email,
 			password: password,
 		};
-		fetch('https://rebirth-ktaf.onrender.com/login', {
+		fetch('https://rebiirth.onrender.com/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',

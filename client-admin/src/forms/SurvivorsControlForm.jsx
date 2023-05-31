@@ -42,7 +42,7 @@ const UpdateDetailsForm = ({
 		console.log(newSurvivor);
 
 		if (isUpdating) {
-			fetch(`https://rebirth-ktaf.onrender.com/survivors/${id}`, {
+			fetch(`https://rebiirth.onrender.com/survivors/${id}`, {
 				method: 'PATCH',
 				headers: {
 					'Content-Type': 'application/json',

@@ -58,7 +58,7 @@ const SurvivorsDetails = ({
 	};
 
 	useEffect(() => {
-		fetch('https://rebirth-ktaf.onrender.com/survivors/' + id, {
+		fetch('https://rebiirth.onrender.com/survivors/' + id, {
 			method: 'GET',
 			headers: {
 				Authorization: `Bearer ${token}`,

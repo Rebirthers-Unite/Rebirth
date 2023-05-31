@@ -14,7 +14,7 @@ const StaffControlForm = ({ staff, setStaff }) => {
 		// setStaffId(staff.id['$oid']);
 		// console.log(staffId);
 
-		fetch(`https://rebirth-ktaf.onrender.com/staffs/${iod}`, {
+		fetch(`https://rebiirth.onrender.com/staffs/${iod}`, {
 			method: 'PATCH',
 			headers: {
 				Authorization: `Bearer ${token}`,

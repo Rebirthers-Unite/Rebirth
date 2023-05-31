@@ -12,7 +12,7 @@ const StaffControlForm = ({ newStaff, setNewStaff }) => {
 		e.preventDefault();
 		console.log(newStaff);
 
-		fetch('https://rebirth-ktaf.onrender.com/staffs', {
+		fetch('https://rebiirth.onrender.com/staffs', {
 			method: 'POST',
 			headers: { 
 				Authorization: `Bearer ${token}`,

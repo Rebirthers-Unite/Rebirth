@@ -45,7 +45,7 @@ const StaffDetails = () => {
 	};
 
 	useEffect(() => {
-		fetch(`https://rebirth-drtz.onrender.com/staffs/${id}`, {
+		fetch(`https://rebiirth.onrender.com/staffs/${id}`, {
 			method: 'GET',
 			headers: {
 				Authorization: `Bearer ${token}`,
@@ -62,7 +62,7 @@ const StaffDetails = () => {
 	}, []);
 
 	const deleteStaffMember = () => {
-		fetch(`https://rebirth-drtz.onrender.com/staffs/${id}`, {
+		fetch(`https://rebiirth.onrender.com/staffs/${id}`, {
 			method: 'DELETE',
 			headers: {
 				Authorization: `Bearer ${token}`,

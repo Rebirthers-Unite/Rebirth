@@ -28,7 +28,7 @@ const BlogDetails = ({
 	// const navigate = useNavigate();
 	// const toast = useToast();
 	useEffect(() => {
-		fetch('https://rebirth-ktaf.onrender.com/blogs/' + id).then(
+		fetch('https://rebiirth.onrender.com/blogs/' + id).then(
 			(r) => {
 				r.ok
 					? r.json().then((data) => {

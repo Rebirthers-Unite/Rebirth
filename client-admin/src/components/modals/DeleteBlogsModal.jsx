@@ -18,7 +18,7 @@ const DeleteBlogsModal = ({ deleteModalOpen, closeDeleteBlogModal, blog }) => {
 	const token = useAuthStore((state) => state.token);
 
 	const deleteBlog = () => {
-		fetch(`https://rebirth-ktaf.onrender.com/blogs/${blog.id['$oid']}`, {
+		fetch(`https://rebiirth.onrender.com/blogs/${blog.id['$oid']}`, {
 			method: 'DELETE',
 			headers: {
 				Authorization: `Bearer ${token}`,

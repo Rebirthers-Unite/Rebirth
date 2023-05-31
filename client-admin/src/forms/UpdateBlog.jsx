@@ -44,7 +44,7 @@ const UpdateBlog = ({
 			formData.append(`${x}`, updateBlog[x]);
 		}
 
-		fetch(`https://rebirth-ktaf.onrender.com/blogs/${blog.id['$oid']}`, {
+		fetch(`https://rebiirth.onrender.com/blogs/${blog.id['$oid']}`, {
 			method: 'PUT',
 			headers: {
 				Authorization: `Bearer ${token}`,

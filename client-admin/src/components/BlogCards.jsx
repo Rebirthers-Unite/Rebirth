@@ -31,7 +31,7 @@ const BlogCards = () => {
 	};
 
 	useEffect(() => {
-		fetch('https://rebirth-ktaf.onrender.com/blogs/').then((r) => {
+		fetch('https://rebiirth.onrender.com/blogs/').then((r) => {
 			r.ok ? r.json().then((data) => setBlogs(data)) : 'Problems!';
 		});
 	}, []);

@@ -48,7 +48,7 @@ const Dashboard = ({
 	const [search, setSearch] = useState('');
 
 	useEffect(() => {
-		fetch('https://rebirth-ktaf.onrender.com/survivors/', {
+		fetch('https://rebiirth.onrender.com/survivors/', {
 			method: 'GET',
 			headers: {
 				Authorization: `Bearer ${token}`,
