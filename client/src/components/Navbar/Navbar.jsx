@@ -19,7 +19,7 @@ function Navbar() {
 
 	const programLink = programs.map((program) => {
 		return (
-			<Dropdown.Item key={program.id.$oid} onClick={() => window.location.reload()}><NavLink to={`/program/${program.id.$oid}`} >{program.title}</NavLink></Dropdown.Item>
+			<Dropdown.Item key={program.id.$oid}><NavLink to={`/program/${program.id.$oid}`} >{program.title}</NavLink></Dropdown.Item>
 		)
 	} )
 
