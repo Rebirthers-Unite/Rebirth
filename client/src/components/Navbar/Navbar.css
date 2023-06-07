@@ -1,0 +1,10 @@
+.ai-icons {
+    display: none;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .ai-icons {
+      display: block;
+    }
+  }
+  

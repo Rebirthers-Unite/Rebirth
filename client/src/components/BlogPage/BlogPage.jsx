@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BsSearch } from 'react-icons/bs';
 import { BlogCard } from './BlogCard';
-// import './BlogPage.css'
 
 const BLOGS_PER_PAGE = 6; // Number of blogs to display per page
 
@@ -58,37 +57,37 @@ export const BlogPage = () => {
 	});
 
 	return (
-		<div className='bg-purple-300 mt-[-160px] text-black'>
-			<h1 className='text-5xl font-serif text-center pt-40'>BLOGS</h1>
+		<div className="bg-purple-300 mt-[-160px] text-black">
+			<h1 className="text-5xl font-serif text-center pt-40">BLOGS</h1>
 
-			<div className='relative md:left-[575px] sm:left-[230px] w-52 pt-4'>
+			<div className="relative w-full sm:w-64 pt-4">
 				<input
-					type='text'
+					type="text"
 					className={`form-control ${isFocused ? 'border-black' : ''}`}
-					placeholder='Search for Blog'
+					placeholder="Search for Blog"
 					onChange={(e) => setSearch(e.target.value)}
 					onFocus={() => setIsFocused(true)}
 					onBlur={() => setIsFocused(false)}
 				/>
-				<div className='absolute top-10 right-3 transform -translate-y-1/2'>
+				<div className="absolute top-10 right-3 transform -translate-y-1/2">
 					<BsSearch
 						className={`text-black ${
 							isFocused ? 'text-black' : 'text-gray-500'
 						}`}
-					/>{' '}
-					{/* Add text-black class when focused */}
+					/>
 				</div>
 			</div>
 
-			<div className='grid md:grid-cols-3 sm:grid-cols-1 sm:pl-[110px] sm:pr-10 z-0 justify-center md:mt-5 sm:mt-6'>
+			<div className="grid gap-4 grid-cols-1 md:grid-cols-3 md:pl-10 sm:pl-4 z-0 justify-center mt-6">
 				{cards}
 			</div>
 
-			<div className='flex justify-center sm:mt-2 sm:pl-10 sm:pb-4 md:pb-6'>
+			<div className="flex justify-center mt-2 pl-10 pb-6">
 				{currentPage > 1 && (
 					<button
-						className='px-4 py-2 mx-2 rounded-lg'
-						onClick={() => setCurrentPage(currentPage - 1)}>
+						className="px-4 py-2 mx-2 rounded-lg"
+						onClick={() => setCurrentPage(currentPage - 1)}
+					>
 						Prev
 					</button>
 				)}
@@ -99,16 +98,18 @@ export const BlogPage = () => {
 					<button
 						key={page}
 						className={`px-4 py-2 mx-2 rounded-lg ${
-							page === currentPage ? ' bg-purple-500 text-white' : ''
+							page === currentPage ? 'bg-purple-500 text-white' : ''
 						}`}
-						onClick={() => setCurrentPage(page)}>
+						onClick={() => setCurrentPage(page)}
+					>
 						{page}
 					</button>
 				))}
 				{currentPage < totalPages && (
 					<button
-						className='px-4 py-2 mx-2 rounded-lg'
-						onClick={() => setCurrentPage(currentPage + 1)}>
+						className="px-4 py-2 mx-2 rounded-lg"
+						onClick={() => setCurrentPage(currentPage + 1)}
+					>
 						Next
 					</button>
 				)}
@@ -116,4 +117,3 @@ export const BlogPage = () => {
 		</div>
 	);
 };
-

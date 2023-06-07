@@ -21,7 +21,6 @@ function Footer() {
 					<ul style={{lineHeight: '30px'}}>
 						<Link to='/aboutus'>About</Link><br></br>
 						<Link to='/blogs'>Blogs</Link><br></br>
-						<Link to='/programs'>Programs</Link><br></br>
 						<Link to='/support'>Support</Link><br></br>
 						<Link to='/contact'>Contact</Link><br></br>
 					</ul>

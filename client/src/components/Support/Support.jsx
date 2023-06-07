@@ -4,14 +4,14 @@ import happy from '../../assets/again.jpeg';
 
 export const Support = () => {
 	return (
-		<div id='support-page' className='bg-purple-300 sm:m-0 md:m-0 pb-[100px]'>
+		<div id='support-page' className='bg-purple-400 sm:m-0 md:m-0 pb-[100px]'>
 			<img
 				src={
 					'https://images.unsplash.com/photo-1509099836639-18ba1795216d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=731&q=80'
 				}
 				alt=''
 				id='donate-image'
-				className='w-full md:h-[760px] -mt-96 '
+				className='w-full md:h-[760px] -mt-96'
 			/>
 			<h1
 				id='title'
@@ -23,8 +23,8 @@ export const Support = () => {
 				You can donate through
 			</h1>
 
-			<div className='grid grid-cols-3 justify-center items-center text-center py-8 md:pr-12 sm:pr-8 md:pl-12 sm:pl-4'>
-				<div className='col-span-1'>
+			<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 justify-center items-center text-center py-8 md:pr-12 sm:pr-8 md:pl-12 sm:pl-4'>
+				<div>
 					<a href='https://gofund.me/bc18e7b5'>
 						<img
 							src='https://p.kindpng.com/picc/s/151-1514121_go-fund-me-hd-png-download.png'
@@ -34,13 +34,13 @@ export const Support = () => {
 						/>
 					</a>
 				</div>
-				<div className='col-span-1'>
+				<div>
 					<p id='or-text' className='text-3xl font-serif'>
 						or
 					</p>
 				</div>
 
-				<div className='col-span-1 '>
+				<div>
 					<a href='https://www.mchanga.africa/fundraiser/44234'>
 						<img
 							src={
