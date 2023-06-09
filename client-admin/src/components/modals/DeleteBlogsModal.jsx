@@ -34,7 +34,7 @@ const DeleteBlogsModal = ({ deleteModalOpen, closeDeleteBlogModal, blog }) => {
 			<Modal isOpen={deleteModalOpen} onClose={closeDeleteBlogModal}>
 				<ModalOverlay />
 				<ModalContent>
-					<ModalHeader>DELETE SURVIVOR</ModalHeader>
+					<ModalHeader>DELETE BLOG</ModalHeader>
 					<ModalCloseButton />
 					<ModalBody
 						as={'form'}
