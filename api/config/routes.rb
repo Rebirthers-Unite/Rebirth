@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   # Routes for CRUD operations programs
   resources :programs
+
+  delete '/programs/:id', to 'programs#destroy'
   
   # Routes for CRUD operations staff
   resources :staffs
