@@ -66,7 +66,7 @@ const UpdateDetailsForm = ({
 			closeUpdateSurvivorModal();
 			// window.location.reload();
 		} else {
-			fetch('https://rebirth-ktaf.onrender.com/survivors/', {
+			fetch('https://rebiirth.onrender.com/survivors/', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

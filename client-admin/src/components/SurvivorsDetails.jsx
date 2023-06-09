@@ -73,7 +73,7 @@ const SurvivorsDetails = ({
 	}, []);
 
 	const deleteSurvivor = () => {
-		fetch('  https://rebirth-ktaf.onrender.com/survivors/' + id, {
+		fetch('https://rebiirth.onrender.com/survivors/' + id, {
 			method: 'DELETE',
 			headers: {
 				Authorization: `Bearer ${token}`,
