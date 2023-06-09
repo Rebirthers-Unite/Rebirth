@@ -108,17 +108,17 @@ const SurvivorsDetails = ({
 						{survivor.organization}
 					</Text>
 					<Text>
-						<span>Referring Organization Address: </span>
+						<span>Organization Contact: </span>
 						{survivor.organization_contact}
 					</Text>
 					<Text>
 						<span>Organization Email: </span> {survivor.organization_email}
 					</Text>
 					<Text>
-						<span>Guadian: </span> {survivor.guardian_name}
+						<span>Guardian: </span> {survivor.guardian_name}
 					</Text>
 					<Text>
-						<span>Contact of Guardian: </span> {survivor.contact_of_guardian}
+						<span>Guardian Contact: </span> {survivor.contact_of_guardian}
 					</Text>
 					<Text>
 						<span>Level of Education: </span> {survivor.level_of_education}
@@ -130,9 +130,9 @@ const SurvivorsDetails = ({
 						<span>Social Asset Building: </span>{' '}
 						{survivor.social_asset_building}
 					</Text>
-					<Text>
+					{/* <Text>
 						<span>Children: </span> {survivor.children}
-					</Text>
+					</Text> */}
 					<Text>
 						{' '}
 						<span>Date of Entry: </span> {survivor.date_of_entry}

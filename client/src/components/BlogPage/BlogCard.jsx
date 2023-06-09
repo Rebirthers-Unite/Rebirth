@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export const BlogCard = ({ id, title, content, image }) => {
   return (
-    <div className="card me-5 mb-5 px-0 pt-0 shadow p-3" id="blog-card">
+    <div className="card me-5 mb-5 px-0 pt-0 shadow p-3 font-serif" id="blog-card">
       <img className="card-img-top" alt="" src={image} style={{ height: '250px', objectFit: 'cover' }} />
       <div className="card-body">
         <h3 className="card-title text-3xl font-bold">{title}</h3>
