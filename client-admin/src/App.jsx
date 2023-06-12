@@ -15,6 +15,7 @@ import StaffDetails from './components/StaffDetails';
 import BlogDetails from './components/BlogDetails';
 import StaffControlForm from './forms/StaffControlForm';
 import UpdateStaff from './forms/UpdateStaff';
+import ProgramDetails from './components/ProgramDetails';
 
 function App() {
 	const [isOpen, setIsOpen] = useState(false);
@@ -180,6 +181,10 @@ function App() {
 				<Route
 					path="/update-staff"
 					element={<UpdateStaff staff={staff} setStaff={setStaff} />}
+				/>
+				<Route
+					path="/programs/:id"
+					element={<ProgramDetails />}
 				/>
 				<Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
 			</Route>

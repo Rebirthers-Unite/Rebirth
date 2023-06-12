@@ -10,7 +10,7 @@ function Hero() {
       <img
         src={girl}
         alt='hero-bg-image'
-        className='sm:mt-[-96px] md:mb-[-10px] md:h-[900px] filter brightness-80'
+        className='sm:mt-[-96px] md:mb-[-10px] md:h-[900px] bg-cover filter brightness-80'
       />
       <div className='absolute inset-0 flex items-center justify-center'>
         <div className='max-w-[800px] px-4 sm:px-6 lg:px-8'>

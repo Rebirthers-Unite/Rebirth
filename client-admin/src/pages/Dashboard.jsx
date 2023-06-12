@@ -21,6 +21,7 @@ import BlogCards from '../components/BlogCards';
 import StaffControlForm from '../forms/StaffControlForm';
 import { Link } from 'react-router-dom';
 import useAuthStore from '../store/Token';
+import Programs from '../components/Programs'; // Import the modified Programs component
 
 const Dashboard = ({
 	renderupdateform,
@@ -60,6 +61,31 @@ const Dashboard = ({
 
 	const [tabIndex, setTabIndex] = useState(0);
 	const [searchStaff, setSearchStaff] = useState('');
+
+	// Fetch programs from the render API
+	const [programs, setPrograms] = useState([]);
+
+	useEffect(() => {
+		fetch('https://rebiirth.onrender.com/programs', {
+			method: 'GET',
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		})
+			.then((response) => {
+				if (response.ok) {
+					return response.json();
+				} else {
+					throw new Error('Failed to fetch programs');
+				}
+			})
+			.then((data) => {
+				setPrograms(data);
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	}, []);
 
 	return (
 		<Box>
@@ -131,7 +157,7 @@ const Dashboard = ({
 						_selected={{
 							color: 'white',
 							bg: 'purple.400',
-							borderTopRightRadius: '60px',
+							// borderTopRightRadius: '60px',
 						}}
 						h={{
 							base: '2rem',
@@ -144,6 +170,23 @@ const Dashboard = ({
 						id="#viewBlogs"
 					>
 						View Blogs
+					</Tab>
+					<Tab
+						_selected={{
+							color: 'white',
+							bg: 'purple.400',
+							borderTopRightRadius: '60px',
+						}}
+						h={{
+							base: '2rem',
+							md: '3rem',
+						}}
+						fontSize={{
+							base: '0.7rem',
+							md: '1rem',
+						}}
+					>
+						Programs
 					</Tab>
 				</TabList>
 				<TabPanels>
@@ -212,6 +255,9 @@ const Dashboard = ({
 						<BlogsSearch search={search} setSearch={setSearch} />
 						<BlogCards />
 					</TabPanel>
+					<TabPanel>
+						<Programs programs={programs} />
+					</TabPanel>
 				</TabPanels>
 			</Tabs>
 		</Box>
@@ -219,3 +265,4 @@ const Dashboard = ({
 };
 
 export default Dashboard;
+

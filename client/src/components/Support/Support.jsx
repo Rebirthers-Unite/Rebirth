@@ -27,10 +27,10 @@ export const Support = () => {
 				<div>
 					<a href='https://gofund.me/bc18e7b5'>
 						<img
-							src='https://p.kindpng.com/picc/s/151-1514121_go-fund-me-hd-png-download.png'
+							src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThd-1DnXVof5yLmoxA0zFTOPSsW0-oMKZUDg&usqp=CAU'
 							alt='gofundme logo'
 							id='gofundme-logo'
-							className='hover:scale-105 w-40 h-30 md:h-40 md:w-72 mx-auto mt-4'
+							className='hover:scale-105 w-35 h-30 md:h-40 md:w-60 mx-auto mt-4'
 						/>
 					</a>
 				</div>
