@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # Routes for CRUD operations programs
   resources :programs
 
+  get '/programs/:id', to: 'programs#show'
+
   delete '/programs/:id', to: 'programs#destroy'
   
   # Routes for CRUD operations staff
