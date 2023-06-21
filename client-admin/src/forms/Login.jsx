@@ -1,70 +1,74 @@
-import {
-	Button,
-	Flex,
-	FormControl,
-	VStack,
-	Input,
-	Text,
-	HStack,
-} from '@chakra-ui/react';
+import { Button, Flex, FormControl, VStack, Input, Text, HStack } from '@chakra-ui/react';
 import { Link, useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { EmailIcon, LockIcon } from '@chakra-ui/icons';
 import useAuthStore from '../store/Token';
 
 const Login = ({ isLoggedIn, setIsLoggedIn }) => {
-	const setToken = useAuthStore((state) => state.setToken);
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
+  const setToken = useAuthStore((state) => state.setToken);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const redirect = useNavigate();
 
-	const redirect = useNavigate();
+  useEffect(() => {
+    const storedLoggedInStatus = localStorage.getItem('isLoggedIn');
+    if (storedLoggedInStatus) {
+      setIsLoggedIn(JSON.parse(storedLoggedInStatus));
+    }
+  }, [setIsLoggedIn]);
 
-	const handleEmailChange = (event) => {
-		setEmail(event.target.value);
-	};
-	const handlePasswordChange = (event) => {
-		setPassword(event.target.value);
-	};
-	const handleSubmit = (event) => {
-		event.preventDefault();
-		const data = {
-			email: email,
-			password: password,
-		};
-		fetch('https://rebiirth.onrender.com/login', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(data),
-		})
-			.then((response) => {
-				if (!response.ok) {
-					throw new Error('Network response was not ok');
-				}
-				return response.json();
-			})
-			.then((data) => {
-				console.log(data.user.id);
-				const jwt = data.jwt;
-				setToken(jwt);
-				setIsLoggedIn(true);
-				console.log(isLoggedIn);
-				redirect('/dashboard');
-			})
-			.catch((error) => {
-				console.error('There was a problem with the fetch operation:', error);
-			});
-	};
-	const loginPageTexts = {
-		welcomeMessage: 'Welcome Back',
-		// forgotPassword: 'Forgot Password?',
-		// noAccount: "Dont't have an account? ",
-		// signupLink: 'Create one here',
-	};
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
 
-	return (
-		<Flex
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = {
+      email: email,
+      password: password,
+    };
+
+    fetch('https://rebiirth.onrender.com/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data.user.id);
+        const jwt = data.jwt;
+        setToken(jwt);
+        setIsLoggedIn(true);
+        localStorage.setItem('isLoggedIn', true); // Store the login status
+        console.log(isLoggedIn);
+        redirect('/dashboard');
+      })
+      .catch((error) => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
+  };
+
+  const loginPageTexts = {
+    welcomeMessage: 'Welcome!',
+    // forgotPassword: 'Forgot Password?',
+    // noAccount: "Don't have an account? ",
+    // signupLink: 'Create one here',
+  };
+
+  return (
+
+	<Flex
 			h={'100vh'}
 			w={'100vw'}
 			direction={'column'}

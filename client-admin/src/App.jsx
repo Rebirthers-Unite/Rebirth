@@ -27,6 +27,8 @@ function App() {
 	const [staff, setStaff] = useState([]);
 	const [updateBlogsModalOpen, setUpdateBlogsModalOpen] = useState(false);
 	const [deleteBlogsModalOpen, setDeleteBlogsModalOpen] = useState(false);
+	const [updateProgramsModalOpen, setUpdateProgramsModalOpen] = useState(false);
+	const [deleteProgramsModalOpen, setDeleteProgramsModalOpen] = useState(false);
 	// const [blogIsUpdating, setBlogIsUpdating] = useState(false);
 	const [newSurvivor, setNewSurvivor] = useState({
 		name: '',
@@ -39,7 +41,6 @@ function App() {
 		level_of_education: '',
 		school: '',
 		social_asset_building: '',
-		children: '',
 		date_of_entry: '',
 		date_of_exit: '',
 	});
@@ -54,6 +55,8 @@ function App() {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 	const [newBlog, setNewBlog] = useState({});
+
+	const [newProgram, setNewProgram] = useState({});
 
 	const renderupdateform = () => {
 		setIsOpen(true);
@@ -94,6 +97,24 @@ function App() {
 		}, []);
 	};
 
+	const closeUpdateProgramsModal = () => {
+		setUpdateProgramsModalOpen(false);
+	};
+
+	const closeDeleteProgramsModal = () => {
+		setDeleteProgramsModalOpen(false);
+	};
+
+	const renderDeleteProgramsModal = () => {
+		setDeleteProgramsModalOpen(true);
+	};
+
+	const renderUpdateProgramsModal = () => {
+		setUpdateProgramsModalOpen(true);
+		useEffect(() => {
+			setIsModalOpen(true);
+		}, []);
+	};
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route
@@ -183,9 +204,20 @@ function App() {
 					element={<UpdateStaff staff={staff} setStaff={setStaff} />}
 				/>
 				<Route
-					path="/programs/:id"
-					element={<ProgramDetails />}
-				/>
+  path="/programs/:id"
+  element={
+    <ProgramDetails
+      renderDeleteProgramsModal={renderDeleteProgramsModal}
+      renderUpdateProgramsModal={renderUpdateProgramsModal}
+      closeUpdateProgramsModal={closeUpdateProgramsModal}
+      updateProgramsModalOpen={updateProgramsModalOpen}
+      deleteProgramsModalOpen={deleteProgramsModalOpen}
+      newProgram={newProgram}
+      setNewProgram={setNewProgram}
+    />
+  }
+/>
+
 				<Route path="*" element={<h1>PAGE NOT FOUND</h1>} />
 			</Route>
 		)
