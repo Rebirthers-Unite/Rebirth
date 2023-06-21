@@ -60,4 +60,19 @@ Rails.application.routes.draw do
     # Route for deleting a blog
     delete '/blogs/:id', to: 'blogs#destroy'
 
+    #Route to create a new trainee
+    post '/trainee', to: 'trainee#create'
+
+    #Route to get all trainees
+    get '/trainee', to: 'trainee#index'
+
+    #Route to get a single trainee
+    get '/trainee/:id', to: 'trainee#show'
+
+    #Route to update a trainee
+    patch '/trainee/:id', to: 'trainee#update'
+
+    #Route to delete a trainee
+    delete '/tainee/:id', to: 'trainee#destroy'
+
 end
